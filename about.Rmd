@@ -1,9 +1,20 @@
 ---
-title: "About this blog"
+title: "About me"
 description: |
   Some additional details about the blog
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+## Hi, everyone! 🤚
+
+I'm Miftahul Hadi — a **Data Analyst** who likes to interpret data by blend analytically thinking and presentation skills into ***easy-to-understand*** data visualization.
+
+> *"Presenting new information is what I love to do the most."*
+
+**I am a fun-fact enthusiast**. When I am in a conversation, I want my voice to be as informative as possible because it will make me feel connected to others people. Sometimes about fun facts about the world and pack them with data. For example, more pyramid is built not in Egypt, but in Sudan!
+
+This habit brought me to be a Data Interpreter who try to reveal not only fun-fact but actionable fact within the data set. I like to set up an easy-to-understand data visualization for people to get meaningful information.
+
+Currently, I am an ex-Data Analyst Intern at Campaign.com — one of the largest social-tech start-up companies in Indonesia. Recently, I try to level up my knowledge in two courses including **Google Data Analytics Professional Certification** and **Financial Analysis with the University of Illinois**.
+
+## [Resume 📑](https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&ouid=104673057248975950615&rtpof=true&sd=true)
+## [Email me!🤚](mailto:hadimiftahul5@gmail.com)

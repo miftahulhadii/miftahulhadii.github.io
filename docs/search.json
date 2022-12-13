@@ -2,18 +2,65 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
+      "title": "About me",
       "description": "Some additional details about the blog",
       "author": [],
+      "contents": "\r\nHi, everyone! 🤚\r\nI’m Miftahul Hadi — a Data Analyst who likes to interpret data by blend analytically thinking and presentation skills into easy-to-understand data visualization.\r\n\r\n“Presenting new information is what I love to do the most.”\r\n\r\nI am a fun-fact enthusiast. When I am in a conversation, I want my voice to be as informative as possible because it will make me feel connected to others people. Sometimes about fun facts about the world and pack them with data. For example, more pyramid is built not in Egypt, but in Sudan!\r\nThis habit brought me to be a Data Interpreter who try to reveal not only fun-fact but actionable fact within the data set. I like to set up an easy-to-understand data visualization for people to get meaningful information.\r\nCurrently, I am an ex-Data Analyst Intern at Campaign.com — one of the largest social-tech start-up companies in Indonesia. Recently, I try to level up my knowledge in two courses including Google Data Analytics Professional Certification and Financial Analysis with the University of Illinois.\r\nResume 📑\r\nEmail me!🤚\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:38:57+07:00"
+    },
+    {
+      "path": "certifications.html",
+      "title": "Certifications",
+      "description": "Here is the showcase of certifications earned from courses or an achievement.\n",
+      "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-13T19:47:16+07:00"
+      "last_modified": "2022-12-13T20:38:57+07:00"
+    },
+    {
+      "path": "excel.html",
+      "title": "Excel Project",
+      "description": "Here is the showcase of my Excel project.\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:38:58+07:00"
     },
     {
       "path": "index.html",
       "title": "Hadi Portfolio",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-13T19:47:17+07:00"
+      "last_modified": "2022-12-13T20:38:58+07:00"
+    },
+    {
+      "path": "project.html",
+      "title": "Project",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:38:59+07:00"
+    },
+    {
+      "path": "r.html",
+      "title": "R Project",
+      "description": "Here is the showcase of my R project.\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:38:59+07:00"
+    },
+    {
+      "path": "sql.html",
+      "title": "SQL Project",
+      "description": "Here is the showcase of my SQL project.\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:39:00+07:00"
+    },
+    {
+      "path": "tableau.html",
+      "title": "Tableau Project",
+      "description": "Here is the showcase of my Tableau project.\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-12-13T20:39:00+07:00"
     }
   ],
   "collections": ["posts/posts.json"]
