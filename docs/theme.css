@@ -76,6 +76,72 @@ d-appendix {
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 
+/* Import fonts from Google's API */
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+
+
+/* change code chunk colors */
+d-code {
+  background: grey;
+}
+
+/*------------FOOTER----------*/
+
+/* Divider line above footer */
+.footer hr{
+  width: 100%;
+}
+
+.footer {
+  font-size: 16px;
+  color: #808080;
+  text-align: center;
+  width: 90%;
+  margin: 3rem auto;
+  font-weight: 300;
+}
+
+.logo-rstudio {
+  width: 3%;
+  margin: 0px !important;
+}
+
+.logo-github {
+  width: 3%;
+  margin: 0px !important;
+}
+
+.distilll-footer {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.tocify-extend-page {
+  height: 0px !important; /* Gets rid of extra space after footer*/
+}
+
+/* Use specific font in the body of the text */
+html, body, p {
+  
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  line-height: 1.3; 
+  font-size: 1.0em;
+  color: #333333;
+  font-style: normal;
+  
+}
+
+/* Change the appearance of in-line code chunks */
+code {
+  font-family: 'Fira Mono', sans-serif;
+  color: #383838;
+  background: #F5F5F5;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
 /* -----------HERO IMAGE AT TOP OF PAGE -----------*/
 /* LARGE HERO IMAGE AT TOP OF PAGE*/
 
@@ -83,7 +149,7 @@ d-appendix {
     position: relative;
     margin-bottom: 2em;
     /*liner gradient tints the image darker for readability*/
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(hero-chart.jpg); 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/hero-chart.jpg); 
     height: 400px;
     background-size: cover;
     background-color: #141c25f2;

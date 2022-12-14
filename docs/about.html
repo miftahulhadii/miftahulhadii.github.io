@@ -90,7 +90,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Hadi Portfolio: About me</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the blog"/>
 
   <link rel="icon" type="image/png" href="images/web-logo.png"/>
 
@@ -98,20 +97,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Hadi Portfolio: About me"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the blog"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Hadi Portfolio"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Hadi Portfolio: About me"/>
-  <meta property="twitter:description" content="Some additional details about the blog"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About me"]},{"type":"character","attributes":{},"value":["Some additional details about the blog"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["About me"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2230,6 +2227,72 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
 
+  /* Import fonts from Google's API */
+  @import url('https://fonts.googleapis.com/css2?family=Lato');
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+
+
+  /* change code chunk colors */
+  d-code {
+    background: grey;
+  }
+
+  /*------------FOOTER----------*/
+
+  /* Divider line above footer */
+  .footer hr{
+    width: 100%;
+  }
+
+  .footer {
+    font-size: 16px;
+    color: #808080;
+    text-align: center;
+    width: 90%;
+    margin: 3rem auto;
+    font-weight: 300;
+  }
+
+  .logo-rstudio {
+    width: 3%;
+    margin: 0px !important;
+  }
+
+  .logo-github {
+    width: 3%;
+    margin: 0px !important;
+  }
+
+  .distilll-footer {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .tocify-extend-page {
+    height: 0px !important; /* Gets rid of extra space after footer*/
+  }
+
+  /* Use specific font in the body of the text */
+  html, body, p {
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    line-height: 1.3; 
+    font-size: 1.0em;
+    color: #333333;
+    font-style: normal;
+    
+  }
+
+  /* Change the appearance of in-line code chunks */
+  code {
+    font-family: 'Fira Mono', sans-serif;
+    color: #383838;
+    background: #F5F5F5;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
   /* -----------HERO IMAGE AT TOP OF PAGE -----------*/
   /* LARGE HERO IMAGE AT TOP OF PAGE*/
 
@@ -2237,7 +2300,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       position: relative;
       margin-bottom: 2em;
       /*liner gradient tints the image darker for readability*/
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(hero-chart.jpg); 
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/hero-chart.jpg); 
       height: 400px;
       background-size: cover;
       background-color: #141c25f2;
@@ -2432,8 +2495,198 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <div class="hero-image"> 
+          <div class="hero-text">
+            <div class="top-text">Data Science Project</div>
+              <div class="bottom-text">A portfolio blog by Miftahul Hadi</div>
+          </div>
+  </div>
+  <style type="text/css">
+
+  /* base variables */
+
+  /* Edit the CSS properties in this file to create a custom
+     Distill theme. Only edit values in the right column
+     for each row; values shown are the CSS defaults.
+     To return any property to the default,
+     you may set its value to: unset
+     All rows must end with a semi-colon.                      */
+
+  /* Optional: embed custom fonts here with `@import`          */
+  /* This must remain at the top of this file.                 */
+
+
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      12px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #000000;
+    --header-color:    rgba(0, 0, 0, 0.8);
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    sans-serif;
+    --mono-font:       monospace;
+    --body-font:       sans-serif;
+    --navbar-font:     sans-serif;  /* websites + blogs only */
+  }
+
+  /*-- ARTICLE METADATA --*/
+  d-byline {
+    --heading-size:    0.6rem;
+    --heading-color:   rgba(0, 0, 0, 0.5);
+    --body-size:       0.8rem;
+    --body-color:      rgba(0, 0, 0, 0.8);
+  }
+
+  /*-- ARTICLE TABLE OF CONTENTS --*/
+  .d-contents {
+    --heading-size:    18px;
+    --contents-size:   13px;
+  }
+
+  /*-- ARTICLE APPENDIX --*/
+  d-appendix {
+    --heading-size:    15px;
+    --heading-color:   rgba(0, 0, 0, 0.65);
+    --text-size:       0.8em;
+    --text-color:      rgba(0, 0, 0, 0.5);
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  /* These properties only apply to Distill sites and blogs  */
+
+  .distill-site-header {
+    --title-size:       18px;
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  .distill-site-footer {
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  /*-- Additional custom styles --*/
+  /* Add any additional CSS rules below                      */
+
+  /* Import fonts from Google's API */
+  @import url('https://fonts.googleapis.com/css2?family=Lato');
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+
+
+  /* change code chunk colors */
+  d-code {
+    background: grey;
+  }
+
+  /*------------FOOTER----------*/
+
+  /* Divider line above footer */
+  .footer hr{
+    width: 100%;
+  }
+
+  .footer {
+    font-size: 16px;
+    color: #808080;
+    text-align: center;
+    width: 90%;
+    margin: 3rem auto;
+    font-weight: 300;
+  }
+
+  .logo-rstudio {
+    width: 3%;
+    margin: 0px !important;
+  }
+
+  .logo-github {
+    width: 3%;
+    margin: 0px !important;
+  }
+
+  .distilll-footer {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .tocify-extend-page {
+    height: 0px !important; /* Gets rid of extra space after footer*/
+  }
+
+  /* Use specific font in the body of the text */
+  html, body, p {
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    line-height: 1.3; 
+    font-size: 1.0em;
+    color: #333333;
+    font-style: normal;
+    
+  }
+
+  /* Change the appearance of in-line code chunks */
+  code {
+    font-family: 'Fira Mono', sans-serif;
+    color: #383838;
+    background: #F5F5F5;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
+  /* -----------HERO IMAGE AT TOP OF PAGE -----------*/
+  /* LARGE HERO IMAGE AT TOP OF PAGE*/
+
+  .hero-image {
+      position: relative;
+      margin-bottom: 2em;
+      /*liner gradient tints the image darker for readability*/
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/hero-chart.jpg); 
+      height: 400px;
+      background-size: cover;
+      background-color: #141c25f2;
+      background-position: center center;
+      display: flex; /*Change to `display: none` for no hero image */
+      justify-content: center;
+      align-items: center;
+  }
+
+  .bottom-text {
+    position: relative;
+    font-size: 34px;
+    padding-bottom: 0.5em;
+    text-align: center;
+    display: block; /*Change to `display: none` for no top text */
+    color: #ffffff72;
+  }
+
+  .top-text {
+    position: relative;
+    letter-spacing: 0.065em;
+    line-height: 1em;
+    font-size: 68px;
+    text-align: center;
+    display: block; /* Change to `display: none` for no bottom text */
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+  }
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="theme.css" type="text/css"/>
 
 </head>
 
@@ -2442,7 +2695,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About me","description":"Some additional details about the blog","authors":[]}
+{"title":"About me","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2450,7 +2703,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a class="logo">
+<a class="logo" href="https://miftahulhadii.github.io/">
 <img src="images/web-logo.png" alt="Logo"/>
 </a>
 <a href="index.html" class="title">Hadi Portfolio</a>
@@ -2499,21 +2752,19 @@ Project
 <h1>About me</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the blog</p></p>
+
 </div>
 
 
 <div class="d-article">
 <h2 id="hi-everyone">Hi, everyone! 🤚</h2>
-<p>I’m Miftahul Hadi — a <strong>Data Analyst</strong> who likes to interpret data by blend analytically thinking and presentation skills into <strong><em>easy-to-understand</em></strong> data visualization.</p>
+<p>I am Hadi — have +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. Working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.</p>
 <blockquote>
-<p><em>“Presenting new information is what I love to do the most.”</em></p>
+<p><em>“<strong>Presenting new information</strong> is what I love to do the most.”</em></p>
 </blockquote>
-<p><strong>I am a fun-fact enthusiast</strong>. When I am in a conversation, I want my voice to be as informative as possible because it will make me feel connected to others people. Sometimes about fun facts about the world and pack them with data. For example, more pyramid is built not in Egypt, but in Sudan!</p>
-<p>This habit brought me to be a Data Interpreter who try to reveal not only fun-fact but actionable fact within the data set. I like to set up an easy-to-understand data visualization for people to get meaningful information.</p>
-<p>Currently, I am an ex-Data Analyst Intern at Campaign.com — one of the largest social-tech start-up companies in Indonesia. Recently, I try to level up my knowledge in two courses including <strong>Google Data Analytics Professional Certification</strong> and <strong>Financial Analysis with the University of Illinois</strong>.</p>
-<h2 id="resume"><a href="https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&amp;ouid=104673057248975950615&amp;rtpof=true&amp;sd=true">Resume 📑</a></h2>
-<h2 id="email-me"><a href="mailto:hadimiftahul5@gmail.com">Email me!🤚</a></h2>
+<p>If you interest in working together with Hadi. Check the information below:</p>
+<h3 id="resume"><a href="https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&amp;ouid=104673057248975950615&amp;rtpof=true&amp;sd=true">Resume 📑</a></h3>
+<h3 id="email-me"><a href="mailto:hadimiftahul5@gmail.com">Email me!🤚</a></h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2524,6 +2775,14 @@ Project
 
 
 <!--radix_placeholder_site_after_body-->
+<div class="footer"> 
+  
+  <hr> 
+  <p> Powered by <img class="logo-rstudio" src = "images/logo-rstudio.png"> & <img class="logo-github" src = "images/logo-github.png"</p>
+  <p class="distilll-footer">Created with a <a class="distilll-link" href="https://rstudio.github.io/distill/">&nbsp;Distill blog</a> template.</p>
+
+
+</div>
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>

@@ -9,7 +9,7 @@ output_dir: "docs"
 navbar:
   logo:
     image: images/web-logo.png
-    href: 
+    href: https://miftahulhadii.github.io/
   left:
     - text: "Home"
       icon: fa-home
@@ -45,8 +45,15 @@ collections:
     disqus: 
       shortname: miftahulhadii.github.io
       hidden: false
+      categories_metadata: false
+      authors_metadata: false
     share: [twitter, linkedin]
 rss:
   full_content: true
 output: 
-  distill::distill_article
+  distill::distill_article:
+    css: theme.css
+    includes:
+      in_header:
+        - assets/hero-image.html
+      after_body: assets/footer.html
