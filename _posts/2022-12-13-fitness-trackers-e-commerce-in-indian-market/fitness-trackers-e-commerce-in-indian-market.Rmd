@@ -2,7 +2,7 @@
 title: "Fitness Trackers e-Commerce in Indian Market"
 description: |
   A financial analysis about fitness trackers device sales in Indian market on 2022. 
-preview: _posts/2022-12-13-fitness-trackers-e-commerce-in-indian-market/fitness-tracker.png
+preview: https://phoneradar.com/wp-content/uploads/2014/09/GetActive-Tapp.jpg
 author:
   - name: Miftahul Hadi
 date: Dec 6, 2022
