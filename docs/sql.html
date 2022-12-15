@@ -2187,6 +2187,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
 
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -2337,6 +2338,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #ffffff;
     margin-bottom: 2.5rem;
     font-weight: bold;
+  }
+
+  /*-----------------TOC----------------*/
+
+  /* Makes TOC sticky (needed if you used a hero image) */
+
+  .row-fluid{
+    display: flex; /* Necessary for sticky TOC*/
+
+  }
+
+  .tocify {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 120px; /*Controls where TOC stops when sticky */
+    width: 100% !important;
+    border: none;
+  }
+
+  /* TOC links */
+
+  .list-group-item {
+      color: #7b8a8b;
+      font-size: 16px;
+  }
+
+
+  /* NO TOC on mobile */
+  @media screen and (max-width: 767px){
+
+    .col-xs-12.col-sm-4.col-md-3 {
+      display: none;
+    }
+    
+    .top-text {
+      font-size: 25px;
+    }
+
+    .bottom-text {
+      font-size: 40px;
+    }
+    
+    
   }</style>
   <style type="text/css">
   /* base style */
@@ -2586,6 +2630,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
 
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -2736,6 +2781,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #ffffff;
     margin-bottom: 2.5rem;
     font-weight: bold;
+  }
+
+  /*-----------------TOC----------------*/
+
+  /* Makes TOC sticky (needed if you used a hero image) */
+
+  .row-fluid{
+    display: flex; /* Necessary for sticky TOC*/
+
+  }
+
+  .tocify {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 120px; /*Controls where TOC stops when sticky */
+    width: 100% !important;
+    border: none;
+  }
+
+  /* TOC links */
+
+  .list-group-item {
+      color: #7b8a8b;
+      font-size: 16px;
+  }
+
+
+  /* NO TOC on mobile */
+  @media screen and (max-width: 767px){
+
+    .col-xs-12.col-sm-4.col-md-3 {
+      display: none;
+    }
+    
+    .top-text {
+      font-size: 25px;
+    }
+
+    .bottom-text {
+      font-size: 40px;
+    }
+    
+    
   }
   </style>
   <!--/radix_placeholder_site_in_header-->

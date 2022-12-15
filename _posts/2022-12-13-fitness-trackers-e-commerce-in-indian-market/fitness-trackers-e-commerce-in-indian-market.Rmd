@@ -13,8 +13,14 @@ categories:
 output:
   distill::distill_article:
     toc: true
+    toc_float: true
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
     code_folding: show
+    toc_depth: 1
     self_contained: true
+    highlight: tango
 ---
 
 
