@@ -5,6 +5,7 @@ favicon: images/web-logo.png
 description: |
   Hadi Portfolio
 base_url: https://miftahulhadii.github.io/
+repository_url: https://github.com/miftahulhadii/miftahulhadii.github.io/
 output_dir: "docs"
 navbar:
   logo:
@@ -42,12 +43,6 @@ navbar:
 collections:
   posts:
     feed_items_max: 10
-    disqus: 
-      shortname: miftahulhadii.github.io
-      hidden: false
-      categories_metadata: false
-      authors_metadata: false
-    share: [twitter, linkedin]
 rss:
   full_content: true
 output: 
@@ -56,4 +51,5 @@ output:
     includes:
       in_header:
         - assets/hero-image.html
+        - assets/giscus.html
       after_body: assets/footer.html

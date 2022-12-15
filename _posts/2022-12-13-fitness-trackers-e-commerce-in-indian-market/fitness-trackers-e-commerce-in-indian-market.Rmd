@@ -11,13 +11,12 @@ categories:
   - Financial Analysis
   - Data Visualization
 output:
-  distill::distill_article
+  distill::distill_article:
+    toc: true
+    code_folding: show
+    self_contained: true
 ---
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 # Introduction
 
@@ -62,7 +61,7 @@ Here, I want to describe a few tools in this analysis:
 
 Before doing our analysis, we loaded the library.
 
-```{r Library included, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Library included, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
@@ -74,7 +73,7 @@ library(ggpubr)
 
 Then, load and name the dataset as a *fitness_tracker* using `readr` library.
 
-```{r Dataset loaded, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Dataset loaded, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 library(readr)
 fitness_trackers <- read_csv("D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/Project/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv")
 ```
@@ -89,7 +88,7 @@ fitness_trackers <- read_csv("D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/P
 
 Here, we try to find which strap material for **Fitness Band** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
-```{r Top Strap Material: Fitness Band}
+```{r Top Strap Material: Fitness Band, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 mean_strap_fitnessband <- fitness_trackers %>% 
   group_by(`Strap Material`) %>%
   filter (`Device Type` == "FitnessBand") %>% 
@@ -107,7 +106,7 @@ From the bar chart above, we see the brand name on the left-axis with their aver
 
 Here, we try to find which strap material for **Smartwatch** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
-```{r Top Strap Material: Smartwatches}
+```{r Top Strap Material: Smartwatches, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 mean_strap_smartwatch <- fitness_trackers %>% 
   drop_na() %>% 
   group_by(`Strap Material`) %>%
@@ -133,7 +132,7 @@ Here, we want to inspect whether or not if more battery life is an important fac
 
 Here's the formula in R
 
-```{r Battery Life Vs. Rating, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Battery Life Vs. Rating, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 ggplot(data = fitness_trackers, 
        mapping = aes(x = `Average Battery Life (in days)`, y = `Rating (Out of 5)`, alpha = `Rating (Out of 5)`)) + 
   geom_smooth() +
@@ -161,7 +160,7 @@ Here, we want to inspect the mean price for selling a fitness tracker in Indian 
 
 Here's the formula in R to check the **correlation** for selling price in **Smartwatch**.
 
-```{r Mean Selling Price: Smartwatch, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Mean Selling Price: Smartwatch, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 mean_selling_smartwatch <- fitness_trackers %>% 
   group_by(`Rating (Out of 5)`) %>%
   filter (`Device Type` == "Smartwatch") %>% 
@@ -177,7 +176,7 @@ If we see the chart above, the ***R*** value for Smartwatch's selling price is l
 
 Let's check the selling price in **Fitness Band**.
 
-```{r Mean Selling Price: Fitness Band, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Mean Selling Price: Fitness Band, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 mean_selling_fitnessband <- fitness_trackers %>% 
   group_by(`Rating (Out of 5)`) %>%
   filter (`Device Type` == "FitnessBand") %>% 
@@ -214,5 +213,5 @@ For further analysis, the specifications price is needed. This is important to m
 
 # Source
 
-* RStudio[link](https://posit.co/)
+* [RStudio](https://posit.co/)
 * Fitness Tracker Dataset: [Kaggle](https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce)
