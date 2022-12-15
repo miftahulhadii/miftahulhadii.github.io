@@ -63,7 +63,7 @@ d-appendix {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
   --hover-color:      white;
-  --bkgd-color:       #0F2E3D;
+  --bkgd-color:       #7a1010;
 }
 
 .distill-site-footer {
@@ -108,13 +108,18 @@ d-code {
 }
 
 .logo-github {
-  width: 2%;
+  width: 1.5%;
   margin: 0px !important;
 }
 
 .distilll-footer {
   font-size: 12px;
   text-transform: uppercase;
+}
+
+.distilll-footer-logo {
+  width: 3%;
+  margin: 0px !important;
 }
 
 .tocify-extend-page {
