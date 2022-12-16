@@ -108,7 +108,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","listing"]}},"value":[{"type":"character","attributes":{},"value":["R Project"]},{"type":"character","attributes":{},"value":["Here is the showcase of my R project."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2022-12-13-fitness-trackers-e-commerce-in-indian-market"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","caption","listing"]}},"value":[{"type":"character","attributes":{},"value":["R Project"]},{"type":"character","attributes":{},"value":["Here is the showcase of my R project.\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2022-12-13-fitness-trackers-e-commerce-in-indian-market"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2174,7 +2174,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /*-- Main font colors --*/
     --title-color:     #000000;
     --header-color:    rgba(0, 0, 0, 250);
-    --body-color:      rgba(0, 0, 0, 250);
+    --body-color:      black;
     --aside-color:     rgba(0, 0, 0, 250);
     --fig-cap-color:   rgba(0, 0, 0, 250);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
@@ -2193,11 +2193,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-color:      rgba(0, 0, 0, 0.8);
   }
 
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
 
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
@@ -2218,6 +2213,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --bkgd-color:       #7a1010;
   }
 
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
@@ -2235,7 +2231,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* change code chunk colors */
   d-code {
-    background: grey;
+    background: black;
   }
 
   /*------------FOOTER----------*/
@@ -2292,8 +2288,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* Change the appearance of in-line code chunks */
   code {
-    font-family: 'Fira Mono', sans-serif;
-    color: #383838;
+    font-family: 'Muli', sans-serif;
+    color: #000000;
     background: #F5F5F5;
     font-weight: 400;
     font-size: 0.9em;
@@ -2357,7 +2353,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* TOC links */
 
   .list-group-item {
-      color: #7b8a8b;
+      color: #000000;
       font-size: 16px;
   }
 
@@ -2370,14 +2366,48 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     }
     
     .top-text {
+      color: #000000;
       font-size: 25px;
     }
 
     .bottom-text {
+      color: #000000;
       font-size: 40px;
     }
     
     
+  }
+
+
+  /*----------------NAVBAR ---------------*/
+  .navbar-default {
+      background-color: #141c25f2;
+  }
+
+  .navbar-default .navbar-nav>.open>a, 
+  .navbar-default .navbar-nav>.active>a, 
+  a.dropdown-toggle:hover {
+    background-color: #141c25 !important;
+  }
+
+  /* Dropdown menu color */
+  .navbar-default .dropdown-menu {
+    background-color: #141c25;
+  }
+
+  /* Dropdown menu hover color */
+    .navbar-default .dropdown-menu>li>a:hover {
+      background-color: #202831f2;
+    }
+
+  /* Navbar Links when hovered*/
+  .navbar-default .dropdown-menu>.active>a
+  .navbar-default .navbar-nav>.active>a:hover, 
+  .navbar-default .navbar-nav:hover, 
+  .navbar-default .navbar-nav>li>a:hover, 
+  a.navbar-brand:hover {
+    color: #ffffffab !important;
+    background-color: #141c25;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2617,7 +2647,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /*-- Main font colors --*/
     --title-color:     #000000;
     --header-color:    rgba(0, 0, 0, 250);
-    --body-color:      rgba(0, 0, 0, 250);
+    --body-color:      black;
     --aside-color:     rgba(0, 0, 0, 250);
     --fig-cap-color:   rgba(0, 0, 0, 250);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
@@ -2636,11 +2666,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-color:      rgba(0, 0, 0, 0.8);
   }
 
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
 
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
@@ -2661,6 +2686,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --bkgd-color:       #7a1010;
   }
 
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
@@ -2678,7 +2704,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* change code chunk colors */
   d-code {
-    background: grey;
+    background: black;
   }
 
   /*------------FOOTER----------*/
@@ -2735,8 +2761,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* Change the appearance of in-line code chunks */
   code {
-    font-family: 'Fira Mono', sans-serif;
-    color: #383838;
+    font-family: 'Muli', sans-serif;
+    color: #000000;
     background: #F5F5F5;
     font-weight: 400;
     font-size: 0.9em;
@@ -2800,7 +2826,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* TOC links */
 
   .list-group-item {
-      color: #7b8a8b;
+      color: #000000;
       font-size: 16px;
   }
 
@@ -2813,14 +2839,48 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     }
     
     .top-text {
+      color: #000000;
       font-size: 25px;
     }
 
     .bottom-text {
+      color: #000000;
       font-size: 40px;
     }
     
     
+  }
+
+
+  /*----------------NAVBAR ---------------*/
+  .navbar-default {
+      background-color: #141c25f2;
+  }
+
+  .navbar-default .navbar-nav>.open>a, 
+  .navbar-default .navbar-nav>.active>a, 
+  a.dropdown-toggle:hover {
+    background-color: #141c25 !important;
+  }
+
+  /* Dropdown menu color */
+  .navbar-default .dropdown-menu {
+    background-color: #141c25;
+  }
+
+  /* Dropdown menu hover color */
+    .navbar-default .dropdown-menu>li>a:hover {
+      background-color: #202831f2;
+    }
+
+  /* Navbar Links when hovered*/
+  .navbar-default .dropdown-menu>.active>a
+  .navbar-default .navbar-nav>.active>a:hover, 
+  .navbar-default .navbar-nav:hover, 
+  .navbar-default .navbar-nav>li>a:hover, 
+  a.navbar-brand:hover {
+    color: #ffffffab !important;
+    background-color: #141c25;
   }
   </style>
   <!--/radix_placeholder_site_in_header-->

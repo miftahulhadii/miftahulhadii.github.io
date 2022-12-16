@@ -1,6 +1,7 @@
 ---
 title: "R Project"
-subtitle: "Here is the showcase of my R project."
+caption: |
+  Here is the showcase of my R project.
 listing:
   posts:
     - 2022-12-13-fitness-trackers-e-commerce-in-indian-market
