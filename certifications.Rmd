@@ -2,7 +2,24 @@
 title: "Certifications"
 description: |
   Here is the showcase of certifications earned from courses or an achievement.
-categories:
-  - Achievement
-  - Courses
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
+    code_folding: show
+    toc_depth: 2
+    self_contained: true
+    highlight: tango
 ---
+
+## Completed courses
+### The Fundamental of Digital Marketing
+### Google Analytics Individual Qualification
+### Advanced Google Analytics
+
+## Current courses
+### Google Data Analyticcs Professional Certificate
+### Financial Analysis by University of Illnois
