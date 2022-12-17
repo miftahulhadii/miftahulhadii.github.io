@@ -2,10 +2,10 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About me",
+      "title": "Miftahul Hadi",
       "author": [],
-      "contents": "\r\nHi, everyone! 🤚\r\nI am Hadi — have +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. Working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.\r\n\r\n“Presenting new information is what I love to do the most.”\r\n\r\nIf you interest in working together with Hadi. Check the information below:\r\nResume 📑\r\nEmail me!🤚\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:33+07:00"
+      "contents": " \r\n                  \r\n                    Data Science Project\r\n                      A portfolio blog by Miftahul Hadi\r\n                  \r\n          \r\n          \r\n          \r\n          \r\n          Hadi Portfolio\r\n          \r\n          \r\n          \r\n          \r\n          \r\n          Project\r\n           \r\n          ▾\r\n          \r\n          \r\n          R\r\n          SQL\r\n          Tableau\r\n          Excel\r\n          \r\n          \r\n          Certifications\r\n          About Me\r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Miftahul Hadi\r\n          \r\n          \r\n            \r\n              Hadi have +6 months of experience as a data analyst in\r\n              a social-tech company. Practiced experience in data\r\n              cleaning, visualization, and analysis with R, SQL,\r\n              Tableau, and communication. He working on personal\r\n              projects over different cases in data analysis. Attending\r\n              online courses and reading books to leverage my\r\n              knowledge.\r\n              \r\n              “Presenting new information is\r\n              what I love to do the most.”\r\n              \r\n            \r\n            \r\n              Hadi have +6 months of experience as a data analyst in\r\n              a social-tech company. Practiced experience in data\r\n              cleaning, visualization, and analysis with R, SQL,\r\n              Tableau, and communication. He working on personal\r\n              projects over different cases in data analysis. Attending\r\n              online courses and reading books to leverage my\r\n              knowledge.\r\n              \r\n              “Presenting new information is\r\n              what I love to do the most.”\r\n              \r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Resume\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    \r\n                \r\n                                \r\n                  \r\n                    \r\n                \r\n                                \r\n                  \r\n                    \r\n                \r\n                                \r\n                  \r\n                    Resume\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n     \r\n            \r\n             Powered by  & Created with a  Distill template.\r\n\r\n\r\n          \r\n          \r\n          \r\n          \r\n    \r\n  \r\n",
+      "last_modified": "2022-12-17T11:38:46+07:00"
     },
     {
       "path": "certifications.html",
@@ -13,7 +13,7 @@
       "description": "Here is the showcase of certifications earned from courses or an achievement.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:34+07:00"
+      "last_modified": "2022-12-17T11:35:02+07:00"
     },
     {
       "path": "excel.html",
@@ -21,21 +21,21 @@
       "description": "Here is the showcase of my Excel project.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:34+07:00"
+      "last_modified": "2022-12-17T11:35:03+07:00"
     },
     {
       "path": "index.html",
       "title": "Hadi Portfolio",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:35+07:00"
+      "last_modified": "2022-12-17T11:35:03+07:00"
     },
     {
       "path": "r.html",
       "title": "R Project",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:35+07:00"
+      "last_modified": "2022-12-17T11:35:04+07:00"
     },
     {
       "path": "sql.html",
@@ -43,7 +43,7 @@
       "description": "Here is the showcase of my SQL project.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:36+07:00"
+      "last_modified": "2022-12-17T11:35:04+07:00"
     },
     {
       "path": "tableau.html",
@@ -51,7 +51,7 @@
       "description": "Here is the showcase of my Tableau project.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-12-16T14:02:36+07:00"
+      "last_modified": "2022-12-17T11:35:05+07:00"
     }
   ],
   "collections": ["posts/posts.json"]
