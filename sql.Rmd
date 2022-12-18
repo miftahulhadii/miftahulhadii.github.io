@@ -1,7 +1,0 @@
----
-title: "SQL Project"
-description: |
-  Here is the showcase of my SQL project.
-categories:
-  - SQL
----

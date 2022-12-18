@@ -1,20 +1,37 @@
 ---
-title: "Miftahul Hadi"
-image: "images/photo_profile.png"
-links:
-  - label: '`r fontawesome::fa("linkedin", height = "25px")`'
-    url: "https://linkedin.com/in/miftahulhadii/"
-  - label: '`r fontawesome::fa("github", height = "25px")`'
-    url: "https://github.com/miftahulhadii/"
-  - label: '`r fontawesome::fa("envelope", height = "25px")`'
-    url: "mailto:hadimiftahul5@gmail.com"
-  - label: Resume
-    url: "https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&ouid=104673057248975950615&rtpof=true&sd=true"
-site: distill::distill_website
+title: "About me"
 output:
-  postcards::jolla
+    distill::distill_article:
+      toc: true
 ---
 
-Hadi have +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(distilltools)
+```
 
-> *"**Presenting new information** is what I love to do the most."*
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
+<center>
+```{r, echo=FALSE}
+icon_link(
+    text = "Resume",
+    url  = "https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&ouid=104673057248975950615&rtpof=true&sd=true"
+)
+```
+</center>
+
+### Short Bio
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
+### `r make_icon("fab fa-r-project")` Programming
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
+### Mountaineering
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
+### Football
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
+### Music
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.

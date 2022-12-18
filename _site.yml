@@ -12,18 +12,10 @@ navbar:
     image: images/web-logo.png
     href: https://miftahulhadii.github.io/
   right:
-    - text: "About Me"
+    - text: "About"
       href: about.html
     - text: "Project"
-      menu:
-        - text: "R"
-          href: r.html
-        - text: "SQL"
-          href: sql.html
-        - text: "Tableau"
-          href: tableau.html
-        - text: Excel
-          href: excel.html
+      href: project.html
     - text: "Certifications"
       href: certifications.html
     - text: "Contact"

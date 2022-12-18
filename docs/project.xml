@@ -3,7 +3,7 @@
   <channel>
     <title>DataHadi</title>
     <link>https://miftahulhadii.github.io/</link>
-    <atom:link href="https://miftahulhadii.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://miftahulhadii.github.io/project.xml" rel="self" type="application/rss+xml"/>
     <description>DataHadi
 </description>
     <image>

@@ -1,7 +1,0 @@
----
-title: "Tableau Project"
-description: |
-  Here is the showcase of my Tableau project.
-categories:
-  - Tableau
----
