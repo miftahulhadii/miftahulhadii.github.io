@@ -15,11 +15,17 @@ output:
     highlight: tango
 ---
 
-## Completed courses
-### The Fundamental of Digital Marketing
-### Google Analytics Individual Qualification
-### Advanced Google Analytics
+## Data Science
+* Google Data Analytics Professional Certificate (*on-going*)
 
-## Current courses
-### Google Data Analytics Professional Certificate
-### Financial Analysis by University of Illnois
+## Tools
+* Google Analytics Individual Qualification
+* Advanced Google Analytics
+* Introduction to Data Studio
+
+## Financial & Digital Marketing
+* Financial Analysis by University of Illinois (*on-going*)
+* The Fundamental of Digital Marketing
+
+## Achievement
+* Presenter in 11th ICTAP Physical Society of Indonesia
