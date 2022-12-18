@@ -16,16 +16,20 @@ output:
 ---
 
 ## Data Science
-* Google Data Analytics Professional Certificate (*on-going*)
-
-## Tools
-* Google Analytics Individual Qualification
-* Advanced Google Analytics
-* Introduction to Data Studio
+### [Google Data Analytics Professional Certificate](https://www.coursera.org/account/accomplishments/certificate/LT9R8CSLK5G9) (*on-going*)
+***Skill earned***: R, Tableau, SQL, Excel, Analytical thinking.
 
 ## Financial & Digital Marketing
-* Financial Analysis by University of Illinois (*on-going*)
-* The Fundamental of Digital Marketing
+### [Financial Analysis by University of Illinois](https://www.coursera.org/account/accomplishments/certificate/V66H4M3TSTY5) (*on-going*)
+***Skill earned***: Accounting, Financial Statement, Risk, Decision-making.
+
+### [The Fundamental of Digital Marketing](https://drive.google.com/file/d/1XwouV0E9wSLIATOPdmk80RFXoboBVZF7/view?usp=sharing)
+***Skill earned***: SEO, SEM, A/B testing.
+
+## Tools
+* [Google Analytics Individual Qualification](https://skillshop.exceedlms.com/student/award/FTPFEs41nBraepdhHbVMzjo4?referer=https%3A%2F%2Fskillshop.exceedlms.com%2Fstudent%2Fpath%2F2938%3Fuse_local%3Dtrue)
+* [Advanced Google Analytics](https://analytics.google.com/analytics/academy/certificate/FMSGkubIQLWEUrzLYxvJHQ)
+* [Introduction to Data Studio](https://analytics.google.com/analytics/academy/certificate/xuWodfkvTfKuBWinMg8Clg)
 
 ## Achievement
-* Presenter in 11th ICTAP Physical Society of Indonesia
+* [Presenter in 11th ICTAP Physical Society of Indonesia](https://drive.google.com/file/d/1jaavf4yBVams6U4JVTEkG6Vzf5CTgmdf/view?usp=sharing)

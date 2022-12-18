@@ -11,10 +11,9 @@ navbar:
   logo:
     image: images/web-logo.png
     href: https://miftahulhadii.github.io/
-  left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
+  right:
+    - text: "About Me"
+      href: about.html
     - text: "Project"
       menu:
         - text: "R"
@@ -27,18 +26,17 @@ navbar:
           href: excel.html
     - text: "Certifications"
       href: certifications.html
-    - text: "About Me"
-      href: about.html
-      
-  right:
-    - icon: fa-github
-      href: https://github.com/miftahulhadii
-    - icon: fa-linkedin
-      href: https://linkedin.com/in/miftahulhadii
-    - icon: fa-envelope
-      href: mailto:hadimiftahul5@gmail.com
-    - icon: fa fa-rss
-      href: index.xml
+    - text: "Contact"
+      icon: fa-arrow 
+      menu:
+        - icon: fa-github
+          href: https://github.com/miftahulhadii
+        - icon: fa-linkedin
+          href: https://linkedin.com/in/miftahulhadii
+        - icon: fa-envelope
+          href: mailto:hadimiftahul5@gmail.com
+        - icon: fa fa-rss
+          href: index.xml
       
 collections:
   posts:
