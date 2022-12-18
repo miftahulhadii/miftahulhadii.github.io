@@ -1,5 +1,5 @@
 ---
-title: "DataHadi"
+title: "Miftahul Hadi"
 favicon: images/web-logo.png
 image: "images/photo_profile.png"
 links:
