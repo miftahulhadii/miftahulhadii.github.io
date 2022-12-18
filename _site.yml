@@ -49,7 +49,6 @@ output:
   distill::distill_article:
     includes:
       in_header:
-        - assets/hero-image.html
         - assets/giscus.html
       after_body: assets/footer.html
       
