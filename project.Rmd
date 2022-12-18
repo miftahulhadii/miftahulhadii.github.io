@@ -1,7 +1,7 @@
 ---
-title: "R Project"
+title: "Project"
 caption: |
-  Here is the showcase of my R project.
+  A showcase of all projects created.
 listing:
   posts
 ---

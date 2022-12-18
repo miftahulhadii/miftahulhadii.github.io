@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(distilltools)
 ```
 
-Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge. You can also see more about my background on my resume:
 
 <center>
 ```{r, echo=FALSE}
@@ -27,11 +27,23 @@ Welcome to my personal website! I am a +6 months of experience as a data analyst
 ### `r make_icon("fab fa-r-project")` Programming
 Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
 
+### College Life
+![Hadi as a presenter in 11th ICTAP Physical Society of Indonesia](images/11-ictap.jpg){width=80% .external}
+
+Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+
 ### Mountaineering
+![Hadi reaching the highest mountain in Lampung Province, Indonesia in 2021](images/mountaineering.jpg){width=80% .external}
+
 Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
 
-### Football
+### Futsal
+![Hadi with his partner as third at the college futsal competition in 2018](images/futsal-third.jpg){width=50% .external}
+
 Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
 
-### Music
-Welcome to my personal website! I am a +6 months of experience as a data analyst in a social-tech company. Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects over different cases in data analysis. Attending online courses and reading books to leverage my knowledge.
+Thanks for visiting my personal website, don't hesitate to give a feedback you may have!
+
+Best,
+
+Hadi
