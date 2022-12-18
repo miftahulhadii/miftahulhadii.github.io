@@ -1,5 +1,5 @@
 ---
-title: "Miftahul Hadi"
+title: "DataHadi"
 image: "images/photo_profile.png"
 links:
   - label: '`r fontawesome::fa("linkedin", height = "25px")`'
