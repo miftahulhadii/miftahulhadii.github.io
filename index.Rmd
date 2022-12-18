@@ -1,5 +1,6 @@
 ---
 title: "DataHadi"
+favicon: images/web-logo.png
 image: "images/photo_profile.png"
 links:
   - label: '`r fontawesome::fa("linkedin", height = "25px")`'
