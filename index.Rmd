@@ -22,7 +22,7 @@ library(distilltools)
 
 # Welcome to my personal website!🤚
 
-I am a data analyst with an experience in a social-tech company, [Campaign.com](https://www.campaign.com/). Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. He working on personal projects with focus on financial analysis. I study on data and financial courses and reading books to leverage my knowledge.
+I am a data analyst with an experience in a social-tech company, [Campaign.com](https://www.campaign.com/). Practiced experience in data cleaning, visualization, and analysis with R, SQL, Tableau, and communication. I work on personal projects with focus on financial analysis. I study on data and financial courses and reading books to leverage my knowledge.
 
 >> *"**Presenting new information** is what I love to do the most."*
 
