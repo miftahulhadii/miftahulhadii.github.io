@@ -1,9 +1,9 @@
 name: "miftahulhadii.github.io"
-title: "Hadi Portfolio"
+title: "Data Hadi"
 theme: theme.css
 favicon: images/web-logo.png
 description: |
-  Hadi Portfolio
+  Data Hadi
 base_url: https://miftahulhadii.github.io/
 repository_url: https://github.com/miftahulhadii/miftahulhadii.github.io/
 output_dir: "docs"
