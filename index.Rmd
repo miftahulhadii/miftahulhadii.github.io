@@ -26,11 +26,4 @@ I am a data analyst with an experience in a social-tech company, [Campaign.com](
 
 >> *"**Presenting new information** is what I love to do the most."*
 
-<center>
-```{r, echo=FALSE}
-icon_link(
-    text = "Let's dive into my project →",
-    url  = "project.html"
-)
-```
-</center>
+### [Let's dive into my project →](project.html)
