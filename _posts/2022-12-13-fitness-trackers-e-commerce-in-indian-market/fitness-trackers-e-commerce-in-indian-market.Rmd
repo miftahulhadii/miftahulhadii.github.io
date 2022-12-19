@@ -81,6 +81,8 @@ Then, load and name the dataset as a *fitness_tracker* using `readr` library.
 
 ```{r Dataset loaded, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
 library(readr)
+
+#Use your file location
 fitness_trackers <- read_csv("D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/Project/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv")
 ```
 
@@ -102,10 +104,14 @@ skim_without_charts(fitness_trackers)
 Here, we try to find which strap material for **Fitness Band** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
 ```{r Top Strap Material: Fitness Band, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
+#Fitness Band
+#Calculate the average rating by strap material
 mean_strap_fitnessband <- fitness_trackers %>% 
   group_by(`Strap Material`) %>%
   filter (`Device Type` == "FitnessBand") %>% 
   summarize(avg_rating = mean(`Rating (Out of 5)`))
+
+#Plot the average rating with strap material
 ggplot(data = mean_strap_fitnessband, 
        mapping = aes(x = avg_rating, y = reorder(`Strap Material`, avg_rating), alpha = avg_rating)) + 
   geom_bar(stat = "identity", fill = "black") + 
@@ -120,11 +126,15 @@ From the bar chart above, we see the brand name on the left-axis with their aver
 Here, we try to find which strap material for **Smartwatch** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
 ```{r Top Strap Material: Smartwatches, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
+#Smartwatches
+#Calculate the average rating by strap material
 mean_strap_smartwatch <- fitness_trackers %>% 
   drop_na() %>% 
   group_by(`Strap Material`) %>%
   filter (`Device Type` == "Smartwatch") %>% 
   summarize(avg_rating = mean(`Rating (Out of 5)`))
+
+#Plot the average rating with strap material
 ggplot(data = mean_strap_smartwatch, 
        mapping = aes(x = avg_rating, y = reorder(`Strap Material`, avg_rating), alpha = avg_rating)) + 
   geom_bar(stat = "identity", fill = "black") + 
@@ -146,6 +156,7 @@ Here, we want to inspect whether or not if more battery life is an important fac
 Here's the formula in R
 
 ```{r Battery Life Vs. Rating, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
+#Plot the battery life with rating
 ggplot(data = fitness_trackers, 
        mapping = aes(x = `Average Battery Life (in days)`, y = `Rating (Out of 5)`, alpha = `Rating (Out of 5)`)) + 
   geom_smooth() +
@@ -174,10 +185,14 @@ Here, we want to inspect the mean price for selling a fitness tracker in Indian 
 Here's the formula in R to check the **correlation** for selling price in **Smartwatch**.
 
 ```{r Mean Selling Price: Smartwatch, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
+#Smartwatches
+#Calculate the mean selling prices
 mean_selling_smartwatch <- fitness_trackers %>% 
   group_by(`Rating (Out of 5)`) %>%
   filter (`Device Type` == "Smartwatch") %>% 
   summarize(selling_price = mean(`Selling Price`))
+
+#Plot the average selling price with device rating
 ggplot(data = mean_selling_smartwatch, 
        mapping = aes(x = `Rating (Out of 5)`, y = selling_price)) + 
   geom_smooth() + 
@@ -190,10 +205,14 @@ If we see the chart above, the ***R*** value for Smartwatch's selling price is l
 Let's check the selling price in **Fitness Band**.
 
 ```{r Mean Selling Price: Fitness Band, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, code_folding=TRUE}
+#Fitness band
+#Calculate the mean selling prices
 mean_selling_fitnessband <- fitness_trackers %>% 
   group_by(`Rating (Out of 5)`) %>%
   filter (`Device Type` == "FitnessBand") %>% 
   summarize(selling_price = mean(`Selling Price`))
+
+#Plot the average selling price with device rating
 ggplot(data = mean_selling_fitnessband, 
        mapping = aes(x = `Rating (Out of 5)`, y = selling_price)) + 
   geom_smooth() + 
