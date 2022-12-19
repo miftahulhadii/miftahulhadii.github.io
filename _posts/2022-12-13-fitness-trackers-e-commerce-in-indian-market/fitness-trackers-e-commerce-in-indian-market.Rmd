@@ -84,6 +84,13 @@ library(readr)
 fitness_trackers <- read_csv("D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/Project/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv")
 ```
 
+Last, we want to get better understanding of our data using `glimpse()` & `skim_without_charts()` to check the null value.
+
+```{r Understand the data, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+glimpse(fitness_trackers)
+skim_without_charts(fitness_trackers)
+```
+
 --------
 
 # Analysis

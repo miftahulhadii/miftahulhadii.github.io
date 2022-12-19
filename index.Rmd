@@ -15,10 +15,6 @@ site: distill::distill_website
 output:
   postcards::trestles
 ---
-```{r librarydistill, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-
-library(distilltools)
-```
 
 # Welcome to my personal website!🤚
 
