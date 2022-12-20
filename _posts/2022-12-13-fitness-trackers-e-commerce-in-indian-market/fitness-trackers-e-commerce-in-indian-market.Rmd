@@ -56,7 +56,7 @@ Hopefully, this questions will reveal what inside the data sets and help other c
 
 Here, I want to describe a few tools in this analysis:
 
--   RStudio [link](https://posit.co/)
+-   [RStudio](https://posit.co/)
 -   Library including:
     -   `tidyverse`
     -   `ggplot2`

@@ -1,0 +1,74 @@
+---
+title: "World CO₂ Emmissions Growth with Dashboard in Tableau"
+description: |
+  A guide to create an effective and clear dashboard for better understand average CO₂ in the world using CO₂ dataset. 
+preview: https://i.ytimg.com/vi/9OX9ohTcC1w/maxresdefault.jpg
+author:
+  - name: Miftahul Hadi
+date: Dec 20, 2022
+categories:
+  - Tableau
+  - Data Visualization
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
+    code_folding: show
+    toc_depth: 1
+    self_contained: true
+    highlight: tango
+---
+
+# Introduction
+
+In this activity, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review about the average CO₂ per capita. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of global climate changes [1](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
+
+![**Fig. 1.** The spreading of factory residue](https://www.sciencealert.com/images/2019-09/processed/agw_topics_1024.jpg)
+
+Here, we used the data sets from [The World Bank Group](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC), a world organization that work to reduce poverty in a country. This data sets include several variable such as:
+
+-   Country Name
+-   Year of CO₂ collected
+-   CO₂ per Capita.
+
+
+## What to analyze?
+
+This data set can be used to find a questions that might arise such as:
+
+-   Which country/region has the most average CO₂ per capita?
+-   What region has the highest growth of CO₂ emitters?
+
+Hopefully, this questions will be a step to reveal what inside the data sets and helps other countries to mitigate the global climate changes.
+
+# Preparation
+
+Here, I want to describe a few tools in this analysis:
+
+-   [Tableau Desktop](https://public.tableau.com/app/discover)
+-   Excel (*for storing data*)
+-   CO₂ Dataset [link](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
+
+
+# Create a Dashboard
+
+
+
+# Analysis
+
+
+
+# Conclusion
+
+
+
+# Suggestion
+
+
+
+# Source
+
+
