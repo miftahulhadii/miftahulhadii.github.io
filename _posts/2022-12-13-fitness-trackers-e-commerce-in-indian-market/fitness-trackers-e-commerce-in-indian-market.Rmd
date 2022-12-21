@@ -18,13 +18,13 @@ output:
     smooth_scroll: false
     number_sections: false
     code_folding: show
-    toc_depth: 1
+    toc_depth: 2
     self_contained: true
     highlight: tango
 ---
 
 
-# Introduction
+## Introduction
 
 In this activity, I want to analyze a **Fitness Trackers Device** product from various brands. This report will analyze review about the device in Indian market. After that, we try to investigate the material used in the device including strap material, battery, and the price itself.
 
@@ -40,7 +40,7 @@ Here, we used the data sets from Flipkart, one of an e-commerce website. This da
 This data has been collected using Kaggle in this [link](https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce)
 
 
-## What to analyze?
+### What to analyze?
 
 This data set can be used to find a questions that might arise such as:
 
@@ -52,7 +52,7 @@ Hopefully, this questions will reveal what inside the data sets and help other c
 
 --------
 
-# Preparation
+## Preparation
 
 Here, I want to describe a few tools in this analysis:
 
@@ -95,11 +95,11 @@ skim_without_charts(fitness_trackers)
 
 --------
 
-# Analysis
+## Analysis
 
-## The best **strap material** for Fitness Tracker Device?
+### The best **strap material** for Fitness Tracker Device?
 
-### Fitness Band Material
+#### Fitness Band Material
 
 Here, we try to find which strap material for **Fitness Band** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
@@ -121,7 +121,7 @@ ggplot(data = mean_strap_fitnessband,
 
 From the bar chart above, we see the brand name on the left-axis with their average rating. **Elastomer** is getting highest rating in Indian market by 4.22. Then follow tightly by Plastic. The use of leather is **less preferable for Fitness Band** in Indian market.
 
-### Smartwatch Material
+#### Smartwatch Material
 
 Here, we try to find which strap material for **Smartwatch** is having a high average rating. The rating is obtained by calculating the average rating per strap material. Then do the ranking analysis.
 
@@ -146,7 +146,7 @@ From the bar chart above, we see that **Nylon** is getting highest rating in Ind
 
 --------
 
-## Is **more battery life** necessary for Smartwatches or Fitness Band?
+### Is **more battery life** necessary for Smartwatches or Fitness Band?
 
 Here, we want to inspect whether or not if more battery life is an important factor for having a high rating in Indian Market. To do that:
 
@@ -174,7 +174,7 @@ In **Smartwatch** on the right, we see that the ***R*** on Fitness band is **-0.
 
 --------
 
-## **Mean price for selling** a fitness tracker
+### **Mean price for selling** a fitness tracker
 
 Here, we want to inspect the mean price for selling a fitness tracker in Indian Market. We want the mean price will get at least 4.0 rating. To do that:
 
@@ -228,7 +228,7 @@ Next, the mean price to get more than 4.0 rating is ₹5,000. If the selling pri
 
 --------
 
-# Conclusion
+## Conclusion
 
 After doing an analysis about fitness tracker in Indian market on 2022, we can conclude that:
 
@@ -238,12 +238,12 @@ After doing an analysis about fitness tracker in Indian market on 2022, we can c
 
 --------
 
-# Suggestion
+## Suggestion
 For further analysis, the specifications price is needed. This is important to measure a material with the lowest price but getting highest ratings.
 
 --------
 
-# Source
+## Source
 
 * [RStudio](https://posit.co/)
 * Fitness Tracker Dataset: [Kaggle](https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce)

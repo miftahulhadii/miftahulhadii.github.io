@@ -12,23 +12,609 @@
       <link>https://miftahulhadii.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>World CO₂ Emissions Growth with Dashboard in Tableau</title>
       <dc:creator>Miftahul Hadi</dc:creator>
       <link>https://miftahulhadii.github.io/posts/2022-12-20-how-to-create-a-dashboard-in-tableau</link>
-      <description>A guide to create an effective and clear dashboard for better understand average CO₂ in the world using CO₂ dataset.</description>
+      <description>
+
+
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this activity, I want to design a dashboard about &lt;strong&gt;World
+CO₂ Emissions Growth&lt;/strong&gt;. This dashboard will review about the
+average CO₂ per capita. Then, we try to investigate the production
+growth over the year in every region. Hopefully, this dashboard will be
+beneficial to reduces and mitigates the effects of global climate
+changes &lt;a
+href="https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/"&gt;1&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img
+src="https://www.sciencealert.com/images/2019-09/processed/agw_topics_1024.jpg"
+alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;Fig. 1.&lt;/strong&gt; The spreading of factory
+residue&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, we used the data sets from &lt;a
+href="http://data.worldbank.org/indicator/EN.ATM.CO2E.PC"&gt;The World Bank
+Group&lt;/a&gt;, a world organization that work to reduce poverty in a
+country. This data sets include several variable such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Country Name&lt;/li&gt;
+&lt;li&gt;Year of CO₂ collected&lt;/li&gt;
+&lt;li&gt;CO₂ per Capita.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="what-to-analyze"&gt;What to analyze?&lt;/h3&gt;
+&lt;p&gt;This data set can be used to find a questions that might arise such
+as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Which country/region has the most average CO₂ per capita?&lt;/li&gt;
+&lt;li&gt;What region has the highest growth of CO₂ emitters?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hopefully, this questions will be a step to reveal what inside the
+data sets and helps other countries to mitigate the global climate
+changes.&lt;/p&gt;
+&lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Here, I want to describe a few tools used in this analysis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://public.tableau.com/app/discover"&gt;Tableau
+Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Excel (&lt;em&gt;for storing data&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;CO₂ Dataset &lt;a
+href="http://data.worldbank.org/indicator/EN.ATM.CO2E.PC"&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="create-a-dashboard"&gt;Create a Dashboard&lt;/h2&gt;
+&lt;p&gt;Here’s a step-by-step to create a clear dashboard about CO₂
+growth.&lt;/p&gt;
+&lt;h3 id="load-the-dataset"&gt;Load the Dataset&lt;/h3&gt;
+&lt;p&gt;To connect the dataset to Tableau, the step as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, open Tableau Public application.&lt;/li&gt;
+&lt;li&gt;Then, the first window you see might be like this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-dataset-tableau.png" width="386" style="display: block; margin: auto;" /&gt;
+* Select &lt;strong&gt;Microsoft Excel&lt;/strong&gt; (&lt;em&gt;because our dataset is in
+excel format&lt;/em&gt;), then locate to the dataset file. * Next, a lot of
+sheet inside of dataset dwill appear. This is Data Source window.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-sheet.png" width="369" style="display: block; margin: auto;" /&gt;
+* Connect the Tableau to useful sheet that we want to analyze. Here, we
+choose &lt;code&gt;CO2 Data Cleaned&lt;/code&gt; because the sheet involves metrics
+needed. * Last, we can go to worksheet&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/go-to-worksheet.png" width="210" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;As a preview, here is a view of Tableau project we work on.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/tableau-project-preview.png" width="576" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;As the image above, there are three sections that show up, including:
+* &lt;strong&gt;Left-side&lt;/strong&gt; = Where the data stored. *
+&lt;strong&gt;Middle&lt;/strong&gt; = Tools to refine your data visualization. *
+&lt;strong&gt;Right-side&lt;/strong&gt; = Place to view your visualization.&lt;/p&gt;
+&lt;h3 id="create-a-graph"&gt;Create a Graph&lt;/h3&gt;
+&lt;p&gt;In this section, we want plotting the dataset about CO₂ activity in
+the World to answers question.&lt;/p&gt;
+&lt;h4 id="average-co₂-per-capita"&gt;Average CO₂ per Capita&lt;/h4&gt;
+&lt;p&gt;Here’s the step to create a clear graph of average CO₂ for every
+country:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, we put the &lt;code&gt;Country Name&lt;/code&gt; column to
+&lt;strong&gt;Detail&lt;/strong&gt; in Marks pane.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-a-country-name.png" width="238" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A map will appear with the country as a data points.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-b-country-appear.png" width="827" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Then, we calculate the average CO₂ for every country by put the
+&lt;code&gt;CO2 (kt)&lt;/code&gt; column to &lt;strong&gt;Size&lt;/strong&gt; in Marks
+pane.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-c-avg-co2.png" width="351" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;** Average of CO₂ will appear with circle size. The larger the
+circle, the highest average.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-d-country-size.png" width="726" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;h4 id="average-co₂-growth-in-every-country"&gt;Average CO₂ Growth in Every
+Country&lt;/h4&gt;
+&lt;p&gt;Here’s the step to a viz about CO₂ growth over the years: *
+First,&lt;/p&gt;
+&lt;h3 id="combine-a-graph"&gt;Combine a Graph&lt;/h3&gt;
+&lt;h3 id="clean-the-dashboard"&gt;Clean the Dashboard&lt;/h3&gt;
+&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id="suggestion"&gt;Suggestion&lt;/h2&gt;
+&lt;h2 id="source"&gt;Source&lt;/h2&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>ce188f69f6781f558730485a2ddd2042</distill:md5>
       <category>Tableau</category>
       <category>Data Visualization</category>
       <guid>https://miftahulhadii.github.io/posts/2022-12-20-how-to-create-a-dashboard-in-tableau</guid>
-      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
       <media:content url="https://i.ytimg.com/vi/9OX9ohTcC1w/maxresdefault.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Fitness Trackers e-Commerce in Indian Market</title>
       <dc:creator>Miftahul Hadi</dc:creator>
       <link>https://miftahulhadii.github.io/posts/2022-12-13-fitness-trackers-e-commerce-in-indian-market</link>
-      <description>A financial analysis about fitness trackers device sales in Indian market on 2022.</description>
+      <description>
+
+
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this activity, I want to analyze a &lt;strong&gt;Fitness Trackers
+Device&lt;/strong&gt; product from various brands. This report will analyze
+review about the device in Indian market. After that, we try to
+investigate the material used in the device including strap material,
+battery, and the price itself.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img
+src="https://phoneradar.com/wp-content/uploads/2014/09/GetActive-Tapp.jpg"
+alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;Fig. 1.&lt;/strong&gt; Fitness Tracker Device&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, we used the data sets from Flipkart, one of an e-commerce
+website. This data sets include several variable such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Selling Price&lt;/li&gt;
+&lt;li&gt;Specifications&lt;/li&gt;
+&lt;li&gt;Ratings&lt;/li&gt;
+&lt;li&gt;Review from the Indian Market&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This data has been collected using Kaggle in this &lt;a
+href="https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="what-to-analyze"&gt;What to analyze?&lt;/h3&gt;
+&lt;p&gt;This data set can be used to find a questions that might arise such
+as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is the &lt;strong&gt;best strap material&lt;/strong&gt; for Fitness Tracker
+Device?&lt;/li&gt;
+&lt;li&gt;Is &lt;strong&gt;more battery life&lt;/strong&gt; necessary for Smartwatches or
+Fitness Band?&lt;/li&gt;
+&lt;li&gt;What is the &lt;strong&gt;mean price for selling&lt;/strong&gt; a fitness
+tracker that might get at least 4.0 ratings?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hopefully, this questions will reveal what inside the data sets and
+help other company to strategies the India Market.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Here, I want to describe a few tools in this analysis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://posit.co/"&gt;RStudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Library including:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dplyr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skimr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dataset &lt;a
+href="https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce"&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before doing our analysis, we loaded the library.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(skimr)
+library(formattable)
+library(ggpubr)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, load and name the dataset as a &lt;em&gt;fitness_tracker&lt;/em&gt; using
+&lt;code&gt;readr&lt;/code&gt; library.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;library(readr)
+
+#Use your file location
+fitness_trackers &amp;lt;- read_csv(&amp;quot;D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/Project/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Last, we want to get better understanding of our data using
+&lt;code&gt;glimpse()&lt;/code&gt; &amp;amp; &lt;code&gt;skim_without_charts()&lt;/code&gt; to check
+the null value.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;glimpse(fitness_trackers)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Rows: 565
+Columns: 11
+$ `Brand Name`                     &amp;lt;chr&amp;gt; &amp;quot;Xiaomi&amp;quot;, &amp;quot;Xiaomi&amp;quot;, &amp;quot;Xiaomi…
+$ `Device Type`                    &amp;lt;chr&amp;gt; &amp;quot;FitnessBand&amp;quot;, &amp;quot;FitnessBand…
+$ `Model Name`                     &amp;lt;chr&amp;gt; &amp;quot;Smart Band 5&amp;quot;, &amp;quot;Smart Band…
+$ Color                            &amp;lt;chr&amp;gt; &amp;quot;Black&amp;quot;, &amp;quot;Black&amp;quot;, &amp;quot;Black&amp;quot;, …
+$ `Selling Price`                  &amp;lt;dbl&amp;gt; 2499, 2099, 1722, 2469, 179…
+$ `Original Price`                 &amp;lt;dbl&amp;gt; 2999, 2499, 2099, 2999, 219…
+$ Display                          &amp;lt;chr&amp;gt; &amp;quot;AMOLED Display&amp;quot;, &amp;quot;AMOLED D…
+$ `Rating (Out of 5)`              &amp;lt;dbl&amp;gt; 4.1, 4.2, 3.5, 4.1, 4.3, 4.…
+$ `Strap Material`                 &amp;lt;chr&amp;gt; &amp;quot;Thermoplastic polyurethane…
+$ `Average Battery Life (in days)` &amp;lt;dbl&amp;gt; 14, 14, 14, 14, 7, 20, 7, 1…
+$ Reviews                          &amp;lt;dbl&amp;gt; NA, NA, NA, NA, NA, NA, NA,…&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="r"&gt;&lt;code&gt;skim_without_charts(fitness_trackers)&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;(#tab:Understand the data)Data summary&lt;/caption&gt;
+&lt;tbody&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Name&lt;/td&gt;
+&lt;td align="left"&gt;fitness_trackers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Number of rows&lt;/td&gt;
+&lt;td align="left"&gt;565&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Number of columns&lt;/td&gt;
+&lt;td align="left"&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;_______________________&lt;/td&gt;
+&lt;td align="left"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Column type frequency:&lt;/td&gt;
+&lt;td align="left"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;character&lt;/td&gt;
+&lt;td align="left"&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;numeric&lt;/td&gt;
+&lt;td align="left"&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;________________________&lt;/td&gt;
+&lt;td align="left"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Group variables&lt;/td&gt;
+&lt;td align="left"&gt;None&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Variable type: character&lt;/strong&gt;&lt;/p&gt;
+&lt;table style="width:100%;"&gt;
+&lt;colgroup&gt;
+&lt;col width="20%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="19%" /&gt;
+&lt;col width="5%" /&gt;
+&lt;col width="5%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="12%" /&gt;
+&lt;col width="15%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class="header"&gt;
+&lt;th align="left"&gt;skim_variable&lt;/th&gt;
+&lt;th align="right"&gt;n_missing&lt;/th&gt;
+&lt;th align="right"&gt;complete_rate&lt;/th&gt;
+&lt;th align="right"&gt;min&lt;/th&gt;
+&lt;th align="right"&gt;max&lt;/th&gt;
+&lt;th align="right"&gt;empty&lt;/th&gt;
+&lt;th align="right"&gt;n_unique&lt;/th&gt;
+&lt;th align="right"&gt;whitespace&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Brand Name&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;4&lt;/td&gt;
+&lt;td align="right"&gt;8&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;19&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Device Type&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;11&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;2&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Model Name&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;62&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;384&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Color&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;3&lt;/td&gt;
+&lt;td align="right"&gt;44&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;134&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Display&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;11&lt;/td&gt;
+&lt;td align="right"&gt;19&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;7&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Strap Material&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;5&lt;/td&gt;
+&lt;td align="right"&gt;26&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;11&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Variable type: numeric&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width="27%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="12%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="4%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="8%" /&gt;
+&lt;col width="6%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class="header"&gt;
+&lt;th align="left"&gt;skim_variable&lt;/th&gt;
+&lt;th align="right"&gt;n_missing&lt;/th&gt;
+&lt;th align="right"&gt;complete_rate&lt;/th&gt;
+&lt;th align="right"&gt;mean&lt;/th&gt;
+&lt;th align="right"&gt;sd&lt;/th&gt;
+&lt;th align="right"&gt;p0&lt;/th&gt;
+&lt;th align="right"&gt;p25&lt;/th&gt;
+&lt;th align="right"&gt;p50&lt;/th&gt;
+&lt;th align="right"&gt;p75&lt;/th&gt;
+&lt;th align="right"&gt;p100&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Selling Price&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1.00&lt;/td&gt;
+&lt;td align="right"&gt;22110.37&lt;/td&gt;
+&lt;td align="right"&gt;19914.93&lt;/td&gt;
+&lt;td align="right"&gt;1195&lt;/td&gt;
+&lt;td align="right"&gt;8990.00&lt;/td&gt;
+&lt;td align="right"&gt;15995.0&lt;/td&gt;
+&lt;td align="right"&gt;29900.00&lt;/td&gt;
+&lt;td align="right"&gt;122090&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Original Price&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1.00&lt;/td&gt;
+&lt;td align="right"&gt;25365.36&lt;/td&gt;
+&lt;td align="right"&gt;20384.03&lt;/td&gt;
+&lt;td align="right"&gt;1599&lt;/td&gt;
+&lt;td align="right"&gt;12999.00&lt;/td&gt;
+&lt;td align="right"&gt;19995.0&lt;/td&gt;
+&lt;td align="right"&gt;32900.00&lt;/td&gt;
+&lt;td align="right"&gt;122090&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Rating (Out of 5)&lt;/td&gt;
+&lt;td align="right"&gt;51&lt;/td&gt;
+&lt;td align="right"&gt;0.91&lt;/td&gt;
+&lt;td align="right"&gt;4.23&lt;/td&gt;
+&lt;td align="right"&gt;0.39&lt;/td&gt;
+&lt;td align="right"&gt;2&lt;/td&gt;
+&lt;td align="right"&gt;4.03&lt;/td&gt;
+&lt;td align="right"&gt;4.3&lt;/td&gt;
+&lt;td align="right"&gt;4.50&lt;/td&gt;
+&lt;td align="right"&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td align="left"&gt;Average Battery Life (in days)&lt;/td&gt;
+&lt;td align="right"&gt;0&lt;/td&gt;
+&lt;td align="right"&gt;1.00&lt;/td&gt;
+&lt;td align="right"&gt;9.03&lt;/td&gt;
+&lt;td align="right"&gt;7.87&lt;/td&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="right"&gt;2.00&lt;/td&gt;
+&lt;td align="right"&gt;7.0&lt;/td&gt;
+&lt;td align="right"&gt;14.00&lt;/td&gt;
+&lt;td align="right"&gt;45&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="odd"&gt;
+&lt;td align="left"&gt;Reviews&lt;/td&gt;
+&lt;td align="right"&gt;487&lt;/td&gt;
+&lt;td align="right"&gt;0.14&lt;/td&gt;
+&lt;td align="right"&gt;2492.95&lt;/td&gt;
+&lt;td align="right"&gt;5607.53&lt;/td&gt;
+&lt;td align="right"&gt;2&lt;/td&gt;
+&lt;td align="right"&gt;107.75&lt;/td&gt;
+&lt;td align="right"&gt;346.0&lt;/td&gt;
+&lt;td align="right"&gt;1580.75&lt;/td&gt;
+&lt;td align="right"&gt;23426&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h3 id="the-best-strap-material-for-fitness-tracker-device"&gt;The best
+&lt;strong&gt;strap material&lt;/strong&gt; for Fitness Tracker Device?&lt;/h3&gt;
+&lt;h4 id="fitness-band-material"&gt;Fitness Band Material&lt;/h4&gt;
+&lt;p&gt;Here, we try to find which strap material for &lt;strong&gt;Fitness
+Band&lt;/strong&gt; is having a high average rating. The rating is obtained by
+calculating the average rating per strap material. Then do the ranking
+analysis.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;#Fitness Band
+#Calculate the average rating by strap material
+mean_strap_fitnessband &amp;lt;- fitness_trackers %&amp;gt;% 
+  group_by(`Strap Material`) %&amp;gt;%
+  filter (`Device Type` == &amp;quot;FitnessBand&amp;quot;) %&amp;gt;% 
+  summarize(avg_rating = mean(`Rating (Out of 5)`))
+
+#Plot the average rating with strap material
+ggplot(data = mean_strap_fitnessband, 
+       mapping = aes(x = avg_rating, y = reorder(`Strap Material`, avg_rating), alpha = avg_rating)) + 
+  geom_bar(stat = &amp;quot;identity&amp;quot;, fill = &amp;quot;black&amp;quot;) + 
+  geom_text(aes(label = round(avg_rating, digits = 2), fontface = &amp;quot;bold&amp;quot;), nudge_x = +0.2, colour = &amp;quot;black&amp;quot;) +
+  labs(title = &amp;quot;Rating for Fitness Band Material&amp;quot;, subtitle = &amp;quot;based on Review in Indian Market&amp;quot;, x = &amp;quot;Average Rating&amp;quot;, y = &amp;quot;Strap Material&amp;quot;, alpha = &amp;quot;Range of Rating&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file4d141eaf132a_files/figure-html/Top%20Strap%20Material:%20Fitness%20Band-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;From the bar chart above, we see the brand name on the left-axis with
+their average rating. &lt;strong&gt;Elastomer&lt;/strong&gt; is getting highest
+rating in Indian market by 4.22. Then follow tightly by Plastic. The use
+of leather is &lt;strong&gt;less preferable for Fitness Band&lt;/strong&gt; in
+Indian market.&lt;/p&gt;
+&lt;h4 id="smartwatch-material"&gt;Smartwatch Material&lt;/h4&gt;
+&lt;p&gt;Here, we try to find which strap material for
+&lt;strong&gt;Smartwatch&lt;/strong&gt; is having a high average rating. The rating
+is obtained by calculating the average rating per strap material. Then
+do the ranking analysis.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;#Smartwatches
+#Calculate the average rating by strap material
+mean_strap_smartwatch &amp;lt;- fitness_trackers %&amp;gt;% 
+  drop_na() %&amp;gt;% 
+  group_by(`Strap Material`) %&amp;gt;%
+  filter (`Device Type` == &amp;quot;Smartwatch&amp;quot;) %&amp;gt;% 
+  summarize(avg_rating = mean(`Rating (Out of 5)`))
+
+#Plot the average rating with strap material
+ggplot(data = mean_strap_smartwatch, 
+       mapping = aes(x = avg_rating, y = reorder(`Strap Material`, avg_rating), alpha = avg_rating)) + 
+  geom_bar(stat = &amp;quot;identity&amp;quot;, fill = &amp;quot;black&amp;quot;) + 
+  geom_text(aes(label = round(avg_rating, digits = 2), fontface = &amp;quot;bold&amp;quot;), nudge_x = +0.2, colour = &amp;quot;black&amp;quot;) +
+  labs(title = &amp;quot;Rating for Smartwatch Material&amp;quot;, subtitle = &amp;quot;based on Review in Indian Market&amp;quot;, x = &amp;quot;Average Rating&amp;quot;, y = &amp;quot;Strap Material&amp;quot;, alpha = &amp;quot;Range of Rating&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file4d141eaf132a_files/figure-html/Top%20Strap%20Material:%20Smartwatches-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;From the bar chart above, we see that &lt;strong&gt;Nylon&lt;/strong&gt; is
+getting highest rating in Indian market by 4.4. Then follow tightly by
+Silicone. The use of rubber is &lt;strong&gt;less preferable for smart
+watches&lt;/strong&gt; in Indian market.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3
+id="is-more-battery-life-necessary-for-smartwatches-or-fitness-band"&gt;Is
+&lt;strong&gt;more battery life&lt;/strong&gt; necessary for Smartwatches or Fitness
+Band?&lt;/h3&gt;
+&lt;p&gt;Here, we want to inspect whether or not if more battery life is an
+important factor for having a high rating in Indian Market. To do
+that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Take the Battery Life and Rating Column.&lt;/li&gt;
+&lt;li&gt;Then, show the relationship between them using scatter plot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here’s the formula in R&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;#Plot the battery life with rating
+ggplot(data = fitness_trackers, 
+       mapping = aes(x = `Average Battery Life (in days)`, y = `Rating (Out of 5)`, alpha = `Rating (Out of 5)`)) + 
+  geom_smooth() +
+  stat_cor(method = &amp;quot;pearson&amp;quot;, label.x = -5, label.y = 4.8) +
+  facet_wrap(~`Device Type`) +
+  labs(title = &amp;quot;Relationship between Battery Life vs. Rating&amp;quot;, subtitle = &amp;quot;based on Review in Indian Market&amp;quot;, 
+       x = &amp;quot;Average Battery Life (in days)&amp;quot;, y = &amp;quot;Rating&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file4d141eaf132a_files/figure-html/Battery%20Life%20Vs.%20Rating-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;From the scatter plot above, we see the average battery life (in
+days) on the x-axis with their rating on y-axis. Scatter plot is used to
+reveal a correlation between two or more variables. Correlation
+coefficient is used to show whether strong or not the correlation is. If
+&lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; is positive and near 1, then battery life is
+dependent to rating.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;Fitness Band&lt;/strong&gt; on the left, we see that there is no
+strong linear correlation between battery life and rating. The
+&lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; on Fitness band is &lt;strong&gt;0.12&lt;/strong&gt;. It
+shows that little correlation between them. Rating above 4.00 is
+actually obtained in battery life that has at least 5 to 20 days.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;Smartwatch&lt;/strong&gt; on the right, we see that the
+&lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; on Fitness band is &lt;strong&gt;-0.18&lt;/strong&gt;.
+It shows a little negative linear correlation. Less battery life and is
+sometimes get a high rating. Higher rating with above 4.5 is obtained on
+battery life below 5 days.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="mean-price-for-selling-a-fitness-tracker"&gt;&lt;strong&gt;Mean price for
+selling&lt;/strong&gt; a fitness tracker&lt;/h3&gt;
+&lt;p&gt;Here, we want to inspect the mean price for selling a fitness tracker
+in Indian Market. We want the mean price will get at least 4.0 rating.
+To do that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Take the &lt;code&gt;Selling Price&lt;/code&gt; and &lt;code&gt;Rating&lt;/code&gt;
+Column.&lt;/li&gt;
+&lt;li&gt;Then, show the relationship between them using scatter plot.&lt;/li&gt;
+&lt;li&gt;Lastly, check the &lt;strong&gt;mean selling price&lt;/strong&gt; that will get
+at least 4.0 rating.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here’s the formula in R to check the &lt;strong&gt;correlation&lt;/strong&gt; for
+selling price in &lt;strong&gt;Smartwatch&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;#Smartwatches
+#Calculate the mean selling prices
+mean_selling_smartwatch &amp;lt;- fitness_trackers %&amp;gt;% 
+  group_by(`Rating (Out of 5)`) %&amp;gt;%
+  filter (`Device Type` == &amp;quot;Smartwatch&amp;quot;) %&amp;gt;% 
+  summarize(selling_price = mean(`Selling Price`))
+
+#Plot the average selling price with device rating
+ggplot(data = mean_selling_smartwatch, 
+       mapping = aes(x = `Rating (Out of 5)`, y = selling_price)) + 
+  geom_smooth() + 
+  stat_cor(method = &amp;quot;pearson&amp;quot;) +
+  labs(title = &amp;quot;Rating by Selling Price&amp;quot;, subtitle = &amp;quot;on Smartwatch&amp;quot;, x = &amp;quot;Device Rating&amp;quot;, y = &amp;quot;Selling Price&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file4d141eaf132a_files/figure-html/Mean%20Selling%20Price:%20Smartwatch-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;If we see the chart above, the &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; value for
+Smartwatch’s selling price is low. So we unable to measure the mean
+selling price for getting higher rating, because little correlation
+between them.&lt;/p&gt;
+&lt;p&gt;Let’s check the selling price in &lt;strong&gt;Fitness Band&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;#Fitness band
+#Calculate the mean selling prices
+mean_selling_fitnessband &amp;lt;- fitness_trackers %&amp;gt;% 
+  group_by(`Rating (Out of 5)`) %&amp;gt;%
+  filter (`Device Type` == &amp;quot;FitnessBand&amp;quot;) %&amp;gt;% 
+  summarize(selling_price = mean(`Selling Price`))
+
+#Plot the average selling price with device rating
+ggplot(data = mean_selling_fitnessband, 
+       mapping = aes(x = `Rating (Out of 5)`, y = selling_price)) + 
+  geom_smooth() + 
+  stat_cor(method = &amp;quot;pearson&amp;quot;) +
+  labs(title = &amp;quot;Rating by Selling Price&amp;quot;, subtitle = &amp;quot;on Fitness Band&amp;quot;, x = &amp;quot;Device Rating&amp;quot;, y = &amp;quot;Selling Price&amp;quot;)+
+  annotate(&amp;quot;text&amp;quot;, x = 4, y = 7000, label = &amp;quot;The mean price to get more than 4.0 rating is ₹5,000&amp;quot;, fontface = &amp;quot;bold&amp;quot;, angle = 25)+
+  annotate(&amp;quot;segment&amp;quot;, x = 4, y = 2500, xend = 4, yend = 4900, arrow = arrow(type = &amp;quot;closed&amp;quot;, length = unit(0.02, &amp;quot;npc&amp;quot;)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file4d141eaf132a_files/figure-html/Mean%20Selling%20Price:%20Fitness%20Band-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;When we see the &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt;, the correlation between
+selling price and rating on Fitness Band is strong (&lt;em&gt;0.76 out of
+1&lt;/em&gt;). So, we can measure the mean price to get more than 4.0
+rating.&lt;/p&gt;
+&lt;p&gt;Next, the mean price to get more than 4.0 rating is ₹5,000. If the
+selling price is increasing, the rating tend to be higher. Then the
+specifications price is needed to see further analysis on selling
+prices.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;After doing an analysis about fitness tracker in Indian market on
+2022, we can conclude that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Strap material for different device require different material.
+&lt;strong&gt;Elastomer&lt;/strong&gt; is preferable for Fitness Band. But for
+Smartwatches, the use of &lt;strong&gt;Nylon&lt;/strong&gt; is getting highest
+rating.&lt;/li&gt;
+&lt;li&gt;More battery life on fitness tracker device is &lt;strong&gt;not
+necessary&lt;/strong&gt; to get higher rating.&lt;/li&gt;
+&lt;li&gt;The preferable selling price for Fitness Band is ₹ 5,000. For
+Smartwatches, the selling price unable to be measured because no
+correlation with ratings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id="suggestion"&gt;Suggestion&lt;/h2&gt;
+&lt;p&gt;For further analysis, the specifications price is needed. This is
+important to measure a material with the lowest price but getting
+highest ratings.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="source"&gt;Source&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://posit.co/"&gt;RStudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fitness Tracker Dataset: &lt;a
+href="https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce"&gt;Kaggle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>ae68db0131adef7c1ecbe152153c46ed</distill:md5>
       <category>R Programming</category>
       <category>Financial Analysis</category>
       <category>Data Visualization</category>

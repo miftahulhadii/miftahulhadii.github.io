@@ -16,7 +16,7 @@ output:
     collapsed: false
     smooth_scroll: false
     number_sections: false
-    toc_depth: 1
+    toc_depth: 2
     self_contained: true
     highlight: tango
 ---
@@ -62,26 +62,79 @@ To connect the dataset to Tableau, the step as follows:
 * First, open Tableau Public application.
 * Then, the first window you see might be like this.
 
-```{r connect dataset, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r connect dataset, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-dataset-tableau.png")  
 ```
-* Select **Microsoft Excel** (*because our dataset is in excel format*), then locate to the dataset.
-* Next, connect the useful sheet that we want to analyze. Here, we choose `CO2 Per Capita RAW DATA` because the sheet involves metrics needed.
+* Select **Microsoft Excel** (*because our dataset is in excel format*), then locate to the dataset file.
+* Next, a lot of sheet inside of dataset will appear. This is Data Source window. 
 
-```{r connect graphics 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r connect graphics 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-sheet.png")  
 ```
-
+* Connect the Tableau to useful sheet that we want to analyze. Here, we choose `CO2 Data Cleaned` because the sheet involves metrics needed.
 * Last, we can go to worksheet
 
-```{r connect graphics 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r connect graphics 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/go-to-worksheet.png")  
 ```
 
+As a preview, here is a view of Tableau project we work on.
+
+```{r connect graphics 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/tableau-project-preview.png")  
+```
+
+As the image above, there are three sections that show up, including:
+
+* **Left-side**  = Where the data stored.
+* **Middle**     = Tools to refine your data visualization.
+* **Right-side** = Place to view your visualization.
+
 ### Create a Graph
+In this section, we want plotting the dataset about CO₂ activity in the World to answers question. 
+
+#### Average CO₂ per Capita
+Here's the step to create a clear graph of average CO₂ for every country:
+
+* First, we put the `Country Name` column to **Detail** in Marks pane.
+
+```{r average CO₂ 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-a-country-name.png")  
+```
+
+* A map will appear with the country as a data points.
+
+```{r average CO₂ 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-b-country-appear.png")  
+```
+
+* Then, we calculate the average CO₂ for every country by put the `CO2 (kt)` column to **Size** in Marks pane.
+
+```{r average CO₂ 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-c-avg-co2.png")  
+```
+
+
+** Average of CO₂ will appear with circle size. The larger the circle, the highest average.
+
+```{r average CO₂ 4, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-d-country-size.png")  
+```
+
+
+
+
+#### Average CO₂ Growth in Every Country
+Here's the step to a viz about CO₂ growth over the years:
+* First, 
 
 ### Combine a Graph
 
