@@ -1,5 +1,5 @@
 ---
-title: "World CO₂ Emissions Growth with Dashboard in Tableau"
+title: "World CO₂ Emissions Growth with Dashboard using Tableau"
 description: |
   A guide to create an effective and clear dashboard for better understand average CO₂ in the world using CO₂ dataset. 
 preview: https://i.ytimg.com/vi/9OX9ohTcC1w/maxresdefault.jpg
@@ -73,7 +73,7 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-sheet.png")  
 ```
-* Connect the Tableau to useful sheet that we want to analyze. Here, we choose `CO2 Data Cleaned` because the sheet involves metrics needed.
+* Connect the Tableau to useful sheet that already been cleaned. Here, we choose `CO2 Data Cleaned` because the sheet involves metrics needed.
 * Last, we can go to worksheet
 
 ```{r connect graphics 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
@@ -122,7 +122,7 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 ```
 
 
-** Average of CO₂ will appear with circle size. The larger the circle, the highest average.
+* Average of CO₂ will appear with circle size. The larger the circle, the highest average.
 
 ```{r average CO₂ 4, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
