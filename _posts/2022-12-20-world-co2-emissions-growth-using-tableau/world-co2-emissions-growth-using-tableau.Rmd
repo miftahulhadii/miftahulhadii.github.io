@@ -129,11 +129,12 @@ library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-d-country-size.png")  
 ```
 
-
+*
 
 
 #### Average CO₂ Growth in Every Country
 Here's the step to a viz about CO₂ growth over the years:
+
 * First, 
 
 ### Combine a Graph
