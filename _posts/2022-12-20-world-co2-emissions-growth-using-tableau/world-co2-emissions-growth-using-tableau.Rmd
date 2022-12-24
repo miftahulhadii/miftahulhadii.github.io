@@ -47,13 +47,18 @@ Hopefully, this questions will be a step to reveal what inside the data sets and
 
 Here, I want to describe a few tools used in this analysis:
 
--   [Tableau Desktop](https://public.tableau.com/app/discover)
--   Excel (*for storing data*)
--   [CO₂ Dataset](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
+1. [Tableau Desktop](https://public.tableau.com/app/discover)
+2. Excel (*for storing data*)
+3. [CO₂ Dataset](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
 
 
 ## Create a Dashboard
-Here's a step-by-step to create a clear dashboard about CO₂ growth.
+Here's a step-by-step to create a clear dashboard about CO₂ growth:
+
+  1. Load the dataset.
+  2. Create a Graph.
+  3. Combine a Graph.
+  4. Clean the Dashboard.
 
 ### Load the Dataset
 
@@ -167,19 +172,60 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 
 * Change the title and this is the first graph for **Average CO₂ per Capita**.
 
-```{r average CO₂ 10, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+```{r average CO₂ 10, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center', out.width= "60%"}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-first-graph.png")
 ```
 
 
+#### CO₂ Production by Region
+Here's the step to a viz about CO₂ production over the years:
 
-#### Average CO₂ Growth in Every Country
-Here's the step to a viz about CO₂ growth over the years:
+* First, add a new worksheet for different graph.
 
-* First, 
+```{r CO₂ production 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-new-worksheet.png")
+```
+
+* Add `Region` column on **color marks**.
+
+```{r CO₂ production 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-region.png")
+```
+
+* Then, add `Year` as a columns & `CO2 (kt)` as a rows.
+
+```{r CO₂ production 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-year-co2.png")
+```
+
+* Here's the graph. You see that the year is too crowded.
+
+```{r CO₂ production 4, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center', out.width= "60%"}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-b-show-graph.png")
+```
+
+* Make it only per 10 years by ranges.
+
+```{r CO₂ production 5, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-c-change-axis.png")
+```
+
+* There you go. Here the graph explain about CO₂ production by Region
+
+```{r CO₂ production 6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center', out.width= "60%"}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-d-graph.png")
+```
 
 ### Combine a Graph
+In this section, we want to combine two graph we have created into one dashboard. Here's the step:
+
 
 ### Clean the Dashboard
 
