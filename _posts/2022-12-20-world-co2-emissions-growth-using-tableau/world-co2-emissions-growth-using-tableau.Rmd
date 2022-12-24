@@ -23,7 +23,7 @@ output:
 
 ## Introduction
 
-In this activity, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review about the average CO₂ per capita. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of global climate changes [1](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
+In this activity, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review about the average CO₂ per capita. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of global climate changes [₁](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
 
 ![**Fig. 1.** The spreading of factory residue](https://www.sciencealert.com/images/2019-09/processed/agw_topics_1024.jpg)
 
@@ -49,7 +49,7 @@ Here, I want to describe a few tools used in this analysis:
 
 -   [Tableau Desktop](https://public.tableau.com/app/discover)
 -   Excel (*for storing data*)
--   CO₂ Dataset [link](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
+-   [CO₂ Dataset](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
 
 
 ## Create a Dashboard
@@ -109,27 +109,69 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 
 * A map will appear with the country as a data points.
 
-```{r average CO₂ 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+```{r average CO₂ 2, echo=FALSE, message=FALSE, out.width= "60%", warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-b-country-appear.png")  
 ```
 
-* Then, we calculate the average CO₂ for every country by put the `CO2 (kt)` column to **Size** in Marks pane.
+* Then, we calculate the average CO₂ per Capita for every country by **drag** the `CO2 Per Capita (metric tons)` column to **Size** in Marks pane.
 
 ```{r average CO₂ 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-c-avg-co2.png")  
 ```
+ 
 
+* Average of CO₂ per Capita will appear with circle size. The larger the circle, the highest average.
 
-* Average of CO₂ will appear with circle size. The larger the circle, the highest average.
-
-```{r average CO₂ 4, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+```{r average CO₂ 4, out.width= "60%", echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-d-country-size.png")  
 ```
 
-*
+* Then, we can **add a color divergence** on the circle to make the average CO₂ per capita more clear.
+
+```{r average CO₂ 5, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-e-country-color.png")  
+```
+
+* Then, we can see the divergence of color in the circle. The higher the blue concentrate, higher the average. 
+
+```{r average CO₂ 6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-f-country-blue-divergence.png")  
+```
+
+* To make it more clear, we can change the color from Blue to Red-Green.
+
+* Click **Edit Colors**, make the colors reversed, because green indicate low CO₂ and red for high CO₂. Make the center to 4.
+
+```{r average CO₂ 7, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-g-country-red-green-divergence.png")  
+```
+
+* Make the size of the circle correlated to average CO₂ per Capita.
+
+```{r average CO₂ 8, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-h-country-size.png")
+```
+* Add a border color on circle.
+
+```{r average CO₂ 9, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-i-country-circle-border.png")
+```
+
+* Change the title and this is the first graph for **Average CO₂ per Capita**.
+
+```{r average CO₂ 10, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-first-graph.png")
+```
+
 
 
 #### Average CO₂ Growth in Every Country
