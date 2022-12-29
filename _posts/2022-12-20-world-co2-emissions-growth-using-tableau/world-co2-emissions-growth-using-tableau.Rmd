@@ -57,8 +57,7 @@ Here's a step-by-step to create a clear dashboard about CO₂ growth:
 
   1. Load the dataset.
   2. Create a Graph.
-  3. Combine a Graph.
-  4. Clean the Dashboard.
+  3. Design the Dashboard.
 
 ### Load the Dataset
 
@@ -223,14 +222,54 @@ library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-d-graph.png")
 ```
 
-### Combine a Graph
+### Design the dashboard
 In this section, we want to combine two graph we have created into one dashboard. Here's the step:
 
+* First, create a **new dashboard**.
 
-### Clean the Dashboard
+```{r Design dash 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/1-create-new-dashb.png")
+```
 
+* Let's add two graph we've created before by **dragging the sheet** into canvas.
 
+```{r Design dash 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/2-drag-graph.png")
+```
 
+* After dragging two graph. Then, it will looks like this.
+
+```{r Design dash 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/3-dash-looks.png")
+```
+
+* Notice that the legend is kind of confusing. Let's move it into the relevant graph.
+
+* To move the legend, first click **More options**, then choose **Floating**.
+
+```{r Design dash 4, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/4-floating-legend.png")
+```
+
+* Do this with color divergence legend. Delete the circle legend.
+
+* Then, **remove** the unused container to make the dashboard more clear.
+
+```{r Design dash 5, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/5-remove-container.png")
+```
+
+* Here's our final dashboard.
+
+```{r Design dash 6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/6-final-dashboard.png")
+```
 
 ## Analysis
 
