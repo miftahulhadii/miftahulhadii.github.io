@@ -23,7 +23,7 @@ output:
 
 ## Introduction
 
-In this activity, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review about the average CO₂ per capita. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of global climate changes [₁](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
+According to [the World Meteorological Organization's (WMO)](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.), the past eight years are the warmest Earth temperature on record. To better understand about this climate changes, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review the average CO₂ that produced in every country. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of [global climate changes](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
 
 ![**Fig. 1.** The spreading of factory residue](https://www.sciencealert.com/images/2019-09/processed/agw_topics_1024.jpg)
 
@@ -272,6 +272,12 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 ```
 
 ## Analysis
+### Average CO₂ per capita
+
+
+
+### Growth of CO₂ emitters
+
 
 
 
@@ -279,10 +285,10 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 
 
 
-## Suggestion
+### Suggestion
 
 
 
-## Source
+### Source
 
 
