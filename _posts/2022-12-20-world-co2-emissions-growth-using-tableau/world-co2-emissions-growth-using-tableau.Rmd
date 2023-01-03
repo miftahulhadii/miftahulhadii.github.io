@@ -20,6 +20,7 @@ output:
     toc_depth: 2
     self_contained: true
     highlight: tango
+    fig_caption: yes
 ---
 
 ## Introduction
@@ -54,7 +55,7 @@ Here, I want to describe a few tools used in this analysis:
 
 
 ## Create a Dashboard
-Here's a step-by-step to create a clear dashboard about CO₂ growth:
+Here's a step-by-step to create a clear dashboard about CO₂ growth. You can click every step to show the detailed :
 
 <details>
   <summary><b>Load the Dataset</b></summary>
@@ -222,7 +223,7 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-d-graph.png")
 ```
-
+Next, we can combine this two graph to design a clear dashboard.
 </details>
 
 <details>
@@ -268,22 +269,27 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/5-remove-container.png")
 ```
+
 </details>
 
 
 <details>
   <summary><b>Final dashboard</b></summary>
 
+Here's the final dashboard that we have created.
+
 ```{r Design dash 6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/6-final-dashboard.png")
 ```
+
+Now, the legend is tied with each graph. It's give a context to graph and make the dashboard more clear.
 </details>
 
 ## Analysis
 ### Average CO₂ per capita
 
-In this section, we want to view the first part of the dashboard. Then, we analyze which part of the world has the highest average of CO₂.
+In this section, we want to view the first part of the dashboard. Then, we analyze which part of the world has the highest average of CO₂
 
 
 
