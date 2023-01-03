@@ -68,7 +68,7 @@ Hopefully, this questions will be a step to reveal what inside the data sets and
 
 Here, I want to describe a few tools used in this analysis:
 
-1. [Tableau Desktop](https://public.tableau.com/app/discover)
+1. [Tableau Public](https://public.tableau.com/app/discover)
 2. Excel (*for storing data*)
 3. [CO₂ Dataset](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
 
@@ -347,4 +347,16 @@ For the next analysis, a population dataset is needed for better little-bias ana
 
 ### Source
 
-* [https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.)
+* [Tableau Public](https://public.tableau.com/app/discover)
+
+* Sheikh, S. E. (2022) 'Eight warmest years on record witness upsurge in climate change impacts', *World Meteorological Organization*, 6 Nov. Available at: [https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.)
+
+* Hamilton, K. (2017) 'Economic co-benefits of reducing CO2 emissions outweigh the cost of mitigation for most big emitters', *The London School of Economics and Political Science*, 3 Nov. Available at: [https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/)
+
+* 
+* Climate Watch Org. (2020) 'CO2 emissions (metric tons per capita)'. Available at: [http://data.worldbank.org/indicator/EN.ATM.CO2E.PC](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
+
+* Adema, S. (2022) 'Understanding Qatar’s Ecological Footprint
+', *Ecomena*, 1 March. Available at: [https://www.ecomena.org/qatar-ecological-footprint/](https://www.ecomena.org/qatar-ecological-footprint/)
+
+* Al-Asmakh, M. and Al-Awainati, N., 2018, March. Counting the Carbon: Assessing Qatar's Carbon Dioxide Emissions. In Qatar Foundation Annual Research Conference Proceedings Volume 2018 Issue 1 (Vol. 2018, No. 1, p. EEPD592). Hamad bin Khalifa University Press (HBKU Press).
