@@ -7,7 +7,7 @@ author:
   - name: Miftahul Hadi
 date: Dec 6, 2022
 categories:
-  - R Programming
+  - R
   - Financial Analysis
   - Data Visualization
 output:
