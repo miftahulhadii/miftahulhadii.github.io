@@ -23,6 +23,25 @@ output:
     fig_caption: yes
 ---
 
+```{css zoom-lib-src, echo = FALSE}
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+```
+
+```{js zoom-jquery, echo = FALSE}
+ $(document).ready(function() {
+    $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+```
+
 ## Introduction
 
 According to [the World Meteorological Organization's (WMO)](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.), the past eight years are the warmest Earth temperature on record. To better understand about this climate changes, I want to design a dashboard about **World CO₂ Emissions Growth**. This dashboard will review the average CO₂ that produced in every country. Then, we try to investigate the production growth over the year in every region. Hopefully, this dashboard will be beneficial to reduces and mitigates the effects of [global climate changes](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/).
@@ -289,7 +308,12 @@ Now, the legend is tied with each graph. It's give a context to graph and make t
 ## Analysis
 ### Average CO₂ per capita
 
-In this section, we want to view the first part of the dashboard. Then, we analyze which part of the world has the highest average of CO₂
+```{r analysis avg 1, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/1-co-2-avg/1-part-dashboard.png")
+```
+
+This graph describes the average of CO₂ per capita in every country, between 1960 and 2011. The circle shows where the country is. 
 
 
 

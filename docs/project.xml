@@ -12,16 +12,260 @@
       <link>https://miftahulhadii.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>World CO₂ Emissions Growth with Dashboard using Tableau</title>
       <dc:creator>Miftahul Hadi</dc:creator>
       <link>https://miftahulhadii.github.io/posts/2022-12-20-world-co2-emissions-growth-using-tableau</link>
-      <description>A guide to create an effective and clear dashboard for better understand average CO₂ in the world using CO₂ dataset.</description>
+      <description>
+
+
+&lt;style type="text/css"&gt;
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+ $(document).ready(function() {
+    $('body').prepend('&lt;div class=\"zoomDiv\"&gt;&lt;img src=\"\" class=\"zoomImg\"&gt;&lt;/div&gt;');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+&lt;/script&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;According to &lt;a
+href="https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022."&gt;the
+World Meteorological Organization’s (WMO)&lt;/a&gt;, the past eight years are
+the warmest Earth temperature on record. To better understand about this
+climate changes, I want to design a dashboard about &lt;strong&gt;World CO₂
+Emissions Growth&lt;/strong&gt;. This dashboard will review the average CO₂
+that produced in every country. Then, we try to investigate the
+production growth over the year in every region. Hopefully, this
+dashboard will be beneficial to reduces and mitigates the effects of &lt;a
+href="https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/"&gt;global
+climate changes&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img
+src="https://www.sciencealert.com/images/2019-09/processed/agw_topics_1024.jpg"
+alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;Fig. 1.&lt;/strong&gt; The spreading of factory
+residue&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, we used the data sets from &lt;a
+href="http://data.worldbank.org/indicator/EN.ATM.CO2E.PC"&gt;The World Bank
+Group&lt;/a&gt;, a world organization that work to reduce poverty in a
+country. This data sets include several variable such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Country Name&lt;/li&gt;
+&lt;li&gt;Year of CO₂ collected&lt;/li&gt;
+&lt;li&gt;CO₂ per Capita.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="what-to-analyze"&gt;What to analyze?&lt;/h3&gt;
+&lt;p&gt;This data set can be used to find a questions that might arise such
+as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Which country/region has the most average CO₂ per capita?&lt;/li&gt;
+&lt;li&gt;What region has the highest growth of CO₂ emitters?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hopefully, this questions will be a step to reveal what inside the
+data sets and helps other countries to mitigate the global climate
+changes.&lt;/p&gt;
+&lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Here, I want to describe a few tools used in this analysis:&lt;/p&gt;
+&lt;ol style="list-style-type: decimal"&gt;
+&lt;li&gt;&lt;a href="https://public.tableau.com/app/discover"&gt;Tableau
+Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Excel (&lt;em&gt;for storing data&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://data.worldbank.org/indicator/EN.ATM.CO2E.PC"&gt;CO₂
+Dataset&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="create-a-dashboard"&gt;Create a Dashboard&lt;/h2&gt;
+&lt;p&gt;Here’s a step-by-step to create a clear dashboard about CO₂ growth.
+You can click every step to show the detailed :&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Load the Dataset&lt;/b&gt;
+&lt;/summary&gt;
+&lt;p&gt;To connect the dataset to Tableau, the step as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, open Tableau Public application.&lt;/li&gt;
+&lt;li&gt;Then, the first window you see might be like this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-dataset-tableau.png" width="386" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select &lt;strong&gt;Microsoft Excel&lt;/strong&gt; (&lt;em&gt;because our dataset is
+in excel format&lt;/em&gt;), then locate to the dataset file.&lt;/li&gt;
+&lt;li&gt;Next, a lot of sheet inside of dataset will appear. This is Data
+Source window.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-sheet.png" width="369" style="display: block; margin: auto;" /&gt;
+* Connect the Tableau to useful sheet that already been cleaned. Here,
+we choose &lt;code&gt;CO2 Data Cleaned&lt;/code&gt; because the sheet involves
+metrics needed. * Last, we can go to worksheet&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/go-to-worksheet.png" width="210" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;As a preview, here is a view of Tableau project we work on.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/tableau-project-preview.png" width="576" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;As the image above, there are three sections that show up,
+including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Left-side&lt;/strong&gt; = Where the data stored.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Middle&lt;/strong&gt; = Tools to refine your data
+visualization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Right-side&lt;/strong&gt; = Place to view your visualization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Create a Graph&lt;/b&gt;
+&lt;/summary&gt;
+&lt;p&gt;In this section, we want plotting the dataset about CO₂ activity in
+the World to answers question.&lt;/p&gt;
+&lt;h4 id="average-co₂-per-capita"&gt;Average CO₂ per Capita&lt;/h4&gt;
+&lt;p&gt;Here’s the step to create a clear graph of average CO₂ for every
+country:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, we put the &lt;code&gt;Country Name&lt;/code&gt; column to
+&lt;strong&gt;Detail&lt;/strong&gt; in Marks pane.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-a-country-name.png" width="238" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A map will appear with the country as a data points.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-b-country-appear.png" width="60%" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Then, we calculate the average CO₂ per Capita for every country by
+&lt;strong&gt;drag&lt;/strong&gt; the &lt;code&gt;CO2 Per Capita (metric tons)&lt;/code&gt;
+column to &lt;strong&gt;Size&lt;/strong&gt; in Marks pane.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-c-avg-co2.png" width="350" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Average of CO₂ per Capita will appear with circle size. The larger
+the circle, the highest average.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-d-country-size.png" width="60%" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Then, we can &lt;strong&gt;add a color divergence&lt;/strong&gt; on the circle
+to make the average CO₂ per capita more clear.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-e-country-color.png" width="341" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Then, we can see the divergence of color in the circle. The higher
+the blue concentrate, higher the average.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-f-country-blue-divergence.png" width="248" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;To make it more clear, we can change the color from Blue to
+Red-Green.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;Edit Colors&lt;/strong&gt;, make the colors reversed,
+because green indicate low CO₂ and red for high CO₂. Make the center to
+4.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-g-country-red-green-divergence.png" width="576" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make the size of the circle correlated to average CO₂ per
+Capita.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-h-country-size.png" width="576" style="display: block; margin: auto;" /&gt;
+* Add a border color on circle.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-i-country-circle-border.png" width="218" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the title and this is the first graph for &lt;strong&gt;Average CO₂
+per Capita&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/1-first-graph.png" width="60%" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;h4 id="co₂-production-by-region"&gt;CO₂ Production by Region&lt;/h4&gt;
+&lt;p&gt;Here’s the step to a viz about CO₂ production over the years:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, add a new worksheet for different graph.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-new-worksheet.png" width="189" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;Region&lt;/code&gt; column on &lt;strong&gt;color marks&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-region.png" width="254" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Then, add &lt;code&gt;Year&lt;/code&gt; as a columns &amp;amp; &lt;code&gt;CO2 (kt)&lt;/code&gt;
+as a rows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-add-year-co2.png" width="334" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Here’s the graph. You see that the year is too crowded.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-b-show-graph.png" width="60%" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make it only per 10 years by ranges.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-c-change-axis.png" width="548" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There you go. Here the graph explain about CO₂ production by
+Region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-d-graph.png" width="60%" style="display: block; margin: auto;" /&gt;
+Next, we can combine this two graph to design a clear dashboard.
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Design the dashboard&lt;/b&gt;
+&lt;/summary&gt;
+&lt;p&gt;In this section, we want to combine two graph we have created into
+one dashboard. Here’s the step:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, create a &lt;strong&gt;new dashboard&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/1-create-new-dashb.png" width="244" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Let’s add two graph we’ve created before by &lt;strong&gt;dragging the
+sheet&lt;/strong&gt; into canvas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/2-drag-graph.png" width="379" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After dragging two graph. Then, it will looks like this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/3-dash-looks.png" width="341" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Notice that the legend is kind of confusing. Let’s move it into
+the relevant graph.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To move the legend, first click &lt;strong&gt;More options&lt;/strong&gt;,
+then choose &lt;strong&gt;Floating&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/4-floating-legend.png" width="551" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Do this with color divergence legend. Delete the circle
+legend.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Then, &lt;strong&gt;remove&lt;/strong&gt; the unused container to make the
+dashboard more clear.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/5-remove-container.png" width="332" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Final dashboard&lt;/b&gt;
+&lt;/summary&gt;
+&lt;p&gt;Here’s the final dashboard that we have created.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/6-final-dashboard.png" width="332" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+Now, the legend is tied with each graph. It’s give a context to graph
+and make the dashboard more clear.
+&lt;/details&gt;
+&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h3 id="average-co₂-per-capita-1"&gt;Average CO₂ per capita&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../../../../../Documents/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/1-co-2-avg/1-part-dashboard.png" width="332" style="display: block; margin: auto;" /&gt;&lt;/p&gt;
+&lt;p&gt;This graph describes the average of CO₂ in every country,
+between.&lt;/p&gt;
+&lt;h3 id="growth-of-co₂-emitters"&gt;Growth of CO₂ emitters&lt;/h3&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;h3 id="suggestion"&gt;Suggestion&lt;/h3&gt;
+&lt;h3 id="source"&gt;Source&lt;/h3&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>20db9df6d7b453becf83e95048687027</distill:md5>
       <category>Tableau</category>
       <category>Data Visualization</category>
       <guid>https://miftahulhadii.github.io/posts/2022-12-20-world-co2-emissions-growth-using-tableau</guid>
-      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
       <media:content url="https://i.ytimg.com/vi/9OX9ohTcC1w/maxresdefault.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
