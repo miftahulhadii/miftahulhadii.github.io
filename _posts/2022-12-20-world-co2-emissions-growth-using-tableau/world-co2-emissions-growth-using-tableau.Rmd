@@ -313,23 +313,38 @@ library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/1-co-2-avg/1-part-dashboard.png")
 ```
 
-This graph describes the average of CO₂ per capita in every country, between 1960 and 2011. The circle shows where the country is. 
+This graph describes the average of CO₂ per capita in every country, between 1960 and 2011. The circle shows where the country is. Darker red or bigger circles indicate the country produces more CO₂ than the others. Darker the green or smaller circles, the less CO₂ to be produced.
 
+From the graph above, we can see that the Middle-east country has the **highest average CO₂ per capita**. For example, Qatar(*one of the Middle-east countries*) has an average of 54.42 tons per capita. It means that Qatari people have produced more CO₂ than any other country in the world. This is because of [Qatar's heavy reliance](https://www.ecomena.org/qatar-ecological-footprint/) on gas and oil and has relatively [small population](https://www.qscience.com/content/papers/10.5339/qfarc.2018.EEPD592#:~:text=Qatar%20has%20the%20highest%20CO2,gas%20reserves%20in%20the%20world.) when compared to other countries. This make the average larger. There's also UAE (31.84 tons), Kuwait (28.4 tons), Bahrain (19.87 tons), and others.
 
+On the opposite, most of Africa and South America country has the **lowest average CO₂ per capita**. Chad (*one of the African countries*) has the average of 0.03 tons per capita, the lowest in the world.
 
 ### Growth of CO₂ emitters
 
+```{r analysis avg 2, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/2-co-2-growth/1-part-2-dashboard.png")
+```
 
+This graph describes the CO₂2 production growth in a number of regions between 1960 and 2011. Here, the CO₂ production is measured by kilo ton (kt). Each region shows in a colored line.
 
+From the graph above, each region tend to produce more CO₂ every year. In 1960, the highest CO₂ emitter is North America region. But 50 years later, East Asia & Pacific has produces more CO₂ than any others region. 
+
+```{r analysis avg 3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+library(knitr)
+knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/2-co-2-growth/2-part-2-dashboard.png")
+```
+
+In the graph above, we can see the rapid increase of CO₂ production in East Asia & Pacific from 1960 to 2011. In 1960, the CO₂ production is about 1,17 billion tons. 40 years later, the production is increased by 6 times (6,34 billion tons). It took only 10 years later to get 12,74 billion tons. This indicates that the **increase rate of CO₂ production in East Asia & Pacific** is significant.
 
 ## Conclusion
 
-
+According to this analysis, we find that Qatar's reliance on Gas and Oil makes the country the highest average of CO₂ per capita with 54.42 tons produced. But, the growth of CO₂ production in East Asia & Pacific should be wary with only 10 years from 2000, the CO₂ production increased 2 times higher by 12,74 billion tons
 
 ### Suggestion
 
-
+For the next analysis, a population dataset is needed for better little-bias analysis. Because, [Qatar with less population](https://www.qscience.com/content/papers/10.5339/qfarc.2018.EEPD592#:~:text=Qatar%20has%20the%20highest%20CO2,gas%20reserves%20in%20the%20world.) could get a higher average of CO₂ per capita than other countries with a higher population.
 
 ### Source
 
-
+* [https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.)
