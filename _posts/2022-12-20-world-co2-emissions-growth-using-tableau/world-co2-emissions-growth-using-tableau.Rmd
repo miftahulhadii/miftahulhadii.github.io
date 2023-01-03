@@ -13,6 +13,7 @@ output:
   distill::distill_article:
     toc: true
     toc_float: true
+    output_folding: show
     collapsed: false
     smooth_scroll: false
     number_sections: false
@@ -55,21 +56,19 @@ Here, I want to describe a few tools used in this analysis:
 ## Create a Dashboard
 Here's a step-by-step to create a clear dashboard about CO₂ growth:
 
-  1. Load the dataset.
-  2. Create a Graph.
-  3. Design the Dashboard.
-
-### Load the Dataset
+<details>
+  <summary><b>Load the Dataset</b></summary>
 
 To connect the dataset to Tableau, the step as follows:
 
 * First, open Tableau Public application.
 * Then, the first window you see might be like this.
 
-```{r connect dataset, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
+```{r connect dataset, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center', fold.plot=FALSE}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/connect-dataset-tableau.png")  
 ```
+
 * Select **Microsoft Excel** (*because our dataset is in excel format*), then locate to the dataset file.
 * Next, a lot of sheet inside of dataset will appear. This is Data Source window. 
 
@@ -97,8 +96,10 @@ As the image above, there are three sections that show up, including:
 * **Left-side**  = Where the data stored.
 * **Middle**     = Tools to refine your data visualization.
 * **Right-side** = Place to view your visualization.
+</details>
 
-### Create a Graph
+<details>
+  <summary><b>Create a Graph</b></summary>
 In this section, we want plotting the dataset about CO₂ activity in the World to answers question. 
 
 #### Average CO₂ per Capita
@@ -222,7 +223,11 @@ library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/2-co2-production/1-d-graph.png")
 ```
 
-### Design the dashboard
+</details>
+
+<details>
+  <summary><b>Design the dashboard</b></summary>
+
 In this section, we want to combine two graph we have created into one dashboard. Here's the step:
 
 * First, create a **new dashboard**.
@@ -263,16 +268,22 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/5-remove-container.png")
 ```
+</details>
 
-* Here's our final dashboard.
+
+<details>
+  <summary><b>Final dashboard</b></summary>
 
 ```{r Design dash 6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align= 'center'}
 library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/3-design-dashboard/6-final-dashboard.png")
 ```
+</details>
 
 ## Analysis
 ### Average CO₂ per capita
+
+In this section, we want to view the first part of the dashboard. Then, we analyze which part of the world has the highest average of CO₂.
 
 
 
