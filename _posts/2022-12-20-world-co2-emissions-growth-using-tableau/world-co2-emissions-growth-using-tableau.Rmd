@@ -347,13 +347,12 @@ For the next analysis, a population dataset is needed for better little-bias ana
 
 ### Source
 
-* [Tableau Public](https://public.tableau.com/app/discover)
+* Deardorff, A., 2016. Tableau (version. 9.1). Journal of the Medical Library Association, 104(2), pp.182-183.
 
 * Sheikh, S. E. (2022) 'Eight warmest years on record witness upsurge in climate change impacts', *World Meteorological Organization*, 6 Nov. Available at: [https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts](https://public.wmo.int/en/media/press-release/eight-warmest-years-record-witness-upsurge-climate-change-impacts#:~:text=Temperature%3A%20The%20global%20average%20temperature,until%20the%20end%20of%202022.)
 
 * Hamilton, K. (2017) 'Economic co-benefits of reducing CO2 emissions outweigh the cost of mitigation for most big emitters', *The London School of Economics and Political Science*, 3 Nov. Available at: [https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/](https://www.lse.ac.uk/granthaminstitute/news/economic-co-benefits-of-reducing-co2-emissions-outweigh-the-cost-of-mitigation-for-most-big-emitters/)
 
-* 
 * Climate Watch Org. (2020) 'CO2 emissions (metric tons per capita)'. Available at: [http://data.worldbank.org/indicator/EN.ATM.CO2E.PC](http://data.worldbank.org/indicator/EN.ATM.CO2E.PC)
 
 * Adema, S. (2022) 'Understanding Qatar’s Ecological Footprint
