@@ -315,7 +315,7 @@ knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-d
 
 This graph describes the average of CO₂ per capita in every country, between 1960 and 2011. The circle shows where the country is. Darker red or bigger circles indicate the country produces more CO₂ than the others. Darker the green or smaller circles, the less CO₂ to be produced.
 
-From the graph above, we can see that the Middle-east country has the **highest average CO₂ per capita**. For example, Qatar(*one of the Middle-east countries*) has an average of 54.42 tons per capita. It means that Qatari people have produced more CO₂ than any other country in the world. This is because of [Qatar's heavy reliance](https://www.ecomena.org/qatar-ecological-footprint/) on gas and oil and has relatively [small population](https://www.qscience.com/content/papers/10.5339/qfarc.2018.EEPD592#:~:text=Qatar%20has%20the%20highest%20CO2,gas%20reserves%20in%20the%20world.) when compared to other countries. This make the average larger. There's also UAE (31.84 tons), Kuwait (28.4 tons), Bahrain (19.87 tons), and others.
+From the graph above, we can see that the Middle-east country has the **highest average CO₂ per capita**. For example, Qatar (*one of the Middle-east countries*) has an average of 54.42 tons per capita. It means that Qatari people have produced more CO₂ than any other country in the world. This is because of [Qatar's heavy reliance](https://www.ecomena.org/qatar-ecological-footprint/) on gas and oil and has relatively [small population](https://www.qscience.com/content/papers/10.5339/qfarc.2018.EEPD592#:~:text=Qatar%20has%20the%20highest%20CO2,gas%20reserves%20in%20the%20world.) when compared to other countries. This make the average larger. There's also UAE (31.84 tons), Kuwait (28.4 tons), Bahrain (19.87 tons), and others.
 
 On the opposite, most of Africa and South America country has the **lowest average CO₂ per capita**. Chad (*one of the African countries*) has the average of 0.03 tons per capita, the lowest in the world.
 
@@ -326,7 +326,7 @@ library(knitr)
 knitr::include_graphics("~/GitHub/miftahulhadii.github.io/images/how-to-create-dashboard-tableau/4-analysis/2-co-2-growth/1-part-2-dashboard.png")
 ```
 
-This graph describes the CO₂2 production growth in a number of regions between 1960 and 2011. Here, the CO₂ production is measured by kilo ton (kt). Each region shows in a colored line.
+This graph describes the CO₂ production growth in a number of regions between 1960 and 2011. Here, the CO₂ production is measured by kilo ton (kt). Each region shows in a colored line.
 
 From the graph above, each region tend to produce more CO₂ every year. In 1960, the highest CO₂ emitter is North America region. But 50 years later, East Asia & Pacific has produces more CO₂ than any others region. 
 
