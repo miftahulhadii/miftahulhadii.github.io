@@ -29,7 +29,7 @@ output:
 ## Tools ⚙️
 * [Google Analytics Individual Qualification](https://skillshop.exceedlms.com/student/award/FTPFEs41nBraepdhHbVMzjo4?referer=https%3A%2F%2Fskillshop.exceedlms.com%2Fstudent%2Fpath%2F2938%3Fuse_local%3Dtrue){target="_blank"}
 * [Advanced Google Analytics](https://analytics.google.com/analytics/academy/certificate/FMSGkubIQLWEUrzLYxvJHQ){target="_blank"}
-* [Introduction to Data Studio](https://analytics.google.com/analytics/academy/certificate/xuWodfkvTfKuBWinMg8Clg){target="_blank"}
+* [Introduction to Google Data Studio](https://analytics.google.com/analytics/academy/certificate/xuWodfkvTfKuBWinMg8Clg){target="_blank"}
 
 ## Achievement 🏆
 * [Presenter in 11th ICTAP Physical Society of Indonesia](https://drive.google.com/file/d/1jaavf4yBVams6U4JVTEkG6Vzf5CTgmdf/view?usp=sharing){target="_blank"}
