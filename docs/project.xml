@@ -12,7 +12,19 @@
       <link>https://miftahulhadii.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Bike Share Marketing Campaigns Analysis using R</title>
+      <dc:creator>Miftahul Hadi</dc:creator>
+      <link>https://miftahulhadii.github.io/posts/2023-01-29-bike-share-analysis-using-r</link>
+      <description>Investigate a bike-share company's marketing campaigns in order to create a new one that is more profitable for the company.</description>
+      <category>R</category>
+      <category>Marketing Analysis</category>
+      <category>Data Visualization</category>
+      <guid>https://miftahulhadii.github.io/posts/2023-01-29-bike-share-analysis-using-r</guid>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>World CO₂ Emissions Growth with Dashboard using Tableau</title>
       <dc:creator>Miftahul Hadi</dc:creator>

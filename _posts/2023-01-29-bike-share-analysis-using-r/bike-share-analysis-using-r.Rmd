@@ -1,0 +1,34 @@
+---
+title: "Bike Share Marketing Campaigns Analysis using R"
+description: |
+ Investigate a bike-share company's marketing campaigns in order to create a new one that is more profitable for the company. 
+preview: https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg
+author:
+  - name: Miftahul Hadi
+date: Jan 29, 2023
+categories:
+  - R
+  - Marketing Analysis
+  - Data Visualization
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    output_folding: show
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
+    toc_depth: 2
+    self_contained: true
+    highlight: tango
+    fig_caption: yes
+---
+
+## Introduction
+
+## Preparation
+
+## Analysis
+
+## Conclusion
+
