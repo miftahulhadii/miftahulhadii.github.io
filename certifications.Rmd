@@ -16,7 +16,7 @@ output:
 ---
 
 ## Data Science 🔬
-### [Google Data Analytics Professional Certificate](https://www.coursera.org/account/accomplishments/certificate/LT9R8CSLK5G9){target="_blank"} (*on-going*)
+### [Google Data Analytics Professional Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/H4H272MAWFBM)
 ***Skill earned***: R, Tableau, SQL, Excel, Analytical thinking.
 
 ## Financial & Digital Marketing 💹
