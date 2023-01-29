@@ -5,6 +5,8 @@ image: "images/photo_profile.png"
 links:
   - label: '`r fontawesome::fa("linkedin", height = "25px")`'
     url: "https://linkedin.com/in/miftahulhadii/"
+  - label: '`r fontawesome::fa("kaggle", height = "25px")`'
+    url: "https://www.kaggle.com/miftahulhadii"
   - label: '`r fontawesome::fa("github", height = "25px")`'
     url: "https://github.com/miftahulhadii/"
   - label: '`r fontawesome::fa("envelope", height = "25px")`'
