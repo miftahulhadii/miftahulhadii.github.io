@@ -48,6 +48,8 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 Welcome to the Cyclistic bike-share analysis case study!
 
+![**Fig. 1.** Bike-share station](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg)
+
 In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. Lily Moreno, the director of marketing believes that the company's future success depends on maximizing the number of annual memberships. 
 
 To ride a Cylcistic bike, you can unlocked it from one station and return to any other station in the system. There are a few pricing plans to purchases:
@@ -82,9 +84,17 @@ Here's a few tools used in this analysis:
 * [RStudio](https://posit.co/)
 * Library used in R: `tidyverse`, `ggplot2`, `lubridate`, `readxl`
 * Dataset
+  * [Cyclistic's historical trip data in 2022](https://divvy-tripdata.s3.amazonaws.com/index.html) 
+  * [License](https://www.divvybikes.com/data-license-agreement) has been made available by Motivate International Inc.
 
 ## Processing the Data
+Here's a step by step of processing raw data to be prepared for analysis:
 
+* Import your data
+* Make columns consistent and merge into a single data frame
+* Clean up and add data to prepare for analysis
+* Conduct descriptive analysis
+* Export a summary file for further analysis
 
 ## Analysis
 
