@@ -15,9 +15,9 @@
       "Marketing Analysis",
       "Data Visualization"
     ],
-    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nAnalysis\r\nConclusion\r\nExternal links\r\n\r\nIntroduction\r\nPreparation\r\nAnalysis\r\nConclusion\r\nExternal links\r\nFor presentable data analysis, here’s the PPT\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nAnalysis\r\nConclusion\r\nAppendix\r\n\r\n\r\n\r\n\r\n\r\nIntroduction\r\nScenario\r\nWelcome to the Cyclistic bike-share analysis case study!\r\nIn this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.\r\nOur tasks here to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, marketing team will design a new marketing strategy to convert casual riders into annual members. But, Cyclistic executives must approve your recommendations with compelling data insigts and visualization.\r\nCompany’s details\r\nObjectives\r\nIdentify how casual and members riders use Cyclists bikes differently to maximizing the number of annual memberships.\r\nPreparation\r\nHere’s a few tools used in this analysis:\r\nRStudio\r\nLibrary used in R: tidyverse, ggplot2, dplyr, readr, skimr\r\nDataset\r\nAnalysis\r\nConclusion\r\nAppendix\r\nPresentable data analysis → PPT\r\nData Analysis Process in R scripts → R Code\r\nGoogle Data Analytics Coursera\r\n\r\n\r\n\r\n",
     "preview": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg",
-    "last_modified": "2023-01-30T10:07:02+07:00",
+    "last_modified": "2023-01-31T09:43:49+07:00",
     "input_file": {}
   },
   {

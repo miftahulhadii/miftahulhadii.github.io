@@ -3709,16 +3709,54 @@ Contact
 <li><a href="#preparation" id="toc-preparation">Preparation</a></li>
 <li><a href="#analysis" id="toc-analysis">Analysis</a></li>
 <li><a href="#conclusion" id="toc-conclusion">Conclusion</a></li>
-<li><a href="#external-links" id="toc-external-links">External links</a></li>
+<li><a href="#appendix" id="toc-appendix">Appendix</a></li>
 </ul>
 </nav>
 </div>
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+</style>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+</script>
+</div>
 <h2 id="introduction">Introduction</h2>
+<h3 id="scenario">Scenario</h3>
+<p>Welcome to the Cyclistic bike-share analysis case study!</p>
+<p>In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.</p>
+<p>Our tasks here to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, marketing team will design a new marketing strategy to convert casual riders into annual members. But, Cyclistic executives must approve your recommendations with compelling data insigts and visualization.</p>
+<h3 id="companys-details">Company’s details</h3>
+<h3 id="objectives">Objectives</h3>
+<p>Identify how casual and members riders use Cyclists bikes differently to maximizing the number of annual memberships.</p>
 <h2 id="preparation">Preparation</h2>
+<p>Here’s a few tools used in this analysis:</p>
+<ul>
+<li><a href="https://posit.co/">RStudio</a></li>
+<li>Library used in R: <code>tidyverse</code>, <code>ggplot2</code>, <code>dplyr</code>, <code>readr</code>, <code>skimr</code></li>
+<li>Dataset</li>
+</ul>
 <h2 id="analysis">Analysis</h2>
 <h2 id="conclusion">Conclusion</h2>
-<h2 id="external-links">External links</h2>
-<p>For presentable data analysis, here’s the <a href="https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p">PPT</a></p>
+<h2 id="appendix">Appendix</h2>
+<ul>
+<li><p>Presentable data analysis → <a href="https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p">PPT</a></p></li>
+<li><p>Data Analysis Process in R scripts → <a href="https://www.kaggle.com/code/miftahulhadii/2022-bike-share-analysis-case-study">R Code</a></p></li>
+<li><p><a href="https://www.coursera.org/professional-certificates/google-data-analytics">Google Data Analytics Coursera</a></p></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
