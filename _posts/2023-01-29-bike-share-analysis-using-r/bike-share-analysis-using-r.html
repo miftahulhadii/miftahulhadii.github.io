@@ -2402,16 +2402,31 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 <h2 id="introduction">Introduction</h2>
 <h3 id="scenario">Scenario</h3>
 <p>Welcome to the Cyclistic bike-share analysis case study!</p>
-<p>In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.</p>
+<p>In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. Lily Moreno, the director of marketing believes that the company’s future success depends on maximizing the number of annual memberships.</p>
+<p>To ride a Cylcistic bike, you can unlocked it from one station and return to any other station in the system. There are a few pricing plans to purchases:</p>
+<ul>
+<li>Single-ride passes</li>
+<li>Full-day passes</li>
+<li>Annual memberships</li>
+</ul>
+<p>Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.</p>
 <p>Our tasks here to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, marketing team will design a new marketing strategy to convert casual riders into annual members. But, Cyclistic executives must approve your recommendations with compelling data insigts and visualization.</p>
-<h3 id="companys-details">Company’s details</h3>
+<details>
+<summary>
+<b>Company’s details</b>
+</summary>
+<p>In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.</p>
+<p>Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.</p>
+<p>Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, Moreno believes there is a very good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.</p>
+<p>Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.</p>
+</details>
 <h3 id="objectives">Objectives</h3>
 <p>Identify how casual and members riders use Cyclists bikes differently to maximizing the number of annual memberships.</p>
 <h2 id="preparation">Preparation</h2>
 <p>Here’s a few tools used in this analysis:</p>
 <ul>
 <li><a href="https://posit.co/">RStudio</a></li>
-<li>Library used in R: <code>tidyverse</code>, <code>ggplot2</code>, <code>dplyr</code>, <code>readr</code>, <code>skimr</code></li>
+<li>Library used in R: <code>tidyverse</code>, <code>ggplot2</code>, <code>lubridate</code>, <code>readxl</code></li>
 <li>Dataset</li>
 </ul>
 <h2 id="analysis">Analysis</h2>
