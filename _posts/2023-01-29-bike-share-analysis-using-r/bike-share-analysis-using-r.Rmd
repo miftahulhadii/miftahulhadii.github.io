@@ -23,6 +23,7 @@ output:
     highlight: tango
     fig_caption: yes
 ---
+
 ```{css zoom-lib-src, echo = FALSE}
 script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 ```
@@ -42,67 +43,174 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   });
 ```
 
-
 ## Introduction
-### Scenario 
+
+### Scenario
 
 Welcome to the Cyclistic bike-share analysis case study!
 
 ![**Fig. 1.** Bike-share station](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg)
 
-In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. Lily Moreno, the director of marketing believes that the company's future success depends on maximizing the number of annual memberships. 
+In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. Lily Moreno, the marketing director, believes that the company's future success depends on maximizing the number of annual memberships.
 
-To ride a Cylcistic bike, you can unlocked it from one station and return to any other station in the system. There are a few pricing plans to purchases:
+To ride a Cylcistic bike, you can unlock it from one station and return it to any other station in the system. There are a few pricing plans to purchase:
 
-* Single-ride passes
-* Full-day passes
-* Annual memberships
+-   Single-ride passes
+-   Full-day passes
+-   Annual memberships
 
 Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-Our tasks here to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, marketing team will design a new marketing strategy to convert casual riders into annual members. But, Cyclistic executives must approve your recommendations with compelling data insigts and visualization.
+Our task here is to understand how casual riders and annual members use Cyclistic bikes differently. The marketing team will design a new marketing strategy from these insights to convert casual riders into annual members. But, Cyclistic executives must approve your recommendations with compelling data insights and visualization.
 
 <details>
-  <summary><b>Company's details</b></summary>
 
-In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.
+<summary><b>More about company's details</b></summary>
 
-Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
+In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geo-tracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system at any time.
 
-Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, Moreno believes there is a very good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.
+Until now, Cyclistic's marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
+
+Cyclistic's finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign targeting all-new customers, Moreno believes there is a good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.
 
 Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.
 
 </details>
 
 ### Objectives
+
 Identify how casual and members riders use Cyclists bikes differently to maximizing the number of annual memberships.
 
 ## Preparation
+
 Here's a few tools used in this analysis:
 
-* [RStudio](https://posit.co/)
-* Library used in R: `tidyverse`, `ggplot2`, `lubridate`, `readxl`
-* Dataset
-  * [Cyclistic's historical trip data in 2022](https://divvy-tripdata.s3.amazonaws.com/index.html) 
-  * [License](https://www.divvybikes.com/data-license-agreement) has been made available by Motivate International Inc.
+-   [RStudio](https://posit.co/)
+-   Library used in R: `tidyverse`, `ggplot2`, `lubridate`, `readxl`
+-   Dataset
+    -   [Cyclistic's historical trip data in 2022](https://divvy-tripdata.s3.amazonaws.com/index.html)
+    -   [License](https://www.divvybikes.com/data-license-agreement) has been made available by Motivate International Inc.
 
 ## Processing the Data
-Here's a step by step of processing raw data to be prepared for analysis:
 
-* Import your data
-* Make columns consistent and merge into a single data frame
-* Clean up and add data to prepare for analysis
-* Conduct descriptive analysis
-* Export a summary file for further analysis
+Here's a step by step of processing raw data to be prepared for analysis: 
+
+<details>
+
+<summary><b>Import your data</b></summary>
+
+To connect the data to the R environment, the step as follows:
+
+-   First, download the previous 12 months' Cyclistic trips in .csv format.
+-   Second, convert the data from .csv to xlsx format. Store it on a new folder (e.g. "\~/bike-project/xlsx-version")
+-   Next, load the library used in this analysis and set the main directory where the data is stored.
+
+```{r STEP 1 - Library included, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(readxl)
+#setwd("~/bike-project/xlsx-version")
+#setwd is not used because of web development circumstances
+```
+
+-   Using the `readxl` library, load the data and give the name each month.
+
+```{r STEP 1 - Collect Data, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+m1_2022 <- read_xlsx("~/bike-project/xlsx-version/202201-divvy-tripdata.xlsx")
+m2_2022 <- read_xlsx("~/bike-project/xlsx-version/202202-divvy-tripdata.xlsx")
+m3_2022 <- read_xlsx("~/bike-project/xlsx-version/202203-divvy-tripdata.xlsx")
+m4_2022 <- read_xlsx("~/bike-project/xlsx-version/202204-divvy-tripdata.xlsx")
+m5_2022 <- read_xlsx("~/bike-project/xlsx-version/202205-divvy-tripdata.xlsx")
+m6_2022 <- read_xlsx("~/bike-project/xlsx-version/202206-divvy-tripdata.xlsx")
+m7_2022 <- read_xlsx("~/bike-project/xlsx-version/202207-divvy-tripdata.xlsx")
+m8_2022 <- read_xlsx("~/bike-project/xlsx-version/202208-divvy-tripdata.xlsx")
+m9_2022 <- read_xlsx("~/bike-project/xlsx-version/202209-divvy-tripdata.xlsx")
+m10_2022 <- read_xlsx("~/bike-project/xlsx-version/202210-divvy-tripdata.xlsx")
+m11_2022 <- read_xlsx("~/bike-project/xlsx-version/202211-divvy-tripdata.xlsx")
+m12_2022 <- read_xlsx("~/bike-project/xlsx-version/202212-divvy-tripdata.xlsx")
+
+#("~/bike-project/xlsx-version") still used because of web development circumstances
+```
+
+</details>
+
+<details>
+
+<summary><b>Make columns consistent and merge into a single data frame</b></summary>
+
+To make columns ready to analysis, here's the step:
+
+-   Firstly, check the columns name of each months trips data.
+
+```{r STEP 2 - Check column name, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+colnames(m1_2022)
+colnames(m2_2022)
+colnames(m3_2022)
+colnames(m4_2022)
+colnames(m5_2022)
+colnames(m6_2022)
+colnames(m7_2022)
+colnames(m8_2022)
+colnames(m9_2022)
+colnames(m10_2022)
+colnames(m11_2022)
+colnames(m12_2022)
+```
+
+-   After that, check the data types.
+
+```{r STEP 2 - Check the data types of column, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+str(m1_2022)
+str(m2_2022)
+str(m3_2022)
+str(m4_2022)
+str(m5_2022)
+str(m6_2022)
+str(m7_2022)
+str(m8_2022)
+str(m9_2022)
+str(m10_2022)
+str(m11_2022)
+str(m12_2022)
+```
+
+-   Change the data types if you find a column that differs from the rest of the columns in another file.
+
+-   Lastly, combine all sheets into one single dataframe and named it `all_trips`.
+
+```{r STEP 2 - Combine all sheet, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+all_trips <- bind_rows(m1_2022, m2_2022, m3_2022, 
+                       m4_2022, m5_2022, m6_2022, 
+                       m7_2022, m8_2022, m9_2022, 
+                       m10_2022, m11_2022, m12_2022)
+```
+
+</details>
+
+<details>
+
+<summary><b>Clean up and add data to prepare for analysis</b></summary>
+
+
+
+
+
+</details>
+
+### Conduct descriptive analysis
+
+### Export a summary file for further analysis
+
 
 ## Analysis
 
 ## Conclusion
 
 ## Appendix
-* Presentable data analysis → [PPT](https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p)
 
-* Data Analysis Process in R scripts → [R Code](https://www.kaggle.com/code/miftahulhadii/2022-bike-share-analysis-case-study)
+-   Presentable data analysis → [PPT](https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p)
 
-* [Google Data Analytics Coursera](https://www.coursera.org/professional-certificates/google-data-analytics)
+-   Data Analysis Process in R scripts → [R Code](https://www.kaggle.com/code/miftahulhadii/2022-bike-share-analysis-case-study)
+
+-   [Google Data Analytics Coursera](https://www.coursera.org/professional-certificates/google-data-analytics)
