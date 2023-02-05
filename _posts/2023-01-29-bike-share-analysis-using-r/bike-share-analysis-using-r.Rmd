@@ -1,7 +1,7 @@
 ---
 title: "Bike Share Marketing Campaigns Analysis using R"
 description: |
- Investigate a bike-share company's marketing campaigns in order to create a new one that is more profitable for the company. 
+ Investigate a bike-share company's marketing campaigns to create a new one that is more profitable for the company. 
 preview: https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg
 author:
   - name: Miftahul Hadi
@@ -79,17 +79,17 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 
 ### Objectives
 
-Identify how casual and members riders use Cyclists bikes differently to maximizing the number of annual memberships.
+Identify how casual and members riders use Cyclists bikes differently to maximize the number of annual memberships.
 
 ## Preparation
 
-Here's a few tools used in this analysis:
+Here are a few tools used in this analysis:
 
 -   [RStudio](https://posit.co/)
--   Library used in R: `tidyverse`, `ggplot2`, `lubridate`, `readxl`
+-   The library used in R: `tidyverse`, `ggplot2`, `lubridate`, `readxl`
 -   Dataset
     -   [Cyclistic's historical trip data in 2022](https://divvy-tripdata.s3.amazonaws.com/index.html)
-    -   [License](https://www.divvybikes.com/data-license-agreement) has been made available by Motivate International Inc.
+    -   [The license](https://www.divvybikes.com/data-license-agreement) has been made available by Motivate International Inc.
 
 ## Processing the Data
 
@@ -102,7 +102,7 @@ Here's a step by step of processing raw data to be prepared for analysis:
 To connect the data to the R environment, the step as follows:
 
 -   First, download the previous 12 months' Cyclistic trips in .csv format.
--   Second, convert the data from .csv to xlsx format. Store it on a new folder (e.g. "\~/bike-project/xlsx-version")
+-   Second, convert the data from .csv to xlsx format. Store it in a new folder (e.g. "\~/bike-project/xlsx-version")
 -   Next, load the library used in this analysis and set the main directory where the data is stored.
 
 ```{r STEP 1 - Library included, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -143,7 +143,7 @@ To make columns ready to analysis, here's the step:
 
 -   Firstly, check the columns name of each months trips data.
 
-```{r STEP 2 - Check column name, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r STEP 2 - Check column name, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 colnames(m1_2022)
 colnames(m2_2022)
 colnames(m3_2022)
@@ -160,7 +160,7 @@ colnames(m12_2022)
 
 -   After that, check the data types.
 
-```{r STEP 2 - Check the data types of column, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r STEP 2 - Check the data types of column, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 str(m1_2022)
 str(m2_2022)
 str(m3_2022)
@@ -177,7 +177,7 @@ str(m12_2022)
 
 -   Change the data types if you find a column that differs from the rest of the columns in another file.
 
--   Lastly, combine all sheets into one single dataframe and named it `all_trips`.
+-   Lastly, combine all sheets into one single data frame and named it `all_trips`.
 
 ```{r STEP 2 - Combine all sheet, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 all_trips <- bind_rows(m1_2022, m2_2022, m3_2022, 
@@ -201,9 +201,9 @@ all_trips <- all_trips %>%
   select(-c(start_lat, start_lng, end_lat, end_lng))
 ```
 
--   Check the dataframe attributes.
+-   Check the data frame attributes.
 
-```{r STEP 3 - Re-check and clean up data, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r STEP 3 - Re-check and clean up data, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 colnames(all_trips)   #list of column names
 nrow(all_trips)       #total row
 dim(all_trips)        #total dimension
@@ -244,7 +244,7 @@ all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 
 -   After creating a new column, inspect the columns data types to make sure.
 
-```{r STEP 3 - Inspect the columns data types, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r STEP 3 - Inspect the columns data types, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 str(all_trips)
 ```
 
@@ -294,7 +294,7 @@ member_compare <- all_trips_v2 %>%                #call dataset
   group_by(membership_type = member_casual) %>%   #group the data by members type
   summarize(average_ride_length = mean(ride_length), number_of_rides = n())  #summarize them with avg and number of rides
 
-View(member_compare)      #view new dataframe
+View(member_compare)      #view new data frame
 ```
 
 -   Do a comparison of average ride time by each `day_of_week` column.
@@ -391,7 +391,7 @@ ggsave(filename = "high-nor-day.png", width = 6.86, height = 4.11, dpi=300)
 
 <summary><b>Export a summary file for further analysis</b></summary>
 
-To export a summary dataframe into a csv format, here's the code
+To export a summary data frame into a csv format, here's the code
 
 ```{r STEP 6 - Export a summary file, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 write.csv(member_compare, file = "all_member_compare.csv")
@@ -400,7 +400,11 @@ write.csv(membertype_per_day, file = "by_day_member_compare.csv")
 
 </details>
 
+
 ## Analysis
+
+
+
 
 ## Conclusion
 
