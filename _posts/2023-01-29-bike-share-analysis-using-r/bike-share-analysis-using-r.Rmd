@@ -49,7 +49,7 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 Welcome to the Cyclistic bike-share analysis case study!
 
-![**Fig. 1.** Bike-share station](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg)
+![***Fig. 1.*** Bike-share station](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg)
 
 In this case study, I am here as a junior data analyst working in the marketing team at Cyclistic, a fictional bike-share company in Chicago. Lily Moreno, the marketing director, believes that the company's future success depends on maximizing the number of annual memberships.
 
@@ -400,9 +400,23 @@ write.csv(membertype_per_day, file = "by_day_member_compare.csv")
 
 </details>
 
-
 ## Analysis
 
+### The Cyclistic bikes usage difference by rider type
+
+To understand each rider behavior of using bikes in 2022, we need to utilize number of rides and ride duration data. This will helps describe how they differ from each other as we can see from ***Fig. 2***.
+
+![***Fig. 2.*** Casual and members riders difference based on number of rides and ride duration.](membership-comparison.png)
+
+In ***Fig. 2***, we see a comparison between two types of rider that using Cyclists bikes. Then compare them based on number of rides and average ride length. We discovered that members riders have a higher total number of rides than casual riders. But, casual riders tend to have a longer ride duration (*1,749 second*) even with less number of rides (*2.321 mil*).
+
+### Number of rides by weekday
+
+This section will explain about how frequently they use Cyclistic bikes during the week. This will assist Cyclistic marketing to determining which day they are most likely to ride. We can see more detail in this ***Fig. 3***.
+
+![***Fig. 3.*** The number of rides done by each rider during the week.](number-of-rides.png)
+
+This graph ***Fig. 3. *** above illustrates the number of rides done from Sunday to Saturday throughout 2022. Casual riders are represented by the red column, while Cyclistic members are represented by the blue column. From this graph ***Fig. 3. ***, we discovered that casual riders maintained a lower number of rides than members from Monday to Friday. On weekends, however, casual riders have a slightly higher number of rides than members. This suggest that casual rider more likely to ride on weekend.
 
 
 
