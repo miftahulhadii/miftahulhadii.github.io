@@ -79,7 +79,7 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 
 ### Objectives
 
-Identify how casual and members riders use Cyclists bikes differently to maximize the number of annual memberships.
+Identify how casual and members riders use Cyclistic bikes differently to maximize the number of annual memberships.
 
 ## Preparation
 
@@ -219,7 +219,7 @@ unique(all_trips$member_casual) #for unique value
 table(all_trips$member_casual)  #total unique value
 ```
 
--   As we know, memberships program in Cyclists only have two, casual and members riders. So, if there's any dualism value (e.g. subscriber instead of members), change the value.
+-   As we know, memberships program in Cyclistic only have two, casual and members riders. So, if there's any dualism value (e.g. subscriber instead of members), change the value.
 
 ```{r STEP 3 - Dualism value in a column, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 all_trips <- all_trips %>% 
@@ -315,7 +315,7 @@ avg_member_per_day <- all_trips_v2 %>%
 View(avg_member_per_day)
 ```
 
--   Lastly, let's count the number of rides by members type and weekday using `ride_id` column.
+-   Lastly, let's count the number of rides by members type and day of week using `ride_id` column.
 
 ```{r STEP 4 - Number of rides by each day, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 ### first check the ride_id duplicate to count number of ride
@@ -358,8 +358,8 @@ ggsave(filename = "number-of-rides.png", width = 6.86, height = 4.11, dpi=300)
 ```{r STEP 5 - Average ride viz, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 ggplot(data = membertype_per_day, mapping = aes(x = day_of_week, y = average_ride_length, fill = membership_type)) + 
   geom_col(position = "dodge") +
-  labs(title = "Average Duration by Membership Type in 2022", 
-       x = "", y = "Average Duration<br><span style = 'font-size:8pt'>(in second)</span>", 
+  labs(title = "Average Ride Length by Membership Type in 2022", 
+       x = "", y = "Average Ride Length<br><span style = 'font-size:8pt'>(in second)</span>", 
        fill = "Membership Type")+
   theme(axis.title.y = ggtext::element_markdown())
 
@@ -377,12 +377,12 @@ highest_day_nor <- membertype_per_day %>%
 
   ggplot(data = highest_day_nor, mapping = aes(x = (number_of_rides/1000), y = (day_of_week = reorder(day_of_week, number_of_rides)))) + 
     geom_col() +
-    labs(title = "Number of Rides Per Day by Casual Riders", 
+    labs(title = "Number of Rides Per Day by Casual Riders",
         x = "Number of Rides<br><span style = 'font-size:8pt'>(in thousand)</span>", y = "")+
     theme(axis.title.x = ggtext::element_markdown())
 
 #save the graph  
-ggsave(filename = "high-nor-day.png", width = 6.86, height = 4.11, dpi=300)
+ggsave(filename = "high-nor-days.png", width = 6.86, height = 4.11, dpi=300)
 ```
 
 </details>
@@ -408,19 +408,73 @@ To understand each rider behavior of using bikes in 2022, we need to utilize num
 
 ![***Fig. 2.*** Casual and members riders difference based on number of rides and ride duration.](membership-comparison.png)
 
-In ***Fig. 2***, we see a comparison between two types of rider that using Cyclists bikes. Then compare them based on number of rides and average ride length. We discovered that members riders have a higher total number of rides than casual riders. But, casual riders tend to have a longer ride duration (*1,749 second*) even with less number of rides (*2.321 mil*).
+In ***Fig. 2***, we see a comparison between two types of rider that using Cyclistic bikes. Then compare them based on number of rides and average ride length. We discovered that members riders have a higher number of rides than casual riders. However, casual riders tend to have a longer ride duration (*1,749 second*) even with less number of rides (*2.321 mil*).
 
-### Number of rides by weekday
+### Number of rides by day
 
 This section will explain about how frequently they use Cyclistic bikes during the week. This will assist Cyclistic marketing to determining which day they are most likely to ride. We can see more detail in this ***Fig. 3***.
 
 ![***Fig. 3.*** The number of rides done by each rider during the week.](number-of-rides.png)
 
-This graph ***Fig. 3. *** above illustrates the number of rides done from Sunday to Saturday throughout 2022. Casual riders are represented by the red column, while Cyclistic members are represented by the blue column. From this graph ***Fig. 3. ***, we discovered that casual riders maintained a lower number of rides than members from Monday to Friday. On weekends, however, casual riders have a slightly higher number of rides than members. This suggest that casual rider more likely to ride on weekend.
+This graph ***Fig. 3.*** above illustrates the number of rides done from Sunday to Saturday throughout 2022. Casual riders are represented by the red column, while Cyclistic members are represented by the blue column. From this graph ***Fig. 3.*** , we discovered that casual riders maintained a lower number of rides than members from Monday to Friday. On weekends, however, casual riders have a slightly higher number of rides than members. This suggest that casual rider less likely to ride on weekday.
 
+### Average ride length by day
 
+This section will explain about how longer they ride using Cyclistic bikes during the week. This will assist Cyclistic marketing to determining which day they are most likely to ride longer. We can see more detail in this ***Fig. 4***.
 
-## Conclusion
+![***Fig. 4.*** The average ride lengths done by each rider during the week.](avg-duration.png)
+
+This graph ***Fig. 4.*** above illustrates the average ride length done during the week throughout 2022. From this graph ***Fig. 4.*** , we observed that casual riders shown longer ride lengths than members every day. In facts, casual riders have a longer ride on weekday, even with less number of rides than members. This suggest that casual rider more likely to ride longer.
+
+### Potential days to promote membership program
+
+In this section, we observed the number of rides taken by casual riders. This data will help us to determine potential days to promote the membership program to casual riders who are already familiar with Cyclistic. This will also help the company generate more annual members, which will be beneficial. Here is ***Fig. 5.*** about number of rides per day by casual rider.
+
+![***Fig. 5.*** The number of rides per day by casual riders.](high-nor-days.png)
+
+This graph ***Fig. 5.*** above illustrates the number of rides taken by casual riders during the week in 2022. From this graph ***Fig. 5.*** , we observed that casual riders show a higher number of ride on weekend. On Saturday, 473 thousand ride are completed. On the other hand, weekdays appear to have fewer rides, ranging from 264 to 334 thousand rides. This suggest that on weekends, there are more casual riders.
+
+### Why casual riders do not convert to members?
+
+In this section, we create a hypothesis after identifying how casual and members use Cyclistic bikes differently. Here are a few potential causes of why casual riders do not purchase membership programs:
+
+#### Marketing mismatch
+
+Our first hypothesis is that casual riders do not join the membership program due to a marketing mismatch. So, we need to analyze the Cyclistic marketing strategies in 2022. To realize this, we need more data required such as:
+
+-   Lead generation data (e.g. how did you hear about Cyclistic?)
+-   Digital media/ads performance data
+
+After gathering data, we can determine whether there are significantly different methods of discovering Cyclistic for casual riders and members. Then we look at how digital media influences casual riders to become members.
+
+#### Incentive mismatch
+
+Our second hypothesis is that casual riders are not interested by current membership benefits as they can obtain them as a casual. As a result, we need to investigate the membership plan. To accomplish this, we need to take steps such as:
+
+-   Breakdown of riders difference by number of rides and ride length
+-   Survey of "why did you use Cyclistic bikes" -- broken out by riders type
+
+After breakdown the data we have and conducting a survey, we can understand how casual and member riders use the bikes differently. As a result, we understand why the use of Cyclistic bikes varies by rider type.
+
+## Recommendation
+
+After conducting a descriptive analysis to identify how different riders use Cyclistic, our strategies to increase annual membership as follow:
+
+### Define new membership program main benefits
+
+As we learn before, casual riders have a longer ride duration. We can then design pricing plans based on limiting the ride duration. So, more people have the urge to be Cyclistic members with unlimited duration benefits.
+
+### Create new pricing plans based on ride length for casual riders
+
+Based on casual riders longer ride length, we can create new pricing plans using [The Decoy Effect strategies](https://insidebe.com/articles/the-decoy-effect/). For casual, make the pricing plans based on limited ride duration. This will make the membership plan more profitable.
+
+### Design a marketing strategies that highlight new membership benefits
+
+Following the establishment of pricing plans, we can plan the marketing strategy on a day with higher number of rides by casual riders (Saturday and Sunday). Highlight the main benefits of members in a targeted manners.
+
+### Test and learn
+
+Run the program on weekly basis to evaluate which pricing plans are working and which aren't. Create a KPI's to define a successful program (e.g. new members growth, number of rides by casual, day of the week, etc.)
 
 ## Appendix
 

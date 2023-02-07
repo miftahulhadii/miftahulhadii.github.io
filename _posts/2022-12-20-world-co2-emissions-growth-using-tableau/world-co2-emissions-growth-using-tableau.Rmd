@@ -1,5 +1,5 @@
 ---
-title: "Worlds CO₂ Emissions Growth with Dashboard using Tableau"
+title: "World CO₂ Emissions Growth with Dashboard using Tableau"
 description: |
   A guide to create an effective and clear dashboard for better understand average CO₂ in the world using CO₂ dataset. 
 preview: https://i.ytimg.com/vi/9OX9ohTcC1w/maxresdefault.jpg
