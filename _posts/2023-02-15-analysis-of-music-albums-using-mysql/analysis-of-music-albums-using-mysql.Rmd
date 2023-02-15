@@ -2,6 +2,7 @@
 title: "Analysis of Music Album using MySQL"
 description: |
   Using MySQL to perform a descriptive analysis on a database of music album.
+preview: https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png
 author:
   - name: Miftahul Hadi
     url: {https://www.linkedin.com/in/miftahulhadii}
