@@ -12,7 +12,7 @@
       <link>https://miftahulhadii.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 15 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Analysis of Music Album using MySQL</title>
       <dc:creator>Miftahul Hadi</dc:creator>
@@ -41,6 +41,11 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 &lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
 &lt;h2 id="design-a-database"&gt;Design a Database&lt;/h2&gt;
 &lt;h3 id="create-a-database"&gt;Create a database&lt;/h3&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;CREATE TABLE bands (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id="design-a-table"&gt;Design a table&lt;/h3&gt;
 &lt;h3 id="insert-the-value-in-the-column."&gt;Insert the value in the
 column.&lt;/h3&gt;
@@ -58,7 +63,7 @@ Script&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
       <category>SQL</category>
       <category>ETL</category>
       <guid>https://miftahulhadii.github.io/posts/2023-02-15-analysis-of-music-albums-using-mysql</guid>
-      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
       <media:content url="https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png" medium="image" type="image/png"/>
     </item>
     <item>
@@ -409,7 +414,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file37583a5e13f6_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -422,7 +427,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file37583a5e13f6_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -440,7 +445,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file37583a5e13f6_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
@@ -607,7 +612,7 @@ Data Analytics Coursera&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
       <category>Marketing Analysis</category>
       <category>Data Visualization</category>
       <guid>https://miftahulhadii.github.io/posts/2023-01-29-bike-share-analysis-using-r</guid>
-      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
       <media:content url="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>

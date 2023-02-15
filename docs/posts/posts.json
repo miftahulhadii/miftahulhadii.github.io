@@ -16,9 +16,9 @@
       "SQL",
       "ETL"
     ],
-    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nAnalysis\r\nAppendix\r\n\r\n\r\n\r\n\r\n\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nCreate a database\r\nDesign a table\r\nInsert the value in the column.\r\nAnalysis\r\nAppendix\r\nWebDevSimplified [YouTube, GitHub]\r\nKaggle Full Script\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nAnalysis\r\nAppendix\r\n\r\n\r\n\r\n\r\n\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nCreate a database\r\n\r\nCREATE TABLE bands (\r\n  id INT NOT NULL AUTO_INCREMENT,\r\n  name VARCHAR(255) NOT NULL,\r\n  PRIMARY KEY (id)\r\n);\r\n\r\nDesign a table\r\nInsert the value in the column.\r\nAnalysis\r\nAppendix\r\nWebDevSimplified [YouTube, GitHub]\r\nKaggle Full Script\r\n\r\n\r\n\r\n",
     "preview": "https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png",
-    "last_modified": "2023-02-15T10:53:19+07:00",
+    "last_modified": "2023-02-15T21:12:05+07:00",
     "input_file": "analysis-of-music-albums-using-mysql.knit.md"
   },
   {

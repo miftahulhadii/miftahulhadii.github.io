@@ -51,6 +51,14 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 ### Create a database
 
+```{sql STEP 1 - create a bands table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+CREATE TABLE bands (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+```
+
 ### Design a table
 
 ### Insert the value in the column.
