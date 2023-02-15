@@ -8,6 +8,7 @@ author:
 date: Jan 29, 2023
 categories:
   - R
+  - ETL
   - Marketing Analysis
   - Data Visualization
 output:
@@ -350,7 +351,7 @@ ggplot(data = membertype_per_day, mapping = aes(x = day_of_week, y = (number_of_
   theme(axis.title.y = ggtext::element_markdown())
 
 #save the data viz in .png format
-ggsave(filename = "number-of-rides.png", width = 6.86, height = 4.11, dpi=300)
+ggsave(filename = "number-of-ride.png", width = 6.86, height = 4.11, dpi=300)
 ```
 
 -   Next, visualize the average duration by members type each day of the week.
@@ -364,7 +365,7 @@ ggplot(data = membertype_per_day, mapping = aes(x = day_of_week, y = average_rid
   theme(axis.title.y = ggtext::element_markdown())
 
 #save the data viz in .png format
-ggsave(filename = "avg-duration.png", width = 6.86, height = 4.11, dpi=300)
+ggsave(filename = "avg-length.png", width = 6.86, height = 4.11, dpi=300)
 ```
 
 -   To find a potential days to promote memberships program to casual riders, we need to identify which day with the most number of rides by casual riders.
@@ -382,7 +383,7 @@ highest_day_nor <- membertype_per_day %>%
     theme(axis.title.x = ggtext::element_markdown())
 
 #save the graph  
-ggsave(filename = "high-nor-days.png", width = 6.86, height = 4.11, dpi=300)
+ggsave(filename = "high-nor-day.png", width = 6.86, height = 4.11, dpi=300)
 ```
 
 </details>
