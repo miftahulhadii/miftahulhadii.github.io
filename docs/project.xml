@@ -14,9 +14,9 @@
     <generator>Distill</generator>
     <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Analysis of Music Album using MySQL</title>
+      <title>Design a Music Album Database using MySQL</title>
       <dc:creator>Miftahul Hadi</dc:creator>
-      <link>https://miftahulhadii.github.io/posts/2023-02-15-analysis-of-music-albums-using-mysql</link>
+      <link>https://miftahulhadii.github.io/posts/2023-02-15-design-a-music-album-database-using-MySQL</link>
       <description>
 
 
@@ -38,14 +38,88 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   });
 &lt;/script&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hello and welcome to the MySQL personal project!&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img
+src="https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg"
+alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 1.&lt;/em&gt;&lt;/strong&gt; MySQL Database.&lt;/p&gt;
+&lt;/div&gt;
 &lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
 &lt;h2 id="design-a-database"&gt;Design a Database&lt;/h2&gt;
 &lt;h3 id="create-a-database"&gt;Create a database&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To begin, we must add and use a new database named
+&lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; to our MySQL schema.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;CREATE DATABASE record_company;
+USE record_company;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Because the &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database is
+already in use, it will appear in the schema with bold text.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 1.&lt;/em&gt;&lt;/strong&gt; New database named
+&lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Next, we add the &lt;strong&gt;&lt;code&gt;bands&lt;/code&gt;&lt;/strong&gt; table into our
+&lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database. This include
+three columns:
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;id&lt;/code&gt; to uniquely identify band data input,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;name&lt;/code&gt; for the band’s name, and&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;make &lt;code&gt;id&lt;/code&gt; our table identifier or Primary
+Key.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre class="sql"&gt;&lt;code&gt;CREATE TABLE bands (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;After that, we add an &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table
+including information on albums they have produced. This includes four
+columns:
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;id&lt;/code&gt; to uniquely identify albums data input,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;name&lt;/code&gt; for the album’s name,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;release_year&lt;/code&gt; for the album’s year released,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;band_id&lt;/code&gt; for uniquely identifying the band (&lt;em&gt;same
+as id on&lt;/em&gt; &lt;code&gt;bands&lt;/code&gt; &lt;em&gt;table&lt;/em&gt;), and&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make the &lt;code&gt;id&lt;/code&gt; of the
+&lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table the primary key.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Connect &lt;code&gt;band_id&lt;/code&gt; column from
+&lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table to the &lt;code&gt;id&lt;/code&gt; column
+from &lt;strong&gt;&lt;code&gt;bands&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;CREATE TABLE albums (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  release_year INT,
+  band_id INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (band_id) REFERENCES bands(id)
+);&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Lastly, add &lt;strong&gt;&lt;code&gt;songs&lt;/code&gt;&lt;/strong&gt; table including
+information on songs they have produced. This includes four columns:
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;id&lt;/code&gt; to uniquely identify songs data input,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;name&lt;/code&gt; for the songs’ name,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;length&lt;/code&gt; for the duration of the song,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;album_id&lt;/code&gt; for uniquely identifying the album
+(&lt;em&gt;same as id on&lt;/em&gt; &lt;code&gt;albums&lt;/code&gt; &lt;em&gt;table&lt;/em&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make the &lt;code&gt;id&lt;/code&gt; of the
+&lt;strong&gt;&lt;code&gt;songs&lt;/code&gt;&lt;/strong&gt; table the primary key.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Connect &lt;code&gt;album_id&lt;/code&gt; column from
+&lt;strong&gt;&lt;code&gt;songs&lt;/code&gt;&lt;/strong&gt; table to the &lt;code&gt;id&lt;/code&gt; column
+from &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="design-a-table"&gt;Design a table&lt;/h3&gt;
 &lt;h3 id="insert-the-value-in-the-column."&gt;Insert the value in the
 column.&lt;/h3&gt;
@@ -59,10 +133,10 @@ href="https://github.com/WebDevSimplified/Learn-SQL"&gt;GitHub&lt;/a&gt;]&lt;/p&
 Script&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>bc4ab80a8f0896b709410c929fb151bb</distill:md5>
+      <distill:md5>b969a050517d6cea4d333a8aaaf492a5</distill:md5>
       <category>SQL</category>
       <category>ETL</category>
-      <guid>https://miftahulhadii.github.io/posts/2023-02-15-analysis-of-music-albums-using-mysql</guid>
+      <guid>https://miftahulhadii.github.io/posts/2023-02-15-design-a-music-album-database-using-MySQL</guid>
       <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
       <media:content url="https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png" medium="image" type="image/png"/>
     </item>
@@ -414,7 +488,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -427,7 +501,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -445,7 +519,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file51441316d0e_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;

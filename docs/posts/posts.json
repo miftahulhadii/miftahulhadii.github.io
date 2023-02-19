@@ -1,8 +1,8 @@
 [
   {
-    "path": "posts/2023-02-15-analysis-of-music-albums-using-mysql/",
-    "title": "Analysis of Music Album using MySQL",
-    "description": "Using MySQL to perform a descriptive analysis on a database of music album.",
+    "path": "posts/2023-02-15-design-a-music-album-database-using-MySQL/",
+    "title": "Design a Music Album Database using MySQL",
+    "description": "Using MySQL to design a database and perform a descriptive analysis on music album database.",
     "author": [
       {
         "name": "Miftahul Hadi",
@@ -16,10 +16,10 @@
       "SQL",
       "ETL"
     ],
-    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nAnalysis\r\nAppendix\r\n\r\n\r\n\r\n\r\n\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nCreate a database\r\n\r\nCREATE TABLE bands (\r\n  id INT NOT NULL AUTO_INCREMENT,\r\n  name VARCHAR(255) NOT NULL,\r\n  PRIMARY KEY (id)\r\n);\r\n\r\nDesign a table\r\nInsert the value in the column.\r\nAnalysis\r\nAppendix\r\nWebDevSimplified [YouTube, GitHub]\r\nKaggle Full Script\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\nContents\r\nIntroduction\r\nPreparation\r\nDesign a Database\r\nAnalysis\r\nAppendix\r\n\r\n\r\n\r\n\r\n\r\nIntroduction\r\nHello and welcome to the MySQL personal project!\r\nFig. 1. MySQL Database.Preparation\r\nDesign a Database\r\nCreate a database\r\nTo begin, we must add and use a new database named record_company to our MySQL schema.\r\n\r\nCREATE DATABASE record_company;\r\nUSE record_company;\r\n\r\nBecause the record_company database is already in use, it will appear in the schema with bold text.\r\nFig. 1. New database named record_company.Next, we add the bands table into our record_company database. This include three columns:\r\nid to uniquely identify band data input,\r\nname for the band’s name, and\r\nmake id our table identifier or Primary Key.\r\n\r\n\r\nCREATE TABLE bands (\r\n  id INT NOT NULL AUTO_INCREMENT,\r\n  name VARCHAR(255) NOT NULL,\r\n  PRIMARY KEY (id)\r\n);\r\n\r\nAfter that, we add an albums table including information on albums they have produced. This includes four columns:\r\nid to uniquely identify albums data input,\r\nname for the album’s name,\r\nrelease_year for the album’s year released,\r\nband_id for uniquely identifying the band (same as id on bands table), and\r\nMake the id of the albums table the primary key.\r\nConnect band_id column from albums table to the id column from bands table.\r\n\r\n\r\nCREATE TABLE albums (\r\n  id INT NOT NULL AUTO_INCREMENT,\r\n  name VARCHAR(255) NOT NULL,\r\n  release_year INT,\r\n  band_id INT NOT NULL,\r\n  PRIMARY KEY (id),\r\n  FOREIGN KEY (band_id) REFERENCES bands(id)\r\n);\r\n\r\nLastly, add songs table including information on songs they have produced. This includes four columns:\r\nid to uniquely identify songs data input,\r\nname for the songs’ name,\r\nlength for the duration of the song,\r\nalbum_id for uniquely identifying the album (same as id on albums table).\r\nMake the id of the songs table the primary key.\r\nConnect album_id column from songs table to the id column from albums table.\r\n\r\nDesign a table\r\nInsert the value in the column.\r\nAnalysis\r\nAppendix\r\nWebDevSimplified [YouTube, GitHub]\r\nKaggle Full Script\r\n\r\n\r\n\r\n",
     "preview": "https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png",
-    "last_modified": "2023-02-15T21:12:05+07:00",
-    "input_file": "analysis-of-music-albums-using-mysql.knit.md"
+    "last_modified": "2023-02-19T12:52:35+07:00",
+    "input_file": "design-a-music-album-database-using-MySQL.knit.md"
   },
   {
     "path": "posts/2023-01-29-bike-share-analysis-using-r/",

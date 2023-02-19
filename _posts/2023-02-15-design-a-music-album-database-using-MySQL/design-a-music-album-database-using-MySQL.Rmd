@@ -1,0 +1,135 @@
+---
+title: "Design a Music Album Database using MySQL"
+description: |
+  Using MySQL to design a database and perform a descriptive analysis on music album database.
+preview: https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png
+author:
+  - name: Miftahul Hadi
+    url: {https://www.linkedin.com/in/miftahulhadii}
+date: 2023-02-15
+categories:
+  - SQL
+  - ETL
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    output_folding: show
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
+    toc_depth: 2
+    self_contained: true
+    highlight: tango
+    fig_caption: yes
+---
+
+```{css zoom-lib-src, echo = FALSE}
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+```
+
+```{js zoom-jquery, echo = FALSE}
+ $(document).ready(function() {
+    $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+```
+
+## Introduction
+
+Hello and welcome to the MySQL personal project!
+
+![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg)
+
+
+
+
+
+## Preparation
+
+## Design a Database
+
+### Create a database
+
+-   To begin, we must add and use a new database named **`record_company`** to our MySQL schema.
+
+```{sql STEP 1-1 - Create a record_company database, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+CREATE DATABASE record_company;
+USE record_company;
+```
+
+-   Because the **`record_company`** database is already in use, it will appear in the schema with bold text.
+
+![***Fig. 1.*** New database named **`record_company`**.](step-1-1_create-a-database.png)
+
+-   Next, we add the **`bands`** table into our **`record_company`** database. This include three columns:
+    -   `id` to uniquely identify band data input,
+
+    -   `name` for the band's name, and
+
+    -   make `id` our table identifier or Primary Key.
+
+```{sql STEP 1-2 - Create a bands table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+CREATE TABLE bands (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+```
+
+-   After that, we add an **`albums`** table including information on albums they have produced. This includes four columns:
+    -   `id` to uniquely identify albums data input,
+
+    -   `name` for the album's name,
+
+    -   `release_year` for the album's year released,
+
+    -   `band_id` for uniquely identifying the band (*same as id on* `bands` *table*), and
+
+    -   Make the `id` of the **`albums`** table the primary key.
+    
+    -   Connect `band_id` column from **`albums`** table to the `id` column from **`bands`** table.
+
+```{sql STEP 1-2 - Create a albums table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+CREATE TABLE albums (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  release_year INT,
+  band_id INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (band_id) REFERENCES bands(id)
+);
+```
+
+-   Lastly, add **`songs`** table including information on songs they have produced. This includes four columns:
+    -   `id` to uniquely identify songs data input,
+
+    -   `name` for the songs' name,
+
+    -   `length` for the duration of the song,
+
+    -   `album_id` for uniquely identifying the album (*same as id on* `albums` *table*).
+
+    -   Make the `id` of the **`songs`** table the primary key.
+    
+    -   Connect `album_id` column from **`songs`** table to the `id` column from **`albums`** table.
+
+### Design a table
+
+### Insert the value in the column.
+
+## Analysis
+
+## Appendix
+
+-   WebDevSimplified [[YouTube](https://www.youtube.com/@WebDevSimplified), [GitHub](https://github.com/WebDevSimplified/Learn-SQL)]
+
+-   [Kaggle Full Script](https://www.kaggle.com/miftahulhadii)
