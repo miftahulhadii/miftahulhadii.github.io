@@ -49,7 +49,7 @@ Hello and welcome to the MySQL personal project!
 
 ![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg){width="569"}
 
-In this post, I will design a database about music albums, bands, and songs. After database is created, I inserting a data on each table. Then, I conduct a descriptive analysis to get better understanding of the information.
+In this post, I will design a database about music albums, bands, and songs. After database is created, I inserting a data on each table. Then, I address some of the SQL Query problems to get better understanding of the information.
 
 ## Preparation
 
@@ -76,7 +76,7 @@ USE record_company;
 
 -   Because the **`record_company`** database is already in use, it will appear in the schema with bold text.
 
-![***Fig. 2.*** New database named **`record_company`**.](step-1-1_create-a-database.png){width="209"}
+![***Fig. 2.*** New database named **`record_company`**.](step-1-1_create-a-database.png){width="35%"}
 
 ### Design a table
 
@@ -144,13 +144,16 @@ CREATE TABLE albums (
 CREATE TABLE songs (
 	id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    length FLOAT NOT NULL, #float is number with decimal, INT isn't
+    length FLOAT NOT NULL,
     album_id INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 ```
 
+Because I already add three tables, it will appear in the schema like this.
+
+![***Fig. 3.*** A three tables appear in **`record_company`** database.](step-1-2_design-a-table.png){width="35%"}
 
 ### Insert the value in the table.
 
@@ -168,11 +171,46 @@ INSERT INTO bands(id,name) VALUES (7,'Dream Theater');
 
 Because the dataset has a large number of rows, I will include another table [in this file](https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql) thanks to [WebDevSimplified](https://www.youtube.com/@WebDevSimplified/about).
 
-## Analysis
+## SQL Query Problem
 
+In this section, I will use some of SQL Query to answer a few question. This will helps us to get better understanding of the dataset.
 
+### How many bands in this dataset?
 
+<details>
 
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-1 - How many bands?, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT bands.name AS 'Band Name'
+FROM bands;
+```
+
+</details>
+
+Here are all the bands that included in this dataset.
+
+![***Fig. 4.*** All the bands included.](step-4-1_how-many-band.png){width="35%"}
+
+### Which is the oldest album?
+
+### Which bands have released at least one album?
+
+### Which bands that have no album?
+
+### Longest album duration?
+
+### Update the album data with no release year
+
+### Insert my favourite band and their albums
+
+### Delete the band and album you added before
+
+### Average length of all songs
+
+### Which song on each album is the longest?
+
+### Get the number of songs for each band
 
 ## Appendix
 

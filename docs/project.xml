@@ -47,8 +47,8 @@ width="569" alt="" /&gt;
 &lt;/div&gt;
 &lt;p&gt;In this post, I will design a database about music albums, bands, and
 songs. After database is created, I inserting a data on each table.
-Then, I conduct a descriptive analysis to get better understanding of
-the information.&lt;/p&gt;
+Then, I address some of the SQL Query problems to get better
+understanding of the information.&lt;/p&gt;
 &lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
 &lt;h3 id="tools"&gt;Tools&lt;/h3&gt;
 &lt;p&gt;To make this project completed, I use SQL for cleaning and analysis.
@@ -82,7 +82,7 @@ USE record_company;&lt;/code&gt;&lt;/pre&gt;
 already in use, it will appear in the schema with bold text.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="figure"&gt;
-&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" width="209" alt="" /&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" style="width:35.0%" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 2.&lt;/em&gt;&lt;/strong&gt; New database named
 &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -153,11 +153,18 @@ from &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&g
 &lt;pre class="sql"&gt;&lt;code&gt;CREATE TABLE songs (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    length FLOAT NOT NULL, #float is number with decimal, INT isn&amp;#39;t
+    length FLOAT NOT NULL,
     album_id INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (album_id) REFERENCES albums(id)
 );&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because I already add three tables, it will appear in the schema like
+this.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-2_design-a-table.png" style="width:35.0%" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 3.&lt;/em&gt;&lt;/strong&gt; A three tables
+appear in &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database.&lt;/p&gt;
+&lt;/div&gt;
 &lt;h3 id="insert-the-value-in-the-table."&gt;Insert the value in the
 table.&lt;/h3&gt;
 &lt;p&gt;After designing a few tables in the database, I insert a number of
@@ -175,7 +182,42 @@ another table &lt;a
 href="https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql"&gt;in
 this file&lt;/a&gt; thanks to &lt;a
 href="https://www.youtube.com/@WebDevSimplified/about"&gt;WebDevSimplified&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h2 id="sql-query-problem"&gt;SQL Query Problem&lt;/h2&gt;
+&lt;p&gt;In this section, I will use some of SQL Query to answer a few
+question. This will helps us to get better understanding of the
+dataset.&lt;/p&gt;
+&lt;h3 id="how-many-bands-in-this-dataset"&gt;How many bands in this
+dataset?&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Query&lt;/b&gt;
+&lt;/summary&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;SELECT bands.name AS &amp;#39;Band Name&amp;#39;
+FROM bands;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;Here are all the bands that included in this dataset.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-1_how-many-band.png" style="width:35.0%" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 4.&lt;/em&gt;&lt;/strong&gt; All the bands
+included.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id="which-is-the-oldest-album"&gt;Which is the oldest album?&lt;/h3&gt;
+&lt;h3 id="which-bands-have-released-at-least-one-album"&gt;Which bands have
+released at least one album?&lt;/h3&gt;
+&lt;h3 id="which-bands-that-have-no-album"&gt;Which bands that have no
+album?&lt;/h3&gt;
+&lt;h3 id="longest-album-duration"&gt;Longest album duration?&lt;/h3&gt;
+&lt;h3 id="update-the-album-data-with-no-release-year"&gt;Update the album
+data with no release year&lt;/h3&gt;
+&lt;h3 id="insert-my-favourite-band-and-their-albums"&gt;Insert my favourite
+band and their albums&lt;/h3&gt;
+&lt;h3 id="delete-the-band-and-album-you-added-before"&gt;Delete the band and
+album you added before&lt;/h3&gt;
+&lt;h3 id="average-length-of-all-songs"&gt;Average length of all songs&lt;/h3&gt;
+&lt;h3 id="which-song-on-each-album-is-the-longest"&gt;Which song on each
+album is the longest?&lt;/h3&gt;
+&lt;h3 id="get-the-number-of-songs-for-each-band"&gt;Get the number of songs
+for each band&lt;/h3&gt;
 &lt;h2 id="appendix"&gt;Appendix&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;WebDevSimplified [&lt;a
@@ -540,7 +582,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -553,7 +595,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -571,7 +613,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
