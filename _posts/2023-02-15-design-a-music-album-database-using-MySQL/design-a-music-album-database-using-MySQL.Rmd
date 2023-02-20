@@ -1,7 +1,7 @@
 ---
-title: "Design a Music Album Database using MySQL"
+title: "Design a Music Database using MySQL"
 description: |
-  Using MySQL to design a database and perform a descriptive analysis on music album database.
+  Using MySQL to design a database and perform a descriptive analysis on music database.
 preview: https://linkoficial.com.br/wp-content/uploads/2017/10/mysql-logo.png
 author:
   - name: Miftahul Hadi
@@ -47,19 +47,27 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 Hello and welcome to the MySQL personal project!
 
-![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg)
+![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg){width="569"}
 
-
-
-
+In this post, I will design a database about music albums, bands, and songs. After database is created, I inserting a data on each table. Then, I conduct a descriptive analysis to get better understanding of the information.
 
 ## Preparation
+
+### Tools
+
+To make this project completed, I use SQL for cleaning and analysis. There are many SQL editors where you can design and manipulate a database. For this particular project, I used [MySQL Workbench](https://www.mysql.com/products/workbench/).
+
+### Dataset
+
+The dataset I used in this project is open-source data without any PII (Personally Identifiable Information). I obtain from my favorite web development skills YouTuber, [WebDevSimplified](https://www.youtube.com/@WebDevSimplified/about), and you can watch all of their videos hereThis music dataset contains
+
+[This music dataset](https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql) contains detailed information about bands, albums, and songs. This includes three tables that have more than 180 rows. Because the value is being inserted into the table, this dataset is ideal for designing a database from scratch.
 
 ## Design a Database
 
 ### Create a database
 
--   To begin, we must add and use a new database named **`record_company`** to our MySQL schema.
+-   To begin, I must add and use a new database named **`record_company`** to our MySQL schema.
 
 ```{sql STEP 1-1 - Create a record_company database, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 CREATE DATABASE record_company;
@@ -68,16 +76,22 @@ USE record_company;
 
 -   Because the **`record_company`** database is already in use, it will appear in the schema with bold text.
 
-![***Fig. 1.*** New database named **`record_company`**.](step-1-1_create-a-database.png)
+![***Fig. 2.*** New database named **`record_company`**.](step-1-1_create-a-database.png){width="209"}
 
--   Next, we add the **`bands`** table into our **`record_company`** database. This include three columns:
+### Design a table
+
+After creating a database named `record_company`, we try to add a few tables including `bands`, `albums`, and `songs` tables. Here are the steps:
+
+#### Bands table
+
+-   Next, I add the **`bands`** table to our **`record_company`** database. This includes three columns:
     -   `id` to uniquely identify band data input,
 
     -   `name` for the band's name, and
 
     -   make `id` our table identifier or Primary Key.
 
-```{sql STEP 1-2 - Create a bands table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{sql STEP 2-1 - Create a bands table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 CREATE TABLE bands (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -85,7 +99,9 @@ CREATE TABLE bands (
 );
 ```
 
--   After that, we add an **`albums`** table including information on albums they have produced. This includes four columns:
+#### Albums table
+
+-   After that, I add an **`albums`** table including information on albums they have produced. This includes four columns:
     -   `id` to uniquely identify albums data input,
 
     -   `name` for the album's name,
@@ -95,10 +111,10 @@ CREATE TABLE bands (
     -   `band_id` for uniquely identifying the band (*same as id on* `bands` *table*), and
 
     -   Make the `id` of the **`albums`** table the primary key.
-    
+
     -   Connect `band_id` column from **`albums`** table to the `id` column from **`bands`** table.
 
-```{sql STEP 1-2 - Create a albums table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{sql STEP 2-2 - Create an albums table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 CREATE TABLE albums (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -108,6 +124,8 @@ CREATE TABLE albums (
   FOREIGN KEY (band_id) REFERENCES bands(id)
 );
 ```
+
+#### Songs table
 
 -   Lastly, add **`songs`** table including information on songs they have produced. This includes four columns:
     -   `id` to uniquely identify songs data input,
@@ -119,14 +137,42 @@ CREATE TABLE albums (
     -   `album_id` for uniquely identifying the album (*same as id on* `albums` *table*).
 
     -   Make the `id` of the **`songs`** table the primary key.
-    
+
     -   Connect `album_id` column from **`songs`** table to the `id` column from **`albums`** table.
 
-### Design a table
+```{sql STEP 2-3 - Create a songs table, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+CREATE TABLE songs (
+	id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    length FLOAT NOT NULL, #float is number with decimal, INT isn't
+    album_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (album_id) REFERENCES albums(id)
+);
+```
 
-### Insert the value in the column.
+
+### Insert the value in the table.
+
+After designing a few tables in the database, I insert a number of values into the table. Here, I will use an `INSERT INTO` function into `bands` table.
+
+```{sql STEP 3-1 - Inserting a bands value, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+INSERT INTO bands(id,name) VALUES (1,'Seventh Wonder');
+INSERT INTO bands(id,name) VALUES (2,'Metallica');
+INSERT INTO bands(id,name) VALUES (3,'The Ocean');
+INSERT INTO bands(id,name) VALUES (4,'Within Temptation');
+INSERT INTO bands(id,name) VALUES (5,'Death');
+INSERT INTO bands(id,name) VALUES (6,'Van Canto');
+INSERT INTO bands(id,name) VALUES (7,'Dream Theater');
+```
+
+Because the dataset has a large number of rows, I will include another table [in this file](https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql) thanks to [WebDevSimplified](https://www.youtube.com/@WebDevSimplified/about).
 
 ## Analysis
+
+
+
+
 
 ## Appendix
 

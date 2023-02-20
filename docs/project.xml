@@ -14,7 +14,7 @@
     <generator>Distill</generator>
     <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Design a Music Album Database using MySQL</title>
+      <title>Design a Music Database using MySQL</title>
       <dc:creator>Miftahul Hadi</dc:creator>
       <link>https://miftahulhadii.github.io/posts/2023-02-15-design-a-music-album-database-using-MySQL</link>
       <description>
@@ -42,14 +42,37 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 &lt;div class="figure"&gt;
 &lt;img
 src="https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg"
-alt="" /&gt;
+width="569" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 1.&lt;/em&gt;&lt;/strong&gt; MySQL Database.&lt;/p&gt;
 &lt;/div&gt;
+&lt;p&gt;In this post, I will design a database about music albums, bands, and
+songs. After database is created, I inserting a data on each table.
+Then, I conduct a descriptive analysis to get better understanding of
+the information.&lt;/p&gt;
 &lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;h3 id="tools"&gt;Tools&lt;/h3&gt;
+&lt;p&gt;To make this project completed, I use SQL for cleaning and analysis.
+There are many SQL editors where you can design and manipulate a
+database. For this particular project, I used &lt;a
+href="https://www.mysql.com/products/workbench/"&gt;MySQL
+Workbench&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="dataset"&gt;Dataset&lt;/h3&gt;
+&lt;p&gt;The dataset I used in this project is open-source data without any
+PII (Personally Identifiable Information). I obtain from my favorite web
+development skills YouTuber, &lt;a
+href="https://www.youtube.com/@WebDevSimplified/about"&gt;WebDevSimplified&lt;/a&gt;,
+and you can watch all of their videos hereThis music dataset
+contains&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql"&gt;This
+music dataset&lt;/a&gt; contains detailed information about bands, albums, and
+songs. This includes three tables that have more than 180 rows. Because
+the value is being inserted into the table, this dataset is ideal for
+designing a database from scratch.&lt;/p&gt;
 &lt;h2 id="design-a-database"&gt;Design a Database&lt;/h2&gt;
 &lt;h3 id="create-a-database"&gt;Create a database&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;To begin, we must add and use a new database named
+&lt;li&gt;To begin, I must add and use a new database named
 &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; to our MySQL schema.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class="sql"&gt;&lt;code&gt;CREATE DATABASE record_company;
@@ -59,13 +82,18 @@ USE record_company;&lt;/code&gt;&lt;/pre&gt;
 already in use, it will appear in the schema with bold text.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="figure"&gt;
-&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" alt="" /&gt;
-&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 1.&lt;/em&gt;&lt;/strong&gt; New database named
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" width="209" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 2.&lt;/em&gt;&lt;/strong&gt; New database named
 &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
+&lt;h3 id="design-a-table"&gt;Design a table&lt;/h3&gt;
+&lt;p&gt;After creating a database named &lt;code&gt;record_company&lt;/code&gt;, we try
+to add a few tables including &lt;code&gt;bands&lt;/code&gt;, &lt;code&gt;albums&lt;/code&gt;,
+and &lt;code&gt;songs&lt;/code&gt; tables. Here are the steps:&lt;/p&gt;
+&lt;h4 id="bands-table"&gt;Bands table&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Next, we add the &lt;strong&gt;&lt;code&gt;bands&lt;/code&gt;&lt;/strong&gt; table into our
-&lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database. This include
+&lt;li&gt;Next, I add the &lt;strong&gt;&lt;code&gt;bands&lt;/code&gt;&lt;/strong&gt; table to our
+&lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database. This includes
 three columns:
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;id&lt;/code&gt; to uniquely identify band data input,&lt;/p&gt;&lt;/li&gt;
@@ -79,8 +107,9 @@ Key.&lt;/p&gt;&lt;/li&gt;
   name VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="albums-table"&gt;Albums table&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;After that, we add an &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table
+&lt;li&gt;After that, I add an &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table
 including information on albums they have produced. This includes four
 columns:
 &lt;ul&gt;
@@ -104,6 +133,7 @@ from &lt;strong&gt;&lt;code&gt;bands&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&gt
   PRIMARY KEY (id),
   FOREIGN KEY (band_id) REFERENCES bands(id)
 );&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="songs-table"&gt;Songs table&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Lastly, add &lt;strong&gt;&lt;code&gt;songs&lt;/code&gt;&lt;/strong&gt; table including
 information on songs they have produced. This includes four columns:
@@ -120,9 +150,31 @@ information on songs they have produced. This includes four columns:
 from &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="design-a-table"&gt;Design a table&lt;/h3&gt;
-&lt;h3 id="insert-the-value-in-the-column."&gt;Insert the value in the
-column.&lt;/h3&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;CREATE TABLE songs (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    length FLOAT NOT NULL, #float is number with decimal, INT isn&amp;#39;t
+    album_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (album_id) REFERENCES albums(id)
+);&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="insert-the-value-in-the-table."&gt;Insert the value in the
+table.&lt;/h3&gt;
+&lt;p&gt;After designing a few tables in the database, I insert a number of
+values into the table. Here, I will use an &lt;code&gt;INSERT INTO&lt;/code&gt;
+function into &lt;code&gt;bands&lt;/code&gt; table.&lt;/p&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;INSERT INTO bands(id,name) VALUES (1,&amp;#39;Seventh Wonder&amp;#39;);
+INSERT INTO bands(id,name) VALUES (2,&amp;#39;Metallica&amp;#39;);
+INSERT INTO bands(id,name) VALUES (3,&amp;#39;The Ocean&amp;#39;);
+INSERT INTO bands(id,name) VALUES (4,&amp;#39;Within Temptation&amp;#39;);
+INSERT INTO bands(id,name) VALUES (5,&amp;#39;Death&amp;#39;);
+INSERT INTO bands(id,name) VALUES (6,&amp;#39;Van Canto&amp;#39;);
+INSERT INTO bands(id,name) VALUES (7,&amp;#39;Dream Theater&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because the dataset has a large number of rows, I will include
+another table &lt;a
+href="https://github.com/WebDevSimplified/Learn-SQL/blob/master/data.sql"&gt;in
+this file&lt;/a&gt; thanks to &lt;a
+href="https://www.youtube.com/@WebDevSimplified/about"&gt;WebDevSimplified&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
 &lt;h2 id="appendix"&gt;Appendix&lt;/h2&gt;
 &lt;ul&gt;
@@ -488,7 +540,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -501,7 +553,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -519,7 +571,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb306f8b2daa_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file6a407c864485_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
