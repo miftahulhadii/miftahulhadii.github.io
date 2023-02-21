@@ -39,17 +39,21 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 &lt;/script&gt;
 &lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hello and welcome to the MySQL personal project!&lt;/p&gt;
+&lt;center&gt;
 &lt;div class="figure"&gt;
 &lt;img
 src="https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg"
 width="569" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 1.&lt;/em&gt;&lt;/strong&gt; MySQL Database.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/center&gt;
 &lt;p&gt;In this post, I will design a database about music albums, bands, and
 songs. After database is created, I inserting a data on each table.
 Then, I address some of the SQL Query problems to get better
 understanding of the information.&lt;/p&gt;
 &lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Here is the preparation required to help finish the MySQL
+project.&lt;/p&gt;
 &lt;h3 id="tools"&gt;Tools&lt;/h3&gt;
 &lt;p&gt;To make this project completed, I use SQL for cleaning and analysis.
 There are many SQL editors where you can design and manipulate a
@@ -70,6 +74,8 @@ songs. This includes three tables that have more than 180 rows. Because
 the value is being inserted into the table, this dataset is ideal for
 designing a database from scratch.&lt;/p&gt;
 &lt;h2 id="design-a-database"&gt;Design a Database&lt;/h2&gt;
+&lt;p&gt;In this section, I will explain how to design a database by inserting
+a few tables and add a value in each column.&lt;/p&gt;
 &lt;h3 id="create-a-database"&gt;Create a database&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;To begin, I must add and use a new database named
@@ -81,11 +87,13 @@ USE record_company;&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Because the &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database is
 already in use, it will appear in the schema with bold text.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;center&gt;
 &lt;div class="figure"&gt;
 &lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-1_create-a-database.png" style="width:35.0%" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 2.&lt;/em&gt;&lt;/strong&gt; New database named
 &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="design-a-table"&gt;Design a table&lt;/h3&gt;
 &lt;p&gt;After creating a database named &lt;code&gt;record_company&lt;/code&gt;, we try
 to add a few tables including &lt;code&gt;bands&lt;/code&gt;, &lt;code&gt;albums&lt;/code&gt;,
@@ -160,11 +168,13 @@ from &lt;strong&gt;&lt;code&gt;albums&lt;/code&gt;&lt;/strong&gt; table.&lt;/p&g
 );&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Because I already add three tables, it will appear in the schema like
 this.&lt;/p&gt;
+&lt;center&gt;
 &lt;div class="figure"&gt;
 &lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-1-2_design-a-table.png" style="width:35.0%" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 3.&lt;/em&gt;&lt;/strong&gt; A three tables
 appear in &lt;strong&gt;&lt;code&gt;record_company&lt;/code&gt;&lt;/strong&gt; database.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="insert-the-value-in-the-table."&gt;Insert the value in the
 table.&lt;/h3&gt;
 &lt;p&gt;After designing a few tables in the database, I insert a number of
@@ -196,17 +206,90 @@ dataset?&lt;/h3&gt;
 FROM bands;&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
 &lt;p&gt;Here are all the bands that included in this dataset.&lt;/p&gt;
+&lt;center&gt;
 &lt;div class="figure"&gt;
 &lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-1_how-many-band.png" style="width:35.0%" alt="" /&gt;
 &lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 4.&lt;/em&gt;&lt;/strong&gt; All the bands
 included.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="which-is-the-oldest-album"&gt;Which is the oldest album?&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Query&lt;/b&gt;
+&lt;/summary&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;SELECT name AS &amp;#39;Album Name&amp;#39;, release_year FROM albums
+WHERE release_year IS NOT NULL
+ORDER BY release_year
+LIMIT 1;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;Here is the oldest album in this dataset.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-2_oldest-album.png" style="width:50.0%" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 5.&lt;/em&gt;&lt;/strong&gt; The oldest
+album.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="which-bands-have-released-at-least-one-album"&gt;Which bands have
 released at least one album?&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Query&lt;/b&gt;
+&lt;/summary&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;SELECT DISTINCT bands.name AS &amp;#39;Band Name&amp;#39; FROM bands
+RIGHT JOIN albums ON albums.band_id = bands.id;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;Here are the list of all bands that have released at least one album
+in this dataset.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-3_bands-one-album.png" style="width:40.0%" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 6.&lt;/em&gt;&lt;/strong&gt; The list of bands
+that have at least one album.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="which-bands-that-have-no-album"&gt;Which bands that have no
 album?&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Query&lt;/b&gt;
+&lt;/summary&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;SELECT b.name AS &amp;#39;Band Name&amp;#39; FROM bands AS b
+LEFT JOIN albums AS a ON a.band_id = b.id
+GROUP BY a.band_id
+HAVING COUNT(a.id) = 0;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;Here are the list of all bands that have no album in this
+dataset.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-4_bands-no-album.png" style="width:40.0%" alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 7.&lt;/em&gt;&lt;/strong&gt; The list of bands
+that have no album.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="longest-album-duration"&gt;Longest album duration?&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;
+&lt;b&gt;Query&lt;/b&gt;
+&lt;/summary&gt;
+&lt;pre class="sql"&gt;&lt;code&gt;SELECT a.name &amp;#39;Album Name&amp;#39;, a.release_year AS &amp;#39;Release Year&amp;#39;, SUM(s.length) AS &amp;#39;Duration&amp;#39; FROM songs AS s
+LEFT JOIN albums AS a ON s.album_id = a.id
+WHERE a.release_year IS NOT NULL
+GROUP BY a.id
+ORDER BY SUM(s.length) DESC
+LIMIT 1;&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p&gt;Here are the band with the longest album duration.&lt;/p&gt;
+&lt;center&gt;
+&lt;div class="figure"&gt;
+&lt;img src="https://miftahulhadii.github.io//posts/2023-02-15-design-a-music-album-database-using-MySQLstep-4-5_bands-longest-album.png" style="width:60.0%"
+alt="" /&gt;
+&lt;p class="caption"&gt;&lt;strong&gt;&lt;em&gt;Fig. 8.&lt;/em&gt;&lt;/strong&gt; The bands with the
+longest album.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
 &lt;h3 id="update-the-album-data-with-no-release-year"&gt;Update the album
 data with no release year&lt;/h3&gt;
 &lt;h3 id="insert-my-favourite-band-and-their-albums"&gt;Insert my favourite
@@ -582,7 +665,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file292046b825ae_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -595,7 +678,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file292046b825ae_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -613,7 +696,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="fileb50b25688_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file292046b825ae_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;

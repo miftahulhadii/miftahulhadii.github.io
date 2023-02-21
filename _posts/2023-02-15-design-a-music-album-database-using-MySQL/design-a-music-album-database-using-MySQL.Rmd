@@ -47,11 +47,17 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 Hello and welcome to the MySQL personal project!
 
+<center>
+
 ![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg){width="569"}
+
+</center>
 
 In this post, I will design a database about music albums, bands, and songs. After database is created, I inserting a data on each table. Then, I address some of the SQL Query problems to get better understanding of the information.
 
 ## Preparation
+
+Here is the preparation required to help finish the MySQL project.
 
 ### Tools
 
@@ -65,6 +71,8 @@ The dataset I used in this project is open-source data without any PII (Personal
 
 ## Design a Database
 
+In this section, I will explain how to design a database by inserting a few tables and add a value in each column.
+
 ### Create a database
 
 -   To begin, I must add and use a new database named **`record_company`** to our MySQL schema.
@@ -76,7 +84,11 @@ USE record_company;
 
 -   Because the **`record_company`** database is already in use, it will appear in the schema with bold text.
 
+<center>
+
 ![***Fig. 2.*** New database named **`record_company`**.](step-1-1_create-a-database.png){width="35%"}
+
+</center>
 
 ### Design a table
 
@@ -153,7 +165,11 @@ CREATE TABLE songs (
 
 Because I already add three tables, it will appear in the schema like this.
 
+<center>
+
 ![***Fig. 3.*** A three tables appear in **`record_company`** database.](step-1-2_design-a-table.png){width="35%"}
+
+</center>
 
 ### Insert the value in the table.
 
@@ -190,17 +206,127 @@ FROM bands;
 
 Here are all the bands that included in this dataset.
 
+<center>
+
 ![***Fig. 4.*** All the bands included.](step-4-1_how-many-band.png){width="35%"}
+
+</center>
 
 ### Which is the oldest album?
 
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-2 - Oldest album?, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT name AS 'Album Name', release_year FROM albums
+WHERE release_year IS NOT NULL
+ORDER BY release_year
+LIMIT 1;
+```
+
+</details>
+
+Here is the oldest album in this dataset.
+
+<center>
+
+![***Fig. 5.*** The oldest album.](step-4-2_oldest-album.png){width="50%"}
+
+</center>
+
 ### Which bands have released at least one album?
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-3 - Band that have at least one album?, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT DISTINCT bands.name AS 'Band Name' FROM bands
+RIGHT JOIN albums ON albums.band_id = bands.id;
+```
+
+</details>
+
+Here are the list of all bands that have released at least one album in this dataset.
+
+<center>
+
+![***Fig. 6.*** The list of bands that have at least one album.](step-4-3_bands-one-album.png){width="40%"}
+
+</center>
+
 
 ### Which bands that have no album?
 
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-4 - Band that have no album?, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT b.name AS 'Band Name' FROM bands AS b
+LEFT JOIN albums AS a ON a.band_id = b.id
+GROUP BY a.band_id
+HAVING COUNT(a.id) = 0;
+```
+
+</details>
+
+Here are the list of all bands that have no album in this dataset.
+
+<center>
+
+![***Fig. 7.*** The list of bands that have no album.](step-4-4_bands-no-album.png){width="40%"}
+
+</center>
+
 ### Longest album duration?
 
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-5 - Band with the longest album duration, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT a.name 'Album Name', a.release_year AS 'Release Year', SUM(s.length) AS 'Duration' FROM songs AS s
+LEFT JOIN albums AS a ON s.album_id = a.id
+WHERE a.release_year IS NOT NULL
+GROUP BY a.id
+ORDER BY SUM(s.length) DESC
+LIMIT 1;
+```
+
+</details>
+
+Here are the band with the longest album duration.
+
+<center>
+
+![***Fig. 8.*** The bands with the longest album.](step-4-5_bands-longest-album.png){width="60%"}
+
+</center>
+
 ### Update the album data with no release year
+
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-6 - Update the album data with no release year, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```
+
+</details>
+
+Here are the steps to updating the album data with no release year.
+
+<center>
+
+![***Fig. 9.*** The steps to update a data.](step-4-6_update-album-year.png){width="60%"}
+
+</center>
+
 
 ### Insert my favourite band and their albums
 
