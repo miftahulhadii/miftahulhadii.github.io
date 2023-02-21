@@ -47,11 +47,7 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 
 Hello and welcome to the MySQL personal project!
 
-<center>
-
-![***Fig. 1.*** MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg){width="569"}
-
-</center>
+<center>![Fig. 1. MySQL Database.](https://ubiq.co/database-blog/wp-content/uploads/2020/10/top-5-mysql-gui-tools.jpg){width="569"}</center>
 
 In this post, I will design a database about music albums, bands, and songs. After database is created, I inserting a data on each table. Then, I address some of the SQL Query problems to get better understanding of the information.
 
@@ -75,7 +71,7 @@ In this section, I will explain how to design a database by inserting a few tabl
 
 ### Create a database
 
--   To begin, I must add and use a new database named **`record_company`** to our MySQL schema.
+-   To begin, I add and use a new database named **`record_company`** to our MySQL schema.
 
 ```{sql STEP 1-1 - Create a record_company database, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 CREATE DATABASE record_company;
@@ -84,11 +80,7 @@ USE record_company;
 
 -   Because the **`record_company`** database is already in use, it will appear in the schema with bold text.
 
-<center>
-
-![***Fig. 2.*** New database named **`record_company`**.](step-1-1_create-a-database.png){width="35%"}
-
-</center>
+<center>![Fig. 2. New database named record_company.](step-1-1_create-a-database.png){width="35%"}</center>
 
 ### Design a table
 
@@ -165,11 +157,7 @@ CREATE TABLE songs (
 
 Because I already add three tables, it will appear in the schema like this.
 
-<center>
-
-![***Fig. 3.*** A three tables appear in **`record_company`** database.](step-1-2_design-a-table.png){width="35%"}
-
-</center>
+<center>![Fig. 3. A three tables appear in record_company database.](step-1-2_design-a-table.png){width="35%"}</center>
 
 ### Insert the value in the table.
 
@@ -206,11 +194,7 @@ FROM bands;
 
 Here are all the bands that included in this dataset.
 
-<center>
-
-![***Fig. 4.*** All the bands included.](step-4-1_how-many-band.png){width="35%"}
-
-</center>
+<center>![Fig. 4. All the bands included.](step-4-1_how-many-band.png){width="35%"}</center>
 
 ### Which is the oldest album?
 
@@ -229,11 +213,7 @@ LIMIT 1;
 
 Here is the oldest album in this dataset.
 
-<center>
-
-![***Fig. 5.*** The oldest album.](step-4-2_oldest-album.png){width="50%"}
-
-</center>
+<center>![Fig. 5. The oldest album.](step-4-2_oldest-album.png){width="30%"}</center>
 
 ### Which bands have released at least one album?
 
@@ -250,12 +230,7 @@ RIGHT JOIN albums ON albums.band_id = bands.id;
 
 Here are the list of all bands that have released at least one album in this dataset.
 
-<center>
-
-![***Fig. 6.*** The list of bands that have at least one album.](step-4-3_bands-one-album.png){width="40%"}
-
-</center>
-
+<center>![Fig. 6. The list of bands that have at least one album.](step-4-3_bands-one-album.png){width="30%"}</center>
 
 ### Which bands that have no album?
 
@@ -274,14 +249,9 @@ HAVING COUNT(a.id) = 0;
 
 Here are the list of all bands that have no album in this dataset.
 
-<center>
-
-![***Fig. 7.*** The list of bands that have no album.](step-4-4_bands-no-album.png){width="40%"}
-
-</center>
+<center>![Fig. 7. The list of bands that have no album.](step-4-4_bands-no-album.png){width="30%"}</center>
 
 ### Longest album duration?
-
 
 <details>
 
@@ -300,43 +270,150 @@ LIMIT 1;
 
 Here are the band with the longest album duration.
 
-<center>
-
-![***Fig. 8.*** The bands with the longest album.](step-4-5_bands-longest-album.png){width="60%"}
-
-</center>
+<center>![Fig. 8. The bands with the longest album.](step-4-5_bands-longest-album.png){width="30%"}</center>
 
 ### Update the album data with no release year
 
+Here are the steps to updating the album data with no release year:
+
+-   First, look for albums that have no release year.
 
 <details>
 
 <summary><b>Query</b></summary>
 
-```{sql STEP 4-6 - Update the album data with no release year, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
-
+```{sql STEP 4-6.1 - Update the album data with no release year, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT name, release_year FROM albums
+WHERE release_year IS NULL;
 ```
 
 </details>
 
-Here are the steps to updating the album data with no release year.
+<center>![Fig. 9. Check albums with its release year.](step-4-6_update-album-year-1.png){width="30%"}</center>
 
-<center>
+-   There's an albums with no release year (null value), update the value to 1982.
 
-![***Fig. 9.*** The steps to update a data.](step-4-6_update-album-year.png){width="60%"}
+<details>
 
-</center>
+<summary><b>Query</b></summary>
 
+```{sql STEP 4-6.2 - Update the album data with no release year, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+UPDATE albums
+SET release_year = 1982
+WHERE release_year IS NULL;
+```
 
-### Insert my favourite band and their albums
+</details>
 
-### Delete the band and album you added before
+-   Re-check again the value that has been updated.
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-6.3 - Update the album data with no release year, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT name, release_year FROM albums
+WHERE release_year IS NULL;
+```
+
+</details>
+
+<center>![Fig. 10. Update an albums with no release year.](step-4-6_update-album-year-2.png){width="30%"}</center>
+
+-   Because there is **no null or empty value** in the `release_year` column, the result will be empty.
+
+### Delete the album you updated before
+
+Here are the steps to updating the album data with no release year:
+
+-   First, look for albums that have '1982' in release_year column.
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-7.1 - Check albums that have 1982 in release_year column, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT id, name, release_year FROM albums
+WHERE release_year = 1982;
+```
+
+</details>
+
+-   There is an album that has previously been updated; delete it with its album name using `id` column.
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-7.2 - Delete updated albums with its album name, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+DELETE FROM albums
+WHERE id = 4;
+```
+
+</details>
+
+-   Re-check again the value that has been deleted.
+
+-   If there's any problem with deleting the value, go refer to [this discussion](https://findnerd.com/list/view/ERROR-1451-23000-Cannot-delete-or-update-a-parent-row-a-foreign-key-constraint/1133/).
 
 ### Average length of all songs
 
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-8 - Average songs duration, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT AVG(length) AS 'Average Song Duration (in min)' 
+FROM songs;
+```
+
+</details>
+
+Here are the average duration of all song.
+
+<center>![Fig. 11. The duration of all songs.](step-4-7_average-all-songs.png){width="30%"}</center>
+
 ### Which song on each album is the longest?
 
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-9 - Longest songs each album, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT a.name AS 'Album Name', s.name AS 'Song Name', a.release_year AS 'Release Year', MAX(s.length) AS 'Duration' FROM albums AS a
+INNER JOIN songs as s ON a.id = s.album_id
+GROUP BY a.id;
+```
+
+</details>
+
+Here are the longest song of each album with its release year.
+
+<center>![Fig. 12. The longest songs of each album.](step-4-8_longest-songs-each-album.png){width="60%"}</center>
+
 ### Get the number of songs for each band
+
+<details>
+
+<summary><b>Query</b></summary>
+
+```{sql STEP 4-10 - Total songs each bands, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+SELECT b.name AS 'Band Name', COUNT(s.id) AS 'Number of Songs' 
+FROM bands AS b
+JOIN albums AS a ON a.band_id = b.id
+JOIN songs AS s ON s.album_id = a.id
+GROUP BY b.name;
+```
+
+</details>
+
+Here are the total songs counted for each band.
+
+<center>
+
+![Fig. 13. Total songs of each band.](step-4-9_total-songs-each-band.png){width="40%"}
+
+</center>
 
 ## Appendix
 
