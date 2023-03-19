@@ -326,7 +326,7 @@ WHERE release_year IS NULL;
 
 Here are the steps to updating the album data with no release year:
 
--   First, look for albums that have '1982' in release_year column.
+-   First, look for albums that have '1982' in `release_year` column.
 
 <details>
 

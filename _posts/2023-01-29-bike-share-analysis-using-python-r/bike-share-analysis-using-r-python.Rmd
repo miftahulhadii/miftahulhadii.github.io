@@ -1,5 +1,5 @@
 ---
-title: "Bike Share Marketing Campaigns Analysis using R"
+title: "Bike Share Marketing Campaigns Analysis using R or Python"
 description: |
  Investigate a bike-share company's marketing campaigns to create a new one that is more profitable for the company. 
 preview: https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/image1_hH9B4gs.jpg
@@ -7,10 +7,11 @@ author:
   - name: Miftahul Hadi
 date: Jan 29, 2023
 categories:
-  - R
   - ETL
   - Marketing Analysis
   - Data Visualization
+  - R
+  - Python
 output:
   distill::distill_article:
     toc: true
@@ -43,6 +44,10 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
     });
   });
 ```
+
+**🧾Information 🧾**
+
+For presentable analysis and script code in R & Python, click [Appendix]
 
 ## Introduction
 
@@ -481,6 +486,10 @@ Run the program on weekly basis to evaluate which pricing plans are working and 
 
 -   Presentable data analysis → [PPT](https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p)
 
--   Data Analysis Process in R scripts → [R Code](https://www.kaggle.com/code/miftahulhadii/2022-bike-share-analysis-case-study)
+-   Data Analysis Process in:
+
+-   R scripts → [R Code](https://github.com/miftahulhadii/kaggle-r/blob/main/bike-share-analysis-using-r.rmd)
+
+-   Python scripts → [Python Code](https://github.com/miftahulhadii/kaggle-python/blob/main/bike-share-analysis-using-python.ipynb)
 
 -   [Google Data Analytics Coursera](https://www.coursera.org/professional-certificates/google-data-analytics)
