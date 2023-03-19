@@ -375,7 +375,7 @@ rides.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file30ac1d2e3280_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file5c2428a353a6_files/figure-html/STEP%205%20-%20Number%20of%20rides%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;number-of-ride.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -388,7 +388,7 @@ week.&lt;/li&gt;
        x = &amp;quot;&amp;quot;, y = &amp;quot;Average Ride Length&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in second)&amp;lt;/span&amp;gt;&amp;quot;, 
        fill = &amp;quot;Membership Type&amp;quot;)+
   theme(axis.title.y = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file30ac1d2e3280_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file5c2428a353a6_files/figure-html/STEP%205%20-%20Average%20ride%20viz-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the data viz in .png format
 ggsave(filename = &amp;quot;avg-length.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -406,7 +406,7 @@ highest_day_nor &amp;lt;- membertype_per_day %&amp;gt;%
     labs(title = &amp;quot;Number of Rides Per Day by Casual Riders&amp;quot;,
         x = &amp;quot;Number of Rides&amp;lt;br&amp;gt;&amp;lt;span style = &amp;#39;font-size:8pt&amp;#39;&amp;gt;(in thousand)&amp;lt;/span&amp;gt;&amp;quot;, y = &amp;quot;&amp;quot;)+
     theme(axis.title.x = ggtext::element_markdown())&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file30ac1d2e3280_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file5c2428a353a6_files/figure-html/STEP%205%20-%20Number%20of%20rides%20by%20casual-1.png" width="672" /&gt;&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#save the graph  
 ggsave(filename = &amp;quot;high-nor-day.png&amp;quot;, width = 6.86, height = 4.11, dpi=300)&lt;/code&gt;&lt;/pre&gt;
 &lt;/details&gt;
@@ -559,13 +559,15 @@ etc.)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Presentable data analysis → &lt;a
 href="https://docs.google.com/presentation/d/1wpt7qPzR-BEXo2--5i8QVYMetcrwlUB80-9rKWjD6qk/edit#slide=id.p"&gt;PPT&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Data Analysis Process in:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Data Analysis Process in:&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;R scripts → &lt;a
 href="https://github.com/miftahulhadii/kaggle-r/blob/main/bike-share-analysis-using-r.rmd"&gt;R
 Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Python scripts → &lt;a
 href="https://github.com/miftahulhadii/kaggle-python/blob/main/bike-share-analysis-using-python.ipynb"&gt;Python
 Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a
 href="https://www.coursera.org/professional-certificates/google-data-analytics"&gt;Google
 Data Analytics Coursera&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;

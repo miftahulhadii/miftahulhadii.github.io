@@ -488,8 +488,8 @@ Run the program on weekly basis to evaluate which pricing plans are working and 
 
 -   Data Analysis Process in:
 
--   R scripts → [R Code](https://github.com/miftahulhadii/kaggle-r/blob/main/bike-share-analysis-using-r.rmd)
+    -   R scripts → [R Code](https://github.com/miftahulhadii/kaggle-r/blob/main/bike-share-analysis-using-r.rmd)
 
--   Python scripts → [Python Code](https://github.com/miftahulhadii/kaggle-python/blob/main/bike-share-analysis-using-python.ipynb)
+    -   Python scripts → [Python Code](https://github.com/miftahulhadii/kaggle-python/blob/main/bike-share-analysis-using-python.ipynb)
 
 -   [Google Data Analytics Coursera](https://www.coursera.org/professional-certificates/google-data-analytics)
