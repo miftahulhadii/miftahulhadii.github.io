@@ -44,6 +44,7 @@ output:
     includes:
       in_header:
         - assets/giscus.html
+        - _includes/head.html
       after_body: assets/footer.html
       
 cookie_consent:
