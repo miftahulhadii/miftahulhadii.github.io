@@ -5,7 +5,7 @@ favicon: images/web-logo.png
 description: |
   DataHadi
 base_url: https://miftahulhadii.github.io/index.html
-repository_url: https://github.com/miftahulhadii/miftahulhadii.github.io/index.html
+repository_url: https://github.com/miftahulhadii/miftahulhadii.github.io/
 output_dir: "docs"
 navbar:
   search: true
