@@ -1,5 +1,28 @@
 [
   {
+    "path": "posts/2023-04-04-create-an-utm-parameter-to-boost-personal-website-campaign/",
+    "title": "Create an UTM Parameter to Boost Personal Website Campaign",
+    "description": "Are you looking to take your marketing campaigns to the next level? Learn how to use UTM parameters to track your website/app traffic and optimize your marketing strategy for better results.",
+    "author": [
+      {
+        "name": "Miftahul Hadi",
+        "url": {
+          "https://www.linkedin.com/in/miftahulhadii": {}
+        }
+      }
+    ],
+    "date": "2023-04-04",
+    "categories": [
+      "Google Analytics",
+      "Marketing Campaign",
+      "UTM"
+    ],
+    "contents": "\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://crossmasters.com/upload/utm-parameters-illustration.webp",
+    "last_modified": "2023-04-04T15:34:04+07:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2023-02-15-design-a-music-album-database-using-MySQL/",
     "title": "Design a Music Database using MySQL",
     "description": "Using MySQL to design a database and perform a descriptive analysis on music database.",

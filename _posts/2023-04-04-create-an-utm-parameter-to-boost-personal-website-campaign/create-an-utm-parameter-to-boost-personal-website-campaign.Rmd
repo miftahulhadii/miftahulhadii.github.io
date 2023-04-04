@@ -1,0 +1,36 @@
+---
+title: "Create an UTM Parameter to Boost Personal Website Campaign"
+description: |
+  Are you looking to take your marketing campaigns to the next level? Learn how to use UTM parameters to track your website/app traffic and optimize your marketing strategy for better results.
+preview: https://crossmasters.com/upload/utm-parameters-illustration.webp
+author:
+  - name: Miftahul Hadi
+    url: {https://www.linkedin.com/in/miftahulhadii}
+date: 2023-04-04
+categories:
+  - Google Analytics
+  - Marketing Campaign
+  - UTM
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    output_folding: show
+    collapsed: false
+    smooth_scroll: false
+    number_sections: false
+    toc_depth: 2
+    self_contained: true
+    highlight: tango
+    fig_caption: yes
+---
+
+```{r, echo=FALSE}
+embed_file <- function(file, width = "100%", height = "600px") {
+  html <- paste("<embed src='", file, "' width='", width, "' height='", height, "' type='application/pdf' />", sep="")
+  htmltools::HTML(html)
+}
+
+embed_file("D:/Bahan Belajar/Project Portfolio/4_GA_Utm/How to boost website marketing using UTM in Google Analytics 4 .pdf")
+```
+
