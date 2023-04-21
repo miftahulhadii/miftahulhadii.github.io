@@ -12,7 +12,7 @@ links:
   - label: '`r fontawesome::fa("envelope", height = "25px")`'
     url: "mailto:hadimiftahul5@gmail.com"
   - label: Resume
-    url: "https://docs.google.com/document/d/1ySz7KR_ZjWB4NO6u24l9M9BfP6VDiU8m/edit?usp=sharing&ouid=104673057248975950615&rtpof=true&sd=true"
+    url: "https://docs.google.com/document/d/14MjRd5XNb1WXcr__yozYiY8q9AklYo0Wb1z9yOfoV7k/edit"
 site: distill::distill_website
 output:
   postcards::trestles
