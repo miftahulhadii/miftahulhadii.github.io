@@ -2,7 +2,7 @@
 title: "Fitness Trackers e-Commerce in Indian Market"
 description: |
   A financial analysis about fitness trackers device sales in Indian market on 2022. 
-preview: https://phoneradar.com/wp-content/uploads/2014/09/GetActive-Tapp.jpg
+preview: https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_25/3612032/230621-fitness-tracker-bd-2x1.jpg
 author:
   - name: Miftahul Hadi
 date: Dec 6, 2022
@@ -83,7 +83,7 @@ Then, load and name the dataset as a *fitness_tracker* using `readr` library.
 library(readr)
 
 #Use your file location
-fitness_trackers <- read_csv("D:/Bahan Belajar/Experience/Sertifikasi LinkedIn/Project/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv")
+fitness_trackers <- read_csv("D:/Bahan Belajar/Project Portfolio/1_R_Fitness Tracker_ecommerce/Fitness_trackers.csv")
 ```
 
 Last, we want to get better understanding of our data using `glimpse()` & `skim_without_charts()` to check the null value.
