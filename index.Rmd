@@ -20,7 +20,7 @@ output:
 
 # Welcome to my personal website!🤚
 
-Welcome! I'm a Data Analyst with experience at [detikcom](https://www.detik.com/){target="_blank"}. Excel, excelling in automated reporting using SQL and R. My expertise includes Ad-hoc analysis and optimizing data processes. Passionate about financial analysis, I actively study data and financial courses and engage in personal projects.
+Welcome! I'm a Data Analyst with experience at [detikcom](https://www.detik.com/){target="_blank"}. Excelling in automated reporting using SQL and R. My expertise includes Ad-hoc analysis and optimizing data processes. Passionate about financial analysis, I actively study data and financial courses and engage in personal projects.
 
 >> *"**Presenting new information** is what I love to do the most."*
 
