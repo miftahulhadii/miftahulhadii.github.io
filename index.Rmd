@@ -17,19 +17,15 @@ site: distill::distill_website
 output:
   postcards::trestles
 ---
-
+  
 # Welcome to my personal website! 🤚
 
-I'm a **Data Analyst** at [detikcom](https://www.detik.com/){target="_blank"} with expertise in automated reporting, ad-hoc analysis, and data visualization. I love turning complex data into actionable insights.
+I'm a **Data Analyst** at [detikcom](https://www.detik.com/){target="_blank"} with expertise in automated reporting, ad-hoc analysis, and data visualization. I enjoy turning complex data into actionable insights using tools like SQL and R.
 
 > *"Presenting new information is what I love to do the most."*
 
----
-
-## 🔹 Featured Visualization
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(plotly)
-# Sample interactive histogram – replace with your own visualization code
 p <- plot_ly(x = ~rnorm(100), type = "histogram", marker = list(color = '#1a3b70'))
 p
